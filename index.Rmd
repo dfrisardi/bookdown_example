@@ -1,0 +1,71 @@
+--- 
+title: "Esercitazioni"
+author: "Brunero Liseo"
+date: 
+# "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+# url: your book url like https://bookdown.org/yihui/bookdown
+# cover-image: path to the social sharing image like images/cover.jpg
+description: |
+  In questo libro sono presenti le esercitazioni di Statistica di Base
+link-citations: yes
+github-repo: rstudio/bookdown-demo
+---
+
+# Introduzione {-}
+
+In questo libro sono presenti le Esercitazioni di Statistica di Base.
+
+```{r, eval=FALSE, include=FALSE}
+bookdown::render_book()
+```
+
+
+```{r eval=FALSE, include=FALSE}
+bookdown::serve_book()
+```
+
+
+```{r include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+```
+
+```{r include=F}
+ipak <- function(pkg){
+  new.pkg <- pkg[!(pkg %in% installed.packages()[, "Package"])]
+  if (length(new.pkg)) 
+    install.packages(new.pkg, dependencies = TRUE)
+  sapply(pkg, require, character.only = TRUE)
+}
+packages = c('xtable', 'kableExtra')
+ipak(packages)
+
+format_cells <- function(df, rows ,cols, value = c("italics", "bold", "strikethrough")){
+
+  # select the correct markup
+  # one * for italics, two ** for bold
+  map <- setNames(c("*", "**", "~~"), c("italics", "bold", "strikethrough"))
+  markup <- map[value]  
+
+  for (r in rows){
+    for(c in cols){
+
+      # Make sure values are not factors
+      df[[c]] <- as.character( df[[c]])
+
+      # Update formatting
+      df[r, c] <- paste0(markup, df[r, c], markup)
+    }
+  }
+
+  return(df)
+  
+}
+```
+
+

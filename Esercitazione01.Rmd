@@ -1,0 +1,128 @@
+# Esercitazione 1 
+
+<center><h2>**Rapporti statistici**</h2></center>
+
+## Esercizio 1
+
+La seguente tabella riporta i dati relativi alla raccolta (in migliaia di tonnellate) di rifiuti urbani per area geografica nell'anno 2010 (fonte Istat):
+
+```{r, echo=FALSE}
+tab1 = data.frame("area" = c('Nord', 'Centro', 'Sud', 'Italia'),
+                  "indiff" = c(7167, 5258, 8133, 20558),
+                  "diff" = c(7271, 1985, 2194, 11450),
+                  "ingom" = c(370, 81, 21, 472),
+                  "Totale" = c(14808, 7324, 10348, 32480),
+                  "Abitanti" = c(27663, 11321, 20896, 59880))
+colnames(tab1) = c("Area Geografica", "Raccolta Indifferenziata", 
+                   "Raccolta Differenziata", "Rifiuti Ingombranti", "Totale",
+                   "Abitanti (migliaia)")
+tab1%>%
+  format_cells(rows=4, col=1, 'italics')%>%
+  kbl(align = 'c')%>%
+  kable_classic(full_width = F, html_font = "Computer Modern")%>%
+  row_spec(0, extra_css = "border-top: thin solid; border-bottom: thin solid")%>%
+  column_spec(1, bold = T)%>%
+  row_spec(4, extra_css = "border-bottom: thin solid")
+```
+
+<ol type="a">
+  <li> Si determini la composizione percentuale delle varie tipologie di rifiuto per ciascuna delle aree considerate.</li>
+  <li> Quali tra gli abitanti delle tre aree geografiche considerate tendono a produrre il maggior quantitativo di rifiuti? Si specifichi la tipologia di rapporto statistico utile a rispondere a questa domanda.</li>
+  <li>Si riconosca la natura del rapporto statistico: $$\frac{\mathrm{rifiuti \ indifferenziati \ al \ nord}}{\mathrm{rifiuti \ indifferenziati \ al \ sud}}$$ e se ne interpreti il significato. </li>
+</ol>
+
+## Esercizio 2
+
+Nella seguente tabella sono riportati:
+
+* il numero di sportelli bancari presenti in alcune provincie lombarde e in Italia negli anni dal 2003 al 2007 (fonte Banca d'Italia);
+* la superficie delle provincie lombarde considerate, espressa in $km^2$ (fonte Istat);
+* la popolazione residente nel 2003 in ciascuna provincia lombarda considerata (fonte Istat).
+
+```{r echo=F}
+tab2 = data.frame("Provincia" = c("Provincia", "Lodi (LO)", "Milano (MI)", "Pavia (PV)", 
+                                  "Sondrio (SO)", "Altre provincie", 
+                                  "Lombardia", "ITALIA"),
+                  "2003" = c(2003, 132, 2313, 310, 120, 2966, 5841, 30502),
+                  "2004" = c(2004, 133, 2342, 314, 121, 3030, 5940, 30946),
+                  "2005" = c(2005, 137, 2378, 319, 124, 3110, 6068, 31498),
+                  "2006" = c(2006, 142, 2458, 322, 127, 3196, 6245, 33333),
+                  "2007" = c(2007, 150, 2530, 331, 128, 3314, 6453, 32225),
+                  "Superficie" = c("Superficie", 782.25, 1984.39, 3964.73, 3211.30,
+                                   14919.58, 24862.85, ""),
+                  "Popolazione" = c("Popolazione",200554, 3721428, 497233, 
+                                    177568, 4510862,
+                                    9108645, ""))
+tab2%>%
+  format_cells(rows=8, col=1, "italics")%>%
+  kbl(align = 'c', col.names = NULL)%>%
+  kable_classic(html_font = 'Computer Modern')%>%
+  add_header_above(c(' '=1,'$n°$ sportelli'=5,' '=2), extra_css = 'border-top: ')%>%
+  column_spec(1, bold = T, border_left = T, border_right = T)%>%
+  column_spec(8, border_right = T)%>%
+  column_spec(6, border_right = T)%>%
+  row_spec(c(0,1), bold = T)%>%
+  row_spec(c(0,1), bold = T, extra_css = 'border-top: thin solid;border-bottom: thin solid')%>%
+  row_spec(c(6,7,8), extra_css = 'border-bottom: thin solid')
+```
+
+
+<ol type="a">
+  <li> 	Si riconosca la natura del rapporto statistico: $$\frac{n°\mathrm{ \ di \  sportelli \ in \ provincia \ di \ Lodi \ nel \ 2005}}{n° \mathrm{ \ di \ sportelli \ in \ Lombardia \ nel \ 2005}}$$ e se interpreti il significato.</li>
+  <li> 	Si riconosca la natura del rapporto statistico: $$\frac{n° \mathrm{\ di\ sportelli\ in\ provincia\ di\ Milano\ nel\ 2007}}{n° \mathrm{\ di\ sportelli\ in\ provincia\ di\ Sondrio\ nel\ 2007}}$$ e se interpreti il significato.</li>
+  <li> Relativamente all'anno 2007, utilizzando un opportuno rapporto statistico, si valuti la densità degli sportelli bancari sul territorio delle provincie di Milano e di Sondrio. </li>
+  <li> Si ricavi il numero di sportelli bancari per mille abitanti relativamente alle provincie di Milano e di Sondrio nell'anno 2003, riconoscendo la natura del rapporto statistico utilizzato.</li>
+</ol>
+
+## Soluzioni {-}
+
+### Esercizio 1 {-}
+
+<ol type="a">
+  <li> 	Rapporti di composizione (intravedere distribuzioni parziali): 
+```{r echo=FALSE}
+tab1.rel=tab1
+tab1.rel[,2:4]=tab1.rel[,2:4]/tab1.rel[,5]
+tab1.rel[,1:4]%>%
+  format_cells(rows=4, col=1, 'italics')%>%
+  kbl(align = 'c')%>%
+  kable_classic(full_width = F, html_font = "Computer Modern", position = 'left')%>%
+  row_spec(0, extra_css = "border-top: thin solid; border-bottom: thin solid")%>%
+  column_spec(1, bold = T)%>%
+  row_spec(4, extra_css = "border-bottom: thin solid")
+``` 
+  </li>
+  <li> Per confrontare la produzione di rifiuti è opportuno eliminare l’influenza del numero di abitanti; quindi, si utilizza un rapporto di derivazione (gli abitanti producono rifiuti) in particolare di seguito si calcolano i rifiuti prodotti ogni mille abitanti. Gli abitanti dell’Italia centrale tendono a produrre più rifiuti.
+```{r echo=FALSE}
+tab1.deriv = tab1
+tab1.deriv$deriv = tab1[,5]/tab1[,6]
+colnames(tab1.deriv)[7] = "Rapporto di derivazione"
+tab1.deriv[1:4,5:7]%>%
+  kbl(align = 'c')%>%
+  kable_classic(full_width = F, html_font = "Computer Modern", 
+                position = 'left')%>%
+  row_spec(0, extra_css = "border-top: thin solid; border-bottom: thin solid")%>%
+  row_spec(4, extra_css = "border-bottom: thin solid")
+
+```
+
+  </li>
+  <li>  È un rapporto di coesistenza perché si confrontano valori associati a due modalità di uno stesso carattere, in questo caso l’area geografica. Il rapporto è pari a $0.8812$ e indica che per ogni tonnellata (o migliaia di tonnellate) di rifiuti indifferenziati prodotta al sud vengono prodotte $0.8812$ tonnellate di rifiuti indifferenziati al nord.</li>
+</ol>
+
+### Esercizio 2 {-}
+
+<ol type="a">
+  <li> 	Lodi è in Lombardia, quindi gli sportelli di Lodi sono parte degli sportelli della Lombardia, rapporto di composizione. $$\frac{137}{6068}=0.0226$$ Gli sportelli della provincia di Lodi nel 2005 costituivano il $2.26\%$ degli sportelli di tutta la Lombardia.</li>
+  <li>	Milano e Sondrio sono due province distinte, rapporto di coesistenza. Nel 2007, per ogni sportello nella provincia di Sondrio ce ne erano $\frac{2530}{128}=10.7656$ nella provincia di Milano.
+
+</li>
+  <li>Rapporti di densità. <br> 
+  Nel 2007, nella provincia di Milano c’erano $\frac{2530}{1984.39}=1.2375$ sportelli per chilometro quadrato.<br>
+  	Nel 2007, nella provincia di Sondrio c’erano $\frac{128}{3211.90}=0.0399$ sportelli per chilometro quadrato.
+</li>
+  <li> Rapporti di derivazione ipotizzando che la numerosità della popolazione sia causa del numero di sportelli bancari.<br>
+  Nel 2003, nella provincia di Milano c’erano $\frac{2313}{3721428}\cdot 1000=0.6215$ sportelli ogni mille abitanti.<br>
+  Nel 2003, nella provincia di Sondrio c’erano $\frac{120}{177568}\cdot 1000=0.6758$ sportelli ogni mille abitanti.
+</li>
+</ol>

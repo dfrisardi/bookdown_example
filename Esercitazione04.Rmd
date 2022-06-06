@@ -1,0 +1,509 @@
+# Esercitazione 4
+
+## Esercizio 1
+
+La seguente tabella riporta la distribuzione di 351 imprese secondo il fatturato $X$ del 2017 (in milioni di Euro):
+
+```{r echo=FALSE}
+tab1 = data.frame("Classi"=c("$(0,0.6]$", "$(0.6,1]$",
+                             "$(1,1.2]$","$(1.2,1.4]$", "Totale"), 
+                  "Frequenze"=c(170,148,23,10,351))
+tab1%>%
+  kbl(align = 'rc', col.names = c("Classi di $X$","Frequenze"))%>%
+  kable_classic(html_font = 'Computer Modern', full_width=F)%>%
+  column_spec(1, bold = T)%>%
+  row_spec(c(0,5), bold = T, 
+           extra_css = 'border-top: thin solid;border-bottom: thin solid')%>%
+  row_spec(4, extra_css = 'border-bottom: thin solid')
+```
+
+<ol type='a'>
+  <li>	Si individui la classe modale del carattere $X$.</li>
+  <li>Si forniscano il primo ed il terzo quartile di $X$ e di commentino i valori ottenuti.</li>
+  <li>Si calcoli la differenza interquartile e si commenti il valore ottenuto.</li>
+  <li>Si calcoli la media aritmetica del carattere $X$ e si commenti il valore ottenuto.</li>
+  <li>Alle aziende precedentemente considerate, sono state aggiunte altre 134 aziende il cui fatturato del 2017 è mediamente pari a 420000 Euro. Si determini il fatturato medio di tutte le 485 imprese.</li>
+  <li>Come varierebbe il risultato precedente se i valori fossero espressi in migliaia di Dollari statunitensi? Si consideri che un Euro vale 1.23 Dollari statunitensi (dato 2017).</li>
+</ol>
+
+## Esercizio 2
+
+Sono stati rilevati i ritardi (espressi in minuti) dei treni di una linea ferroviaria in un determinato giorno. Le diverse rilevazioni sono state classificate a seconda direzione di percorrenza dei treni. La seguente tabella riporta le distribuzioni di frequenza.
+
+```{r echo=FALSE}
+tab2 = data.frame("Ritardo"=c("$(0,5]$","$(5,10]$","$(10,20]$","$(20,30]$",
+                              "Totale"),
+                  "Andata"=c(14,9,7,2,32),"Ritorno"=c(10,8,7,3,28),
+                  "Totale"=c(24,17,14,5,60))
+tab2%>%
+  kbl(align = 'rccc')%>%
+  kable_classic(html_font = 'Computer Modern', full_width=F)%>%
+  column_spec(c(1,4), bold = T)%>%
+  row_spec(c(0,5), bold = T, 
+           extra_css = 'border-top: thin solid;border-bottom: thin solid')%>%
+  row_spec(4, extra_css = 'border-bottom: thin solid')
+```
+
+Con riferimento all’intero insieme dei 60 treni del giorno:
+<ol type='a'>
+  <li>Si calcoli lo scostamento medio assoluto dalla media aritmetica dei ritardi.</li>
+</ol>
+
+Considerando i treni in andata e in ritorno come due gruppi distinti:
+<ol type='a' start='2'>
+  <li>Si valuti quale gruppo presenta maggiore variabilità.</li>
+</ol>
+
+
+## Esercizio 3
+
+Gli incassi $X$ (in milioni di euro) di 5 punti vendita di una catena di grandi magazzini sono i seguenti: $$11.5;\,2.3;\, 5.5;\,8.9; \,9.7$$
+
+<ol type='a'>
+  <li>Si determinino il campo di variazione e la differenza interquartile di $X$.</li>
+  <li>Si calcoli lo scarto quadratico medio di $X$ e si commenti il valore ottenuto.</li>
+  <li>Sia $Y$ gli incassi (in milioni di euro) dopo l’applicazione di un’imposta proporzionale del $10\%$ e un’imposta fissa di 10000 euro. Si determini lo scarto quadratico medio di $Y$.</li>
+  <li>Si calcoli la differenza media semplice di $X$ e si commenti il valore ottenuto.</li>
+</ol>
+
+## Esercizio 4
+
+La seguente tabella riporta la distribuzione delle retribuzioni mensili $X$ (in migliaia di euro) di 42 dipendenti di un’azienda. I dati sono raggruppati in classi e per ogni classe è riportato anche il totale di $X$.
+
+```{r echo=F}
+tab4=data.frame("Classi"=c("$(0,1]$","$(1,1.5]$","$(1.5,2]$","$(2,4]$",
+                           "Totale"),
+                "N.ro Dipendenti"=c(4,14,21,3,42),
+                "Totale di classe"=c(3.4,19.6,34.65,8.1,65.75))
+tab4%>%
+  kbl(align = 'rcc', col.names = c("Classi", "N.ro Dipendenti", "Totale di classe"))%>%
+  kable_classic(html_font = 'Computer Modern', full_width=F)%>%
+  column_spec(1, bold = T)%>%
+  row_spec(c(0,5), bold = T, 
+           extra_css = 'border-top: thin solid;border-bottom: thin solid')%>%
+  row_spec(4, extra_css = 'border-bottom: thin solid')
+```
+
+<ol type='a'>
+  <li>Si calcoli lo scostamento medio assoluto dalla media aritmetica di $X$.</li>
+  <li>Si calcoli il coefficiente di variazione di $X$ e si commenti il valore ottenuto.</li>
+  <li>Si calcoli la differenza media semplice di $X$ e si commenti il valore ottenuto.</li>
+</ol>
+
+## Soluzioni {-}
+
+### Esercizio 1 {-}
+
+```{r echo=FALSE}
+tab1.sol=data.frame("j"=c("$j$",1:4,"Totale"),
+                    "xj"=c("$\\overline{x}_j$",0.3,0.8,1.1,1.3,""),
+                    "nj"=c("$n_j$",170,148,23,10,351),
+                    "dj"=c("$d_j$",0.6,0.4,0.2,0.2,""),
+                    "hj"=c("$h_j$",283.33,370,115,20,""),
+                    "Nj"=c("$N_j$",170,318,341,351,""),
+                    "xjnj"=c("$\\overline{x}_jn_j$",51,118.4,23.5,13,207.7),
+                    "Fj"=c("$F_j$",0.4843,0.9060,0.9715,1,""))
+tab1.sol%>%
+  kbl(align = 'c', col.names = NULL)%>%
+  column_spec(1, bold = T)%>%
+  column_spec(1:8, border_left = T,border_right = T)%>%
+  kable_classic(html_font = 'Computer Modern', full_width=F)%>%
+  column_spec(1, bold = T)%>%
+  row_spec(c(1,6), bold = T, 
+           extra_css = 'border-top: thin solid;border-bottom: thin solid')%>%
+  row_spec(1:6, extra_css = 'border-top: thin solid;border-bottom: thin solid')
+```
+
+```{r}
+# ES 1
+rm(list = ls())
+breaks <- c(0, 0.6, 1, 1.2, 1.4)
+n <- c(170, 148, 23, 10)
+k <- length(n)
+N <- sum(n)
+x <- c(breaks[-1] + breaks[-k-1])/2
+d <- c(breaks[-1] - breaks[-k-1])
+h <- round(n / d, 2)
+Nc <- cumsum(n)
+Fj <- Nc / N
+```
+
+
+<ol type='a'>
+  <li> 	Dalle frequenze specifiche $h_j$ si osserva che la classe modale è la seconda $(0.6, 1]$ e rappresenta il $42.17\%$ delle imprese considerate. (disegnare istogramma)
+  
+```{r}
+## a)
+pos_moda <- which.max(h)
+n[pos_moda] / N
+barplot(h, width = d, space = 0, col = 'lightblue', border='blue',
+        names.arg = c("(0,0.6]", "(0.6,1]", "(1,1.2]", "(1.2,1.4]"),
+        main='Istogramma frequenze')
+```
+  </li>
+  <li>	Primo quartile
+$$\frac{N}{4}=87.75>0;\quad h=1$$
+$$q_1=l_1^-+\frac{\frac{N}{4}-N_0}{N_1-N_0}\cdot [l_1^+-l_1^- ]=0+\frac{87.75-0}{170-0}\cdot [0,6-0]=0.3097$$
+Un quarto delle imprese considerate ha un fatturato minore di 309700 Euro.
+$$3 \cdot \frac{N}{4}=263.25>170;\quad h=2$$
+$$q_3=l_2^-+\frac{3\cdot\frac{N}{4}-N_1}{N_2-N_1}\cdot [l_2^+-l_2^- ]=0.6+\frac{263.25-170}{318-170}\cdot [1-0,6]=0.8520$$
+Tre quarti delle imprese considerate ha un fatturato minore di 852000 Euro. (disegnare funzione di ripartizione)
+
+```{r}
+## b)
+N/4
+h <- 1
+q1 <- round(breaks[h] + (N/4 - 0)/(Nc[h] - 0)*(breaks[h+1] - breaks[h]), 4); q1
+
+3*N/4
+h <- min(which(Nc > 3*N/4)); h
+q3 <- round(breaks[h] + (3*N/4 - Nc[h-1])/(Nc[h] - Nc[h-1])*(breaks[h+1] - breaks[h]), 4); q3
+
+q_fun <- approxfun(c(0, Fj), breaks)
+plot(q_fun)
+q_fun(0.25*c(1, 3))
+
+plot(q_fun(0.25*c(0,1,2,3,4)),0.25*c(0,1,2,3,4), xlab = "Quantili",
+     ylab="Funzione di ripartizione", axes = F, col="black", pch=19,
+     main="Funzione di ripartizione")
+box()
+axis(1, at=q_fun(0.25*c(0,1,2,3,4)), labels=c(0,round(q_fun(0.25*c(1,2,3)),2),1))
+axis(2, at=0.25*c(0,1,2,3,4), labels=0.25*c(0,1,2,3,4))
+for(i in 1:4){
+  segments(q_fun(0.25*(i-1)),0.25*(i-1), q_fun(0.25*i), 0.25*(i-1), col = 'black')
+}
+
+```
+
+</li>
+  <li>	$$Q_3-Q_1=0.8520-0.3097=0.5423$$
+Il 50% dei fatturati "centrali" sono compresi in un intervallo di ampiezza pari a 542300 Euro.
+```{r}
+## c)
+q3 - q1
+```
+
+</li>
+  <li>$$
+   \overline{x}=\frac{\displaystyle\sum_{ j=1}^kx_j n_j}{N}=\frac{207.7}{351}=0.5917$$
+Mediamente le imprese hanno fatturato 591738 Euro ciascuna.
+```{r}
+## d)
+weighted.mean(x, n)
+```
+
+  </li>
+  <li>	Proprietà associativa della media aritmetica.
+$$M_1=\frac{M_1^{(1)}\cdot N_1+M_1^{(2)}\cdot N_2}{N_1+N_2}=\frac{0.5917\cdot351+0.42\cdot134}{485}=0.5443\quad\mathrm{milioni \ di \ Euro}$$
+```{r}
+(M1 <- (weighted.mean(x,n)*351+0.42*134)/485)
+```
+
+</li>
+  <li>Linearità della media aritmetica. $$Y=a+bX\Rightarrow M_1(Y)=a+bM_1(X)$$ $$a=0, \quad b=1.23$$ $$M_1(Y)=1.23\cdot 0.5443=0.6695\quad \mathrm{milioni \ di \ Dollari \ statunitensi}$$
+```{r}
+M1 * 1.23
+```
+  
+  </li>
+
+
+</ol>
+
+### Esercizio 2 {-}
+
+Tabella sulla distribuzione totale
+
+```{r echo=FALSE}
+tab2.sol = data.frame("j"=c(1:4, "Totale"),
+                      "xj"=c(2.5,7.5,15,25,""),
+                      "nj"=c(24,17,14,5,"N = 60"),
+                      "xnj"=c(60,127.5,210,125,522.5),
+                      "xj_mu"=c(6.2083,  1.2083,  6.2917, 16.2917,""),
+                      "xnj_mu"=c(149, 20.5417,  88.0833,  81.4583,339.0833))
+tab2.sol%>%
+  kbl(align = 'c', col.names = c("$j$", "$\\overline{x}_j$", "$n_j$",
+                                 "$\\overline{x}_jn_j$", "$|\\overline{x}_j-\\mu|$", "$|\\overline{x}_j-\\mu|n_j$"))%>%
+  kable_classic(html_font = 'Computer Modern', full_width=T)%>%
+  column_spec(1, bold = T)%>%
+  row_spec(c(0,5), bold = T, 
+           extra_css = 'border-top: thin solid;border-bottom: thin solid')%>%
+  row_spec(4, extra_css = 'border-bottom: thin solid')
+```
+
+```{r}
+# ES 2
+rm(list = ls())
+breaks <- c(0, 5, 10, 20, 30)
+nA <- c(14, 9, 7, 2)
+nR <- c(10, 8, 7, 3)
+nTot <- nA+nR
+N <- sum(nTot)
+k <- length(nA)
+N_A <- sum(nA)
+N_R <- sum(nR)
+x <- c(breaks[-1] + breaks[-k-1])/2
+d <- c(breaks[-1] - breaks[-k-1])
+
+
+```
+<ol type='a'>
+  <li>Calcoliamo la media aritmetica $$\mu=\frac{\displaystyle \sum_{j=1}^kx_jn_j}{N}=\frac{552.5}{60}=8.7083$$
+```{r}
+(mu <- sum(x*nTot)/N)
+```
+  Mediamente i ritardi sono pari a 9.2083 minuti.
+  
+  Quindi calcoliamo $S_\mu$ $$S_\mu=\frac{\displaystyle \sum_{j=1}^k|x_j-\mu|n_j}{N}=\frac{339.0833}{60}=5.6514$$
+```{r}
+(S_mu <- sum(abs(x-mu)*nTot)/N)
+```
+  Mediamente i ritardi si discostano dalla media aritmetica di 5.6514 minuti.
+  </li>
+  <li>Calcoliamo ora le medie e le varianze di ogni singolo gruppo.
+  
+  Tabella sulla distribuzione dei treni "*Andata*"
+```{r echo=FALSE}
+tab2.b1.sol=data.frame("j"=c(1:4, "Totale"),
+                       "xj"=c(2.5,7.5,15,25,""),
+                       "nj1"=c(14,9,7,2,"$N_A=32$"),
+                       "xnj1"=c(35,67.5,105,50,257.5),
+                       "xj2"=c(6.25,56.25,225,625,""),
+                       "x2nj1"=c(87.5,506.25,1575,1250,3418.75))
+tab2.b1.sol%>%
+  kbl(align = 'c', col.names = c("$j$", "$\\overline{x}_j$", "$n_{jA}$",
+                                 "$\\overline{x}_j n_{jA}$", "$\\overline{x}_j^2$", "$\\overline{x}^2_{j}n_{jA}$"))%>%
+  kable_classic(html_font = 'Computer Modern', full_width=T)%>%
+  column_spec(1, bold = T)%>%
+  row_spec(c(0,5), bold = T, 
+           extra_css = 'border-top: thin solid;border-bottom: thin solid')%>%
+  row_spec(4, extra_css = 'border-bottom: thin solid')
+```
+  
+  $$\overline{x}_A=\frac{\displaystyle \sum_{j=1}^k\overline{x}_jn_{jA}}{N_A}=\frac{257.5}{32}=8.046$$ $$\sigma_A^2=\frac{\displaystyle \sum_{j=1}^k \overline{x}^2_{j}n_{jA}}{N_A}-\overline{x}^2_A=\frac{3418.75}{32}-8.0469^2=42.0837$$
+```{r}
+(mu_A <- sum(x*nA)/sum(nA))
+(sigma2_A <- sum(x^2*nA)/sum(nA)-mu_A^2)
+```
+  Tabella sulla distribuzione dei treni "*Ritorno*"
+
+```{r echo=FALSE}
+tab2.b2.sol=data.frame("j"=c(1:4, "Totale"),
+                       "xj"=c(2.5,7.5,15,25,""),
+                       "njB"=c(10,8,7,3,"$N_R=28$"),
+                       "xnjB"=c(25,60,105,75,265),
+                       "xj2"=c(6.25,56.25,225,625,""),
+                       "x2njB"=c(62.5,450,1575,1875,3962.5))
+tab2.b2.sol%>%
+  kbl(align = 'c', col.names = c("$j$", "$\\overline{x}_j$", "$n_{jR}$",
+                                 "$\\overline{x}_j n_{jR}$", "$\\overline{x}_j^2$", "$\\overline{x}^2_{j}n_{jR}$"))%>%
+  kable_classic(html_font = 'Computer Modern', full_width=T)%>%
+  column_spec(1, bold = T)%>%
+  row_spec(c(0,5), bold = T, 
+           extra_css = 'border-top: thin solid;border-bottom: thin solid')%>%
+  row_spec(4, extra_css = 'border-bottom: thin solid')
+```  
+
+$$\overline{x}_R=\frac{\displaystyle \sum_{j=1}^k\overline{x}_jn_{jR}}{N_R}=\frac{265}{28}=9.4843$$ $$\sigma_R^2=\frac{\displaystyle \sum_{j=1}^k \overline{x}^2_{j}n_{jR}}{N_R}-\overline{x}^2_R=\frac{3962.5}{28}-9.4843^2=51.9452$$
+
+```{r}
+(mu_R <- sum(x*nR)/sum(nR))
+(sigma2_R <- sum(x^2*nR)/sum(nR)-mu_R^2)
+```
+    
+Per confrontare la variabilità dei gruppi dobbiamo usare un indice percentuale. $$\sigma_A=\sqrt{\sigma_A^2}=6.4872\,\,\mathrm{minuti}, \quad CV_A=\frac{\sigma_A}{\overline{x}_A}\cdot 100=80.62\%$$ $$\sigma_R=\sqrt{\sigma_R^2}=7.2073\,\,\mathrm{minuti}, \quad CV_R=\frac{\sigma_R}{\overline{x}_R}\cdot 100=76.15\%$$ C'è meno variabilità nel secondo gruppo.
+
+```{r}
+(CV_A = sqrt(sigma2_A)/mu_A)
+(CV_R = sqrt(sigma2_R)/mu_R)
+```
+
+
+  </li>
+
+</ol>
+
+
+### Esercizio 3 {-}
+
+```{r echo=FALSE}
+tab3.sol=data.frame("i"=c(1:5,"Totale"),
+                    "xi"=c(2.3,5.5,8.9,9.7,11.5,37.9),
+                    "Fi"=c(0.2,0.4,0.6,0.8,1,""),
+                    "xi2"=c(5.29,30.25,79.21,94.09,132.25,341.09))
+tab3.sol%>%
+  kbl(align = 'c', col.names = c("$i$", "$x_{(i)}$", "$F_i$",
+                                 "$x_{(i)}^2$"))%>%
+  kable_classic(html_font = 'Computer Modern', full_width=F)%>%
+  column_spec(1, bold = T)%>%
+  row_spec(c(0,6), bold = T, 
+           extra_css = 'border-top: thin solid;border-bottom: thin solid')%>%
+  row_spec(5, extra_css = 'border-bottom: thin solid')
+```
+
+```{r}
+# ES 3
+rm(list = ls())
+x <- c(11.5, 2.3, 5.5, 8.9, 9.7)
+N <- length(x)
+```
+
+<ol type='a'>
+  <li>$$\Delta_C = x_{(N)}-x_{(1)}=11.5-2.3=9.2\,\,\mathrm{milioni \ di \ euro}$$ $$ \frac{N}{4}=1.25>1;\quad h=2;\quad q_1=x_{(2)}=5.5$$ $$3\cdot \frac{N}{4}=3.75>3;\quad  h=4;\quad q_3=x_{(4)}=9.7$$ $$\Delta_q=q_3-q_1=4.2 \,\,\mathrm{milioni \ di \ euro}$$ 
+```{r}
+## a)
+x <- sort(x)
+Fi <- 1:N/N
+N/4
+N/4*3
+x[4] - x[2]
+```
+  </li>
+  
+  
+  <li>$$\overline{x}=\frac{37.9}{5}=7.58 \,\, \mathrm{milioni \ di \ euro}$$ $$M_1(X^2)=\frac{341.09}{5}=68.218$$ $$Var(X)=[(X-\overline{x})^2]=M_1(X^2)-\overline{x}^2=68.218-7.58^2=10.7616$$ $$\sigma=\sqrt{Var(X)}=3.2805\,\,\mathrm{milioni \ di \ euro}$$ Gli incassi dei punti vendita differiscono dal valore medio di 3.2805 milioni di euro.
+  
+```{r}
+(mu = sum(x)/N)
+(m_x2 = sum(x^2)/N)
+(var_x = m_x2-mu^2)
+(sigma = sqrt(var_x))
+```
+  
+  </li>
+  <li> $$Y=a+bX\Rightarrow \sigma(Y)=|b|\sigma(X)$$ $$a=0.01,\quad b=0.9$$ $$\sigma(Y)=0.9\cdot3.2805=2.9524\,\,\mathrm{milioni \ di\ euro}$$
+```{r}
+(sigmaY=0.9*sigma)
+```
+  </li>
+  <li>$$\Delta = \frac{2}{N(N-1)}\sum_{i=2}^N\sum_{j=1}^{i-1} |x_i-x_j|$$
+```{r echo=FALSE}
+tab3.d.sol=data.frame("xij"=c("$|x_i-x_j|$",2.3,5.5,8.9,9.7,11.5,"Totale"),
+                      "a"=c(2.3,0,3.2,6.6,7.4,9.2,""),
+                      "b"=c(5.5,"",0,3.4,4.2,6.0,""),
+                      "c"=c(8.9,"","",0,0.8,2.6,""),
+                      "d"=c(9.7,"","","",0,1.8,""),
+                      "e"=c(11.5,"","","","",0,""),
+                      "f"=c("Totale","","","","","",42.5))
+tab3.d.sol%>%
+  kbl(align = 'c', col.names = NULL)%>%
+  kable_classic(html_font = 'Computer Modern', full_width=T)%>%
+  column_spec(c(1,7), bold = T, border_right = T, border_left = T)%>%
+  row_spec(1, bold = T, 
+           extra_css = 'border-top: thin solid;border-bottom: thin solid')%>%
+  row_spec(c(6,7), extra_css = 'border-bottom: thin solid')
+```
+  $$\Delta=\frac{2}{4\cdot5}45.2=4.52$$ Gli incassi dei punti vendita differiscono tra loro di 4.52 milioni di Euro
+  
+```{r}
+## d)
+abs(outer(x, x, "-"))
+sum(abs(outer(x, x, "-")))/2
+sum(abs(outer(x, x, "-")))/5/4
+```
+  </li>
+</ol>
+
+### Esercizio 4 {-}
+
+```{r echo=FALSE}
+tab4.sol = data.frame("j"=c(1:4,""),
+                      "nj"=c(4,14,21,3,42),
+                      "tj"=c(3.4,19.6,34.65,8.1,65.75),
+                      "Nj"=c(4,18,39,42,""),
+                      "xj"=c(0.85,1.40,1.65,2.70,""),
+                      "xjmu"=c(0.7155,0.1655,0.0845,1.1345,""),
+                      "xmunj"=c(2.8620,2.3170,1.7745,3.4035,10.3570),
+                      "xj2"=c(0.7225,1.96,2.7225,7.29,""),
+                      "xnj2"=c(2.89,27.44,57.1725,21.87,109.3725))
+tab4.sol%>%
+  kbl(align = 'c', col.names = c("$j$","$n_j$","$t_j$","$N_j$",
+                                 "$x_j$","$|x_j-\\mu|$","$|x_j-\\mu|n_j$",
+                                 "$x_j^2$","$x_j^2n_j$"))%>%
+  kable_classic(html_font = 'Computer Modern', full_width=T)%>%
+  column_spec(1, bold = T)%>%
+  row_spec(c(0,5), bold = T, 
+           extra_css = 'border-top: thin solid;border-bottom: thin solid')%>%
+  row_spec(4, extra_css = 'border-bottom: thin solid')
+```
+
+```{r}
+# ES 4
+rm(list = ls())
+brk <- c(0, 1, 1.5, 2, 4)
+n <- c(4, 14, 21, 3)
+t <- c(3.4, 19.6, 34.65, 8.1)
+x <- t/n
+k <- length(n)
+```
+
+<ol type='a'>
+  <li>	Notare che $x_jn_j=t_j$ e quindi il loro totale è il numeratore della media aritmetica. $$μ=\frac{65.75}{42}=1.5655\,\,\mathrm{migliaia\ di\ euro}$$
+Per calcolare $S_μ$ è più coerente utilizzare i valori centrali come valori rappresentativi della classe
+$$S_μ=\frac{\displaystyle \sum_{j=1}^k|x_j-μ| n_j}{N}=\frac{10.3570}{42}=0.2466\,\,\mathrm{migliaia\ di\ euro} $$
+```{r}
+## a)
+m <- round(sum(t) / sum(n), 4); m
+x
+abs(x - m)
+abs(x - m)*n
+sum(abs(x - m)*n)
+round(sum(abs(x - m)*n) / sum(n), 4)
+```
+
+</li>
+  <li>	$$CV=M_2 \left(\frac{|X-\mu|}{\mu}\cdot  100\right)=\frac{\sigma}{\mu}\cdot  100$$
+Ora come valori rappresentativi prendiamo i valori medi di classe, pari al totale di classe diviso per le rispettive frequenze.
+Notare che $x_j n_j=t_j $ e quindi il loro totale è il numeratore della media aritmetica.
+
+$$\begin{align} \sigma^2 & = M_2 (X)^2-M_1 (X)^2=\frac{109.3725}{42}-1.5655^2=0.1533\\
+\sigma & =0.3916\,\,\mathrm{migliaia\ di\ euro}\\
+CV & =0.2501\cdot 100=25.01\%\end{align}$$
+
+Mediamente i valori di $X$ si discostano dalla media del 25.01%.
+
+```{r}
+## b)
+(sigma2 <- sum(x^2*n)/sum(n)-m^2)
+(sigma <- sqrt(sigma2))
+(CV <- sigma/m*100)
+```
+
+</li>
+  <li>$$\Delta=\frac{2}{N(N-1)}\sum_{i=2}^k\sum_{j=1}^{i-1}|x_i-x_j|n_in_j$$
+```{r echo=FALSE}
+tab4.d.sol=data.frame("xij"=c("$|x_i-x_j|n_in_j$",0.85,1.40,1.65,2.70,""),
+                      "a"=c(0.85,"$0$","$0.55\\cdot56$","$0.80\\cdot84$","$1.85\\cdot12$",4),
+                      "b"=c(1.40,"","$0$","$0.25\\cdot294$","$1.30\\cdot42$",14),
+                      "c"=c(1.65,"","","$0$","$1.05\\cdot63$",21),
+                      "d"=c(2.70,"","","","$0$",3),
+                      "e"=c("",4,14,21,3,314.45))
+tab4.d.sol%>%
+  kbl(align = 'c', col.names = NULL)%>%
+  kable_classic(html_font = 'Computer Modern', full_width=T)%>%
+  column_spec(c(1,6), bold = T, border_right = T, border_left = T)%>%
+  row_spec(1, bold = T, 
+           extra_css = 'border-top: thin solid;border-bottom: thin solid')%>%row_spec(6, bold=T)%>%
+  row_spec(c(5,6), extra_css = 'border-bottom: thin solid')
+  
+```
+```{r}
+## c)
+x
+n
+abs(outer(x, x, "-"))
+abs(outer(n, n, "*"))
+sum(abs(outer(x, x, "-"))*abs(outer(n, n, "*")))/2
+
+sum(abs(outer(x, x, "-"))*abs(outer(n, n, "*")))/sum(n)/(sum(n) - 1)
+
+sum(abs(outer(x, x, "-"))*abs(outer(n, n, "*")))/sum(n)/(sum(n) - 1)/2/m
+```
+  
+  
+  
+  </li>
+</ol>
+
+
+

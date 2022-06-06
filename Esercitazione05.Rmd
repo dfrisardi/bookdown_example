@@ -1,0 +1,311 @@
+# Esercitazione 5
+
+<h2> (continua gli esercizi della quarta esercitazione) </h2>
+
+## Esercizio 1
+
+Gli incassi $X$ (in milioni di euro) di 5 punti vendita di una catena di grandi magazzini sono i seguenti: 
+
+```{r echo=FALSE}
+tab1=data.frame(rbind(c("A","B","C","D","E"),
+                      c(11.5,2.3,5.5,8.9,9.7)))
+tab1%>%
+  kbl(align = 'c', col.names = NULL)%>%
+  kable_classic(html_font = 'Computer Modern', full_width=F)%>%
+  row_spec(1, bold = T, 
+           extra_css = 'border-top: thin solid;border-bottom: thin solid')%>%
+  row_spec(2, extra_css = 'border-bottom: thin solid')
+```
+
+<ol type='a'>
+  <li>Si tracci il diagramma di Lorenz e si calcoli il rapporto di concentrazione di Gini commentando il risultato ottenuto.</li>
+  <li>	Si commenti il punto di coordinate $(p_3; q_3)$.</li>
+  <li> Senza effettuare calcoli si dica come varierebbe l’indice di concentrazione se:
+  
+*	Il punto vendita B dovesse incassare 3 milioni di euro in più e il punto vendita E incassare 3 milioni di euro in meno.
+*	Il punto vendita D dovesse incassare 2 milioni di euro in meno e il punto vendita A incassare 2 milioni di euro in più.
+* Tutti i punti vendita dovessero incassare 1 milione di euro in meno.
+*	Tutti i punti vendita dovessero incassare 1 milione di euro in più.
+*	I conferimenti fossero espressi in milioni di Dollari Statunitensi.
+ 
+</li>
+</ol>
+
+## Esercizio 2
+
+La seguente tabella riporta la distribuzione delle retribuzioni mensili $X$ (in migliaia di euro) di 42 dipendenti di un'azienda. I dati sono raggruppati in classi e per ogni classe è riportato anche il totale di $X$.
+
+```{r echo=FALSE}
+tab2 = data.frame("Classi"=c("Classi","$(0,1]$", "$(1,1.5]$","$(1.5,2]$",
+                             "$(2,4]$","Totale"),
+                  "nro"=c("N.ro Dipendenti",4,14,21,3,42),
+                  "Tot"=c("Totale di classe",3.4,19.6,34.65,8.1,65.75))
+tab2%>%
+  kbl(align = 'rcc', col.names = NULL)%>%
+  kable_classic(html_font = 'Computer Modern', full_width=F)%>%
+  column_spec(c(1,2,3), border_left = T,border_right = T)%>%
+  row_spec(1, bold = T, 
+           extra_css = 'border-top: thin solid;border-bottom: thin solid')%>%
+  row_spec(5,extra_css = 'border-bottom: thin solid')%>%
+  row_spec(6, bold=T,extra_css = 'border-top: thin solid;border-bottom: thin solid')
+```
+<ol>
+  <li>	Si tracci il diagramma di Lorenz.</li>
+  <li>Si commenti il punto di coordinate $(p_2;q_2)$.</li>
+</ol>
+
+## Esercizio 3
+
+La seguente tabella riporta la distribuzione di 100 progetti di ricerca rispetto alle risorse finanziarie (in migliaia di Euro) impiegate. Si tracci il diagramma di Lorenz.
+
+```{r echo=FALSE}
+tab3=data.frame("Classi"=c("Classi","$(0,10]$","$(10,25]$","$(25,50]$","$(50,80]$",
+                           "Totale"),
+                "nro"=c("N.ro Progetti",62,28,6,4,100))
+
+tab3%>%
+  kbl(align = 'rc', col.names = NULL)%>%
+  kable_classic(html_font = 'Computer Modern', full_width=F)%>%
+  column_spec(c(1,2), border_left = T,border_right = T)%>%
+  row_spec(1, bold = T, 
+           extra_css = 'border-top: thin solid;border-bottom: thin solid')%>%
+  row_spec(5,extra_css = 'border-bottom: thin solid')%>%
+  row_spec(6, bold=T,extra_css = 'border-top: thin solid;border-bottom: thin solid')
+```
+
+
+## Esercizio 4
+
+La seguente tabella riporta le distribuzioni di frequenze delle nazionalità dei dipendenti di due aziende. Si determinino per entrambe le squadre l’indice di eterogeneità di Gini e l’indice di entropia.
+
+```{r echo=FALSE}
+tab4=data.frame(rbind(c("Azienda","Italia","Francia","Germania","Gran Bretagna", 
+                        "Spagna", "Totale"),
+                      c("A",23,54,67,21,10,175),
+                      c("B",34,12,43,78,14,181)))
+tab4%>%
+  kbl(align = 'c', col.names = NULL)%>%
+  kable_classic(html_font = 'Computer Modern', full_width=T)%>%
+  column_spec(c(1,7), bold=T, border_left = T,border_right = T)%>%
+  row_spec(1, bold = T, 
+           extra_css = 'border-top: thin solid;border-bottom: thin solid')%>%
+  row_spec(3,extra_css = 'border-bottom: thin solid')
+```
+## Soluzioni {-}
+
+### Esercizio 1 {-}
+
+```{r}
+rm(list = ls())
+x <- c(11.5, 2.3, 5.5, 8.9, 9.7)
+N <- length(x)
+x <- sort(x)
+Fi <- 1:N/N
+N/4
+N/4*3
+x[4] - x[2]
+abs(outer(x, x, "-"))
+sum(abs(outer(x, x, "-")))/2
+sum(abs(outer(x, x, "-")))/5/4 -> Delta
+
+m <- mean(x)
+
+round(Delta / 2 / m, 4)
+
+P <- round(Fi, 4)
+Q <- round(cumsum(x) / sum(x), 4)
+
+P - Q
+sum(P - Q)
+```
+
+
+```{r echo=FALSE}
+# ES 1
+x <- c(2.3,5.5,8.9,9.7,11.5)
+n <- length(x)
+xi <- cumsum(x)
+qi <- xi/xi[n]
+pi <- c(1:n/n)
+pi_qi <- pi-qi
+```
+
+```{r echo=FALSE}
+tab1.sol=data.frame(c(1:5),x,xi,round(qi,4),pi,round(pi_qi,4))
+tab1.sol[nrow(tab1.sol)+1,]=c("Totale",37.9,"","","",round(sum(pi_qi),4))
+tab1.sol%>%
+  kbl(align = 'c', col.names = c("$j$","$x_{(i)}$","$\\sum_ix_{(i)}$","$q_i$",
+                                 "$p_i=\\frac{i}{n}$", "$p_i-q_i$"))%>%
+  kable_classic(html_font = 'Computer Modern', full_width=T)%>%
+  column_spec(1, bold=T)%>%
+  row_spec(c(0,6), bold = T, 
+           extra_css = 'border-top: thin solid;border-bottom: thin solid')%>%
+  row_spec(5,extra_css = 'border-bottom: thin solid')
+```
+```{r fig.width=6,fig.height=6,fig.align='center'}
+plot(c(0,P),c(0,Q), type = 'l', xlab = expression(p[i]),
+      ylab = expression(q[i]))
+segments(0,0,1,1, lty=2)
+```
+<ol type='a'>
+  <li>Dall'esercitazione precedente $$\Delta=4.52\,\,\mathrm{milioni\ di\ euro}$$ $$M_1(X)=7.58\,\,\mathrm{milioni\ di\ euro}$$ quindi, sapendo che $$G=\frac{\Delta}{2M_1}$$ e l'indice di Gini è $$G=\frac{4.52}{2\cdot 7.58}=0.2982$$
+  
+  La concentrazione è pari al 29.82% del suo massimo valore teorico. 
+  
+  Ma possiamo calcolarlo anche attraverso la sua definizione: $$G=\frac{2}{N-1}\sum_{i=1}^{N-1}(P_i-Q_i)=\frac{2}{4}\cdot0.5963=0.2982$$
+  </li>
+  <li>	Il punto $(p_3;q_3 )=(0.6;\,0.4406)$ indica che il 60% dei punti vendita ha incassato il 44,06% dell’incasso complessivo della catena di grandi magazzini.</li>
+  <li> Commenti
+  
+* B aveva incassato di meno di E, per cui l’operazione è analoga a un trasferimento perequativo che comporta una diminuzione dell’indice di concentrazione.
+
+* D aveva incassato di meno di A, per cui l’operazione è analoga a un trasferimento concentrativo che comporta un aumento dell’indice di concentrazione.
+
+* L’operazione corrisponderebbe alla sottrazione di una costante a tutti i valori, pertanto la concentrazione aumenterebbe.
+
+* L’operazione corrisponderebbe alla somma di una costante a tutti i valori, pertanto la concentrazione diminuirebbe.
+
+* L’operazione corrisponderebbe alla moltiplicazione di tutti i valori per una costante, una trasformazione di scala, pertanto la concentrazione non varierebbe.
+  
+  
+  </li>
+</ol>
+
+
+### Esercizio 2 {-}
+
+```{r}
+rm(list = ls())
+n <- c(4,14,21,3)
+t <- c(3.4,19.6,34.65,8.1)
+N <- cumsum(n)
+x <- t/n
+P <- N/N[length(N)]
+sum_t <- cumsum(t)
+Q <- sum_t/sum_t[length(sum_t)]
+P_Q <- P-Q
+P_Q
+P_Q[-1]
+h <- c(P_Q[1])
+for(i in 2:length(P_Q)) h[i] <- P_Q[i]+P_Q[i-1]
+h*n
+sum(h*n)
+```
+```{r echo=FALSE}
+tab2.sol = data.frame("j" = c(1:4), n, t,N,x,round(P,4),sum_t,round(Q,4),round(P_Q,4),round(h,4),round(h*n,4))
+tab2.sol = data.frame(rbind(c(rep("",5),0,"",0,0,"$-$","$-$"),tab2.sol,c("",42,65.75,rep("",3),rep("",4),round(sum(h*n),4))))
+
+tab2.sol%>%
+  kbl(align = 'c', col.names = c("$j$","$n_j$","$t_j$","$N_j$","$x_j=\\frac{t_j}{n_j}$","$P_j=\\frac{N_j}{N}$","$\\sum_j t_j$","$Q_j$", "$d_j=P_j-Q_j$", "$h_j=d_j+d_{j-1}$","$h_j\\cdot n_j$"))%>%
+  kable_classic(html_font = 'Computer Modern', full_width=T, font_size=15)%>%
+  column_spec(1, bold=T)%>%
+  row_spec(c(0,6), bold = T, 
+           extra_css = 'border-top: thin solid;border-bottom: thin solid')%>%
+  row_spec(5,extra_css = 'border-bottom: thin solid')  
+```
+```{r fig.width=6,fig.height=6,fig.align='center'}
+plot(c(0,P),c(0,Q), type = 'l', xlab = expression(p[j]),
+      ylab = expression(q[j]))
+segments(0,0,1,1, lty=2)
+```
+
+<ol type='a'>
+  <li>BONUS! Dall’esercitazione precedente $$\Delta=0.3652\,\, \mathrm{migliaia\ di\ euro}$$ $$M_1=1.5655\,\, \mathrm{migliaia\ di\ euro}$$ quindi $$G=\frac{0.3652}{2\cdot 1.5655}=0.1166$$
+  La concentrazione è pari al 11.66% del suo massimo valore teorico.
+  
+  Inoltre $$R=\frac{4.7842}{42}=0.1139$$ $$G=\frac{N-1}{N}R=0.116688\approx 0.1167$$
+  </li>
+  <li>$(p_2;q_2)=(0.4286,0.3498)$ il 42.86% dei dipendenti dell’azienda percepisce il 34.98% delle retribuzioni mensili.</li>
+</ol>
+
+### Esercizio 3 {-}
+
+```{r}
+# ES 3
+rm(list = ls())
+x <- c(5,17.5,37.5,65)
+n <- c(62,28,6,4)
+N <- cumsum(n)
+P <- N/N[length(N)]
+t <- x*n
+sum_t <- cumsum(t)
+Q <- sum_t/sum_t[length(sum_t)]
+P_Q <- P-Q
+h <- c(P_Q[1])
+for(i in 2:length(P_Q)) h[i] <- P_Q[i]+P_Q[i-1]
+hn <- h*n
+sum(hn)
+```
+```{r echo=F}
+tab3.sol = data.frame(rbind(c(rep("",4),0,"","",0,0,"$-$","$-$"),
+                            data.frame(c(1:4),x,n,N,P,t,sum_t,round(Q,4),round(P_Q,4),round(h,4),round(hn,4)),
+                            c("Totale","",100,"","",1285,rep("",4),round(sum(hn),4))))
+tab3.sol%>%
+  kbl(align = 'c', col.names = c("$j$","$x_j$","$n_j$","$N_j$", "$P_j$", 
+                                 "$x_jn_j$","$\\sum_jx_jn_j$","$Q_j$",
+                                 "$d_j=P_j-Q_j$","$h_j=d_j+d_{j-1}$","$h_j\\cdot n_j$"))%>%
+  kable_classic(html_font = 'Computer Modern', full_width=F, font_size=15)%>%
+  column_spec(1, bold=T)%>%
+  row_spec(c(0,6), bold = T, 
+           extra_css = 'border-top: thin solid;border-bottom: thin solid')%>%
+  row_spec(5,extra_css = 'border-bottom: thin solid')  
+```
+```{r fig.width=6,fig.height=6,fig.align='center'}
+plot(c(0,P),c(0,Q), type = 'l', xlab = expression(p[i]),
+      ylab = expression(q[i]))
+segments(0,0,1,1, lty=2)
+```
+
+Bonus: $$R=\frac{45.2546}{100}=0.4525$$ $$G=\frac{45.2546}{99}=0.4571$$
+La concentrazione è  pari al 45.71% del suo massimo teorico.
+
+### Esercizio 4 {-}
+
+```{r}
+# Es 4
+
+rm(list = ls())
+nA <- c(23, 54, 67, 21, 10)
+nB <- c(34, 12, 43, 78, 14)
+names(nA) <- names(nB) <- c("Ita", "Fran", "Ger", "GB", "Spa")
+
+fA <- nA / sum(nA); fA
+fA^2
+sum(fA^2)
+1 - sum(fA^2)
+log(fA)
+log(fA) * fA
+sum(log(fA) * fA)
+
+fB <- nB / sum(nB); fB
+fB^2
+sum(fB^2)
+1 - sum(fB^2)
+log(fB)
+log(fB) * fB
+sum(log(fB) * fB)
+```
+```{r echo=FALSE}
+names(nA)<-names(nB)<-NULL
+tab4.sol = data.frame(rbind(c("$j$", "$f_A$", "$f_A^2$","$\\mathrm{ln}f_A$",
+                              "$f_A\\mathrm{ln}f_A$", "$f_B$", "$f_B^2$",
+                              "$\\mathrm{ln}f_B$", "$f_B\\mathrm{ln}f_B$"),
+                            data.frame(c(1:5),round(fA,4), round(fA^2,4), round(log(fA),4), round(fA*log(fA),4),
+                                       round(fB,4), round(fB^2,4), round(log(fB),4), round(fB*log(fB),4)),
+                            c("", 1, round(sum(fA^2),4), "", round(sum(fA*log(fA)),4),
+                              1, round(sum(fB^2),4),"",round(sum(fB*log(fB)),4))))
+
+rownames(tab4.sol) <- c("", "Ita", "Fran", "Ger", "GB", "Spa", "Totale")
+tab4.sol%>%
+  kbl(align = 'c', col.names = NULL)%>%
+  kable_classic(html_font = 'Computer Modern', full_width=F, font_size=16)%>%
+  column_spec(1, bold=T, border_left=T)%>%
+  column_spec(2, bold=T)%>%
+  column_spec(c(2,6,10), border_right=T)%>%
+  row_spec(c(1,7), bold = T, 
+           extra_css = 'border-top: thin solid;border-bottom: thin solid')%>%
+  row_spec(6,extra_css = 'border-bottom: thin solid')    
+```
+
+$$e_{1A}=1-0.2767=0.7233$$ $$e_{2A}=1.4151$$ $$e_{1B}=1-0.2878=0.7122$$ $$e_{2B}=1.3962$$
+

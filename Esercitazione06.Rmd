@@ -1,0 +1,267 @@
+# Esercitazione 6
+
+## Esercizio 1
+
+La seguente tabella riporta le serie storiche mensili dei valori (in migliaia di Euro) dei contratti stipulati dalle due filiali di Milano ($X$) e Torino ($Y$) di un’azienda nel corso dell’ultimo semestre del 2017:
+
+```{r echo=F}
+tab1 = data.frame("Mese"=c("Luglio", "Agosto", "Settembre", "Ottobre",
+                           "Novembre", "Dicembre", "Totale"),
+                  "$X$"=c(203,158,87,114,225,253,1040),
+                  "$Y$"=c(231,143,134,123,214,249,1094))
+tab1%>%
+  kbl(align = 'lcc', col.names = c("Mese","$X$","$Y$"))%>%
+  kable_classic(html_font = 'Computer Modern', full_width=F)%>%
+  column_spec(1, bold=T)%>%
+  row_spec(c(0,7), bold = T, 
+           extra_css = 'border-top: thin solid;border-bottom: thin solid')%>%
+  row_spec(6,extra_css = 'border-bottom: thin solid')
+```
+<ol type='a'>
+  <li>Si calcolino le medie aritmetiche di $X$ e $Y$.</li>
+  <li>Si calcolino i tassi di variazione medi mensili di $X$ e $Y$ per l’intero periodo.</li>
+  <li>Quali conclusioni si possono dedurre dai risultati ottenuti nei due punti precedenti?</li>
+</ol>
+	
+## Esercizio 2
+
+I redditi annui (in migliaia di Euro) di 7 individui sono dati da
+$$26,\,\,21,\,\,58,\,\,33,\,\,35,\,\,19,\,\,41.$$
+Si stabilisca se la distribuzione dei redditi è simmetrica rispetto alla mediana. In caso contrario si calcoli l’indice di verso di asimmetria.
+
+## Esercizio 3
+
+La seguente tabella riporta gli esiti di un esame $X$ di 484 studenti suddivisi in base al corso di studi $Y$.
+
+
+```{r echo=FALSE}
+tab3=data.frame(c("$X$","Insufficiente","Sufficiente","Buono","Ottimo","Totale"),
+                c("C1",39,45,53,23,160),c("C2",42,65,44,18,169),
+                c("C3",24,76,39,16,155),c("Totale",105,186,136,57,484))
+tab3%>%
+  kbl(align = 'lcccc', col.names = NULL)%>%
+  kable_classic(html_font = 'Computer Modern', full_width=T)%>%
+  add_header_above(c(' '=1,'$Y$'=3,' '=1), extra_css = 'border-top: ')%>%
+  column_spec(1, bold=T, border_left = T, border_right = T)%>%
+  column_spec(5, bold=T, border_left = T, border_right = T)%>%
+  row_spec(c(0,1,6), bold = T, 
+           extra_css = 'border-top: thin solid;border-bottom: thin solid')%>%
+  row_spec(5,extra_css = 'border-bottom: thin solid')
+```
+<ol>
+  <li>Si determini la mediana di $X$.</li>
+  <li>Si determini la moda di $Y$ e se ne valuti la rappresentatività.</li>
+  <li>Si calcolino le distribuzioni di frequenze relative parziali e la distribuzione di frequenze relative marginali del carattere $X$.</li>
+  <li>Si stabilisca, giustificando la risposta, se fra i due caratteri considerati esiste indipendenza distributiva. In caso di risposta negativa, si costruisca la tabella delle frequenze congiunte in modo che i due caratteri risultino indipendenti.</li>
+  <li>Si fornisca un indice che misuri il grado di dipendenza tra $X$ e $Y$.</li>
+</ol>
+
+Si consideri ora il carattere $Z=$"*voto conseguito all'esame*", esso può essere organizzato in classi in base alle modalità del carattere $X$.
+
+$$\begin{equation*}Z=\begin{cases}[0,17]\quad\,\,\, \mathrm{per\ } X=\mathrm{``Insufficiente"}\\ [18,21]\quad \mathrm{per\ } X=\mathrm{``Sufficiente"}\\ [22,26]\quad \mathrm{per\ } X=\mathrm{``Buono"}\\ [27,30]\quad\mathrm{per\ } X=\mathrm{``Ottimo"}\end{cases}\end{equation*}$$
+
+<ol start=6>
+  <li>	Si valuti il grado di dipendenza in media di $Z$ da $Y$ commentando il risultato ottenuto.</li>
+</ol>
+	
+## Soluzioni {-}	
+
+### Esercizio 1 {-}
+
+<ol type='a'>
+  <li>$$\overline{x}=\frac{1040}{6}=173.3333\,\,\mathrm{mila\ Euro\ al\ mese}$$ $$\overline{y}=\frac{1094}{6}=182.3333\,\,\mathrm{mila\ Euro\ al\ mese}$$</li>
+  <li>$$\overline{V}_X=\sqrt[5]{\frac{253}{203}}-1=0.0450$$ $$\overline{V}_Y=\sqrt[5]{\frac{249}{231}}-1=0.0151$$</li>
+  <li>Mediamente, ogni mese la filiale di Torino a prodotto contratti per un valore superiore rispetto alla filiale di Milano.
+  
+Mediamente il valore dei contratti prodotti dalla filiale di Milano è cresciuto del 4.5% al mese, mentre per quelli prodotti dalla filiale di Torino il valore è cresciuto mediante dell’1.51% al mese.
+</li>
+</ol>
+
+### Esercizio 2 {-}
+
+Valori ordinati: $$19,\,\, 21,\,\, 26,\,\, \mathbf{\underline{33}},\,\, 35,\,\, 41,\,\, 58$$
+La mediana è pari a 33. Ora si immagini che i dati siano una distribuzione di frequenze con frequenze unitarie e facciamo la rappresentazione grafica.
+
+```{r fig.align='center', fig.width=10}
+rm(list = ls())
+val <- c(26,21,58,33,35,19,41)
+val <- sort(val)
+n <- length(val)
+plot(val, rep(1/n,n), xlab='X', ylab='frequenze relative specifiche', 
+     ylim = c(0,1), type = 'h', axes = F, lwd=2)
+segments(median(val),0,median(val),1/n, col = 'red', lwd = 2)
+box()
+axis(1, at = val, labels = val)
+axis(2, at = seq(0,1,0.2))
+```
+Affinché la distribuzione sia simmetrica deve verificarsi che  $frs(Me+c)=frs(Me-c),\,\forall c>0.$ Assumendo $c=2$, $frs(Me+c)=frs(35)=0.142\neq frs(Me-c)=frs(31)=0$. Quindi la distribuzione non è simmetrica rispetto la mediana.
+
+Inoltre, si nota che le osservazioni a destra della mediana si allontanano di più di quelle alla sua sinistra, pertanto ci possiamo aspettare asimmetria positiva (media maggiore della mediana).
+
+Per verificare ciò calcoliamo l’indice di verso di asimmetria: $$a_1=(M_1-Me)=(33.2857-33)=0.2857$$
+
+### Esercizio 3 {-}
+
+```{r echo=FALSE}
+tab3=data.frame(c("$X$","Insufficiente","Sufficiente","Buono","Ottimo","Totale"),
+                c("C1",39,45,53,23,160),c("C2",42,65,44,18,169),
+                c("C3",24,76,39,16,155),c("Totale",105,186,136,57,484))
+tab3%>%
+  kbl(align = 'lcccc', col.names = NULL)%>%
+  kable_classic(html_font = 'Computer Modern', full_width=T)%>%
+  add_header_above(c(' '=1,'$Y$'=3,' '=1), extra_css = 'border-top: ')%>%
+  column_spec(1, bold=T, border_left = T, border_right = T)%>%
+  column_spec(5, bold=T, border_left = T, border_right = T)%>%
+  row_spec(c(0,1,6), bold = T, 
+           extra_css = 'border-top: thin solid;border-bottom: thin solid')%>%
+  row_spec(5,extra_css = 'border-bottom: thin solid')
+```
+
+<ol>
+<li> 	La posizione della mediana è $\frac{N+1}{2}=242.2$. Le frequenze cumulate del carattere $X$ sono:
+```{r echo=FALSE}
+x = c(105,186,136,57)
+tab1.1.sol=data.frame(c("Insufficiente","Sufficiente","Buono","Ottimo"),cumsum(x))
+tab1.1.sol%>%
+  kbl(align = 'lc', col.names = c("$X$", "$C_i$"))%>%
+  kable_classic(html_font = 'Computer Modern', full_width=F)%>%
+  column_spec(1, bold=T)%>%
+  row_spec(0, bold = T, 
+           extra_css = 'border-top: thin solid;border-bottom: thin solid')%>%
+  row_spec(4,extra_css = 'border-bottom: thin solid')
+```
+Pertanto, la mediana corrisponde alla modalità "*Sufficiente*".
+</li>
+
+<li>	La moda del carattere Y corrisponde alla modalità con frequenza più elevata, essa è *C2* con 169 studenti. Essa rappresenta il 34.92% della popolazione. </li>
+<li>
+```{r echo=FALSE}
+tab6 = data.frame("c1"=c(39,45,53,23,160), "c2"=c(42,65,44,18,169), 
+                  "c3"=c(24,76,39,16,155), "tot"=c(105,186,136,57,484))
+tab6.3=data.frame(rbind(c("$X$", "C1", "C2", "C3", "Totale"), cbind(c("Insufficiente","Sufficiente","Buono","Ottimo","Totale"),round(mapply('/', tab6, tab6[5,]),4))))
+tab6.3%>%
+  kbl(align = 'lcccc', col.names = NULL)%>%
+  kable_classic(html_font = 'Computer Modern', full_width=T)%>%
+  add_header_above(c(' '=1,'$Y$'=3,' '=1), extra_css = 'border-top: ')%>%
+  column_spec(1, bold=T, border_left = T, border_right = T)%>%
+  column_spec(5, bold=T, border_left = T, border_right = T)%>%
+  row_spec(c(0,1,6), bold = T, 
+           extra_css = 'border-top: thin solid;border-bottom: thin solid')%>%
+  row_spec(5,extra_css = 'border-bottom: thin solid')
+
+```
+
+</li>
+<li>	Le distribuzioni parziali di $X$ sono tutte diverse tra di loro e sono diverse dalla distribuzione marginale, pertanto $X$ non è indipendente in distribuzione da $Y$. Nel caso non si fossero già calcolate le distribuzioni parziali per rispondere a questa domanda è sufficiente calcolare una frequenza congiunta teorica nel caso di indipendenza distributiva $\hat{n}_{ij}=\frac{n_{i.}n_{.j}}{N}$ e mostrare che questa è diversa da quelle effettive. Si noti che è sufficiente trovare un’eccezione per confermare che non c’è indipendenza distributiva.
+```{r echo=FALSE}
+mat = matrix(NA, ncol=3, nrow=4)
+y = c(160,169,155)
+for(i in 1:length(x)) for(j in 1:length(y)) mat[i,j]=round(x[i]*y[j]/sum(x),2) 
+data.frame(rbind(c("$X$", "C1", "C2", "C3", "Totale"),cbind(c("Insufficiente","Sufficiente","Buono","Ottimo"),mat,x), c("Totale", y, sum(y))))%>%
+  kbl(align = 'lcccc', col.names = NULL)%>%
+  kable_classic(html_font = 'Computer Modern', full_width=T)%>%
+  add_header_above(c(' '=1,'$Y$'=3,' '=1), extra_css = 'border-top: ')%>%
+  column_spec(1, bold=T, border_left = T, border_right = T)%>%
+  column_spec(5, bold=T, border_left = T, border_right = T)%>%
+  row_spec(c(0,1,6), bold = T, 
+           extra_css = 'border-top: thin solid;border-bottom: thin solid')%>%
+  row_spec(5,extra_css = 'border-bottom: thin solid')
+```
+
+
+</li>
+<li>$$M_2\left(|\rho|\right)=\left\{\frac{1}{N}\sum_{i=1}^r\sum_{j=1}^c|\rho_{ij}|^2\cdot\hat{n}_{ij}\right\}^{\frac{1}{2}}=\left\{\frac{1}{N}\sum_{i=1}^r\sum_{j=1}^c\left|\frac{C_{ij}}{\hat{n}_{ij}}\right|^2\cdot\hat{n}_{ij}\right\}^{\frac{1}{2}}=\left\{\frac{1}{N}\sum_{i=1}^r\sum_{j=1}^c\frac{C_{ij}^2}{\hat{n}_{ij}}\right\}^{\frac{1}{2}}$$
+
+Contingenze assolute $C_{ij}=n_{ij}-\hat{n}_{ij}$
+
+```{r echo=FALSE}
+as.data.frame(rbind(c("$X$", "C1", "C2", "C3", "Totale"),cbind(c("Insufficiente","Sufficiente","Buono","Ottimo", "Totale"),round(as.matrix(tab6)-as.matrix(cbind(rbind(mat,y),c(x,sum(x)))),2))))%>%
+  kbl(align = 'lcccc', col.names = NULL)%>%
+  kable_classic(html_font = 'Computer Modern', full_width=T)%>%
+  add_header_above(c(' '=1,'$Y$'=3,' '=1), extra_css = 'border-top: ')%>%
+  column_spec(1, bold=T, border_left = T, border_right = T)%>%
+  column_spec(5, border_left = T, border_right = T)%>%
+  row_spec(c(0,1), bold = T, 
+           extra_css = 'border-top: thin solid;border-bottom: thin solid')%>%
+  row_spec(5,extra_css = 'border-bottom: thin solid')%>%
+  row_spec(6,extra_css = 'border-top: thin solid;border-bottom: thin solid')
+```
+$$C_{ij}^2$$
+```{r echo=FALSE}
+cij2=data.frame(rbind(c("$X$", "C1", "C2", "C3"),cbind(c("Insufficiente","Sufficiente","Buono","Ottimo"),round((as.matrix(tab6[1:4,1:3])-mat)^2,2))))
+
+row.names(cij2)=NULL
+cij2%>%
+  kbl(align = 'lccc', col.names = NULL)%>%
+  kable_classic(html_font = 'Computer Modern', full_width=F)%>%
+  add_header_above(c(' '=1,'$Y$'=3), extra_css = 'border-top: ')%>%
+  column_spec(1, bold=T, border_left = T, border_right = T)%>%
+  column_spec(4, border_right = T)%>%
+  row_spec(c(0,1), bold = T, 
+           extra_css = 'border-top: thin solid;border-bottom: thin solid')%>%
+  row_spec(5,extra_css = 'border-bottom: thin solid')
+```
+$$\frac{C_{ij}^2}{\hat{n}_{ij}}$$
+
+```{r echo=F}
+cij2=(as.matrix(tab6[1:4,1:3])-mat)^2
+matij=data.frame(rbind(c("$X$", "C1", "C2", "C3"),cbind(c("Insufficiente","Sufficiente","Buono","Ottimo"),round(cij2/mat,4))))
+rownames(matij)=NULL
+matij%>%
+  kbl(align = 'lccc', col.names = NULL)%>%
+  kable_classic(html_font = 'Computer Modern', full_width=F)%>%
+  add_header_above(c(' '=1,'$Y$'=3), extra_css = 'border-top: ')%>%
+  column_spec(1, bold=T, border_left = T, border_right = T)%>%
+  column_spec(4, border_right = T)%>%
+  row_spec(c(0,1), bold = T, 
+           extra_css = 'border-top: thin solid;border-bottom: thin solid')%>%
+  row_spec(5,extra_css = 'border-bottom: thin solid')
+```
+$$M_2(|\rho|)=\sqrt{\frac{16.5665}{484}}=0.1850$$ mediamente le frequenze effettive si discostano da quelle teoriche di indipendenza distributiva del 18.5%.
+</li>
+
+<li>	È necessario sostituire le classi di $Z$ con il loro valore centrale per poter calcolare le medie parziali.
+```{r echo=FALSE}
+tab3=data.frame(c("$Z$",8.5,19.5,24,28.5,"Totale"),
+                c("C1",39,45,53,23,160),c("C2",42,65,44,18,169),
+                c("C3",24,76,39,16,155),c("Totale",105,186,136,57,484))
+tab3%>%
+  kbl(align = 'ccccc', col.names = NULL)%>%
+  kable_classic(html_font = 'Computer Modern', full_width=T)%>%
+  add_header_above(c(' '=1,'$Y$'=3,' '=1), extra_css = 'border-top: ')%>%
+  column_spec(1, bold=T, border_left = T, border_right = T)%>%
+  column_spec(5, bold=T, border_left = T, border_right = T)%>%
+  row_spec(c(0,1,6), bold = T, 
+           extra_css = 'border-top: thin solid;border-bottom: thin solid')%>%
+  row_spec(5,extra_css = 'border-bottom: thin solid')
+```
+
+Medie parziali $$\overline{z}_1=19.6; \quad \overline{z}_2=18.9;\quad   \overline{z}_3=19.86$$
+
+Media complessiva di Z $$\overline{z}=19.44$$
+
+Varianze parziali di Z $$\sigma_1^2=47.96;\quad \sigma_2^2=43.47;\quad \sigma_3^2=31.99$$
+
+Varianza complessiva di Z $$\sigma^2=41.4$$
+
+Varianza fra le medie $$\begin{align*}V_F & =\frac{\displaystyle\sum_{j=1}^c(\overline{z}_j-\overline{z})^2 n_{.j}}{N}=\\ &=\frac{(19.6-19.44)^2\cdot 160+(18.9-19.44)^2\cdot 169+(19.86-19.44)^2\cdot 155}{484}=\\ &=\frac{80.7312}{484}=0.1668 \end{align*}$$
+
+Varianza nei gruppi $$V_N=\frac{\displaystyle\sum_{j=1}^c\sigma_j^2 n_{.j}}{N}=\frac{47.96\cdot160+43.47\cdot169+31.99\cdot155}{484}=\frac{20037.6}{484}=41.4$$
+
+Verifica $$V_T=\sigma_Z^2=\frac{198924}{484}=41.4\simeq V_F+V_N=\frac{20118.3312}{484}=41.5668$$
+
+Le differenze sono dovute a errori di arrotondamento. 
+
+$$\eta_{Z│Y}^2=\frac{V_F}{V_T} =\frac{0.1638}{40.15}=0.004$$
+Il grado di dipendenza in media è pari allo 0.4% del suo massimo valore teorico.
+(consiglio: a meno che non venga chiesto di verificare la scomposizione della varianza, scegliere tra $V_T$, $V_N$ e $V_F$ e scegliere le due che si preferisce e ricavare la terza dalle altre due).
+
+
+
+</li>
+
+</ol>
+
+
+
+

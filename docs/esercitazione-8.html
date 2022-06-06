@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>8 Esercitazione 8 | Esercitazioni</title>
+  <meta name="description" content="In questo libro sono presenti le esercitazioni di Statistica di Base" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="8 Esercitazione 8 | Esercitazioni" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="In questo libro sono presenti le esercitazioni di Statistica di Base" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="8 Esercitazione 8 | Esercitazioni" />
+  
+  <meta name="twitter:description" content="In questo libro sono presenti le esercitazioni di Statistica di Base" />
+  
+
+<meta name="author" content="Brunero Liseo" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="esercitazione-7.html"/>
+<link rel="next" href="esercitazione-9.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Esercitazioni di Statistica di Base</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduzione</a></li>
+<li class="chapter" data-level="1" data-path="esercitazione-1.html"><a href="esercitazione-1.html"><i class="fa fa-check"></i><b>1</b> Esercitazione 1</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="esercitazione-1.html"><a href="esercitazione-1.html#esercizio-1"><i class="fa fa-check"></i><b>1.1</b> Esercizio 1</a></li>
+<li class="chapter" data-level="1.2" data-path="esercitazione-1.html"><a href="esercitazione-1.html#esercizio-2"><i class="fa fa-check"></i><b>1.2</b> Esercizio 2</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-1.html"><a href="esercitazione-1.html#soluzioni"><i class="fa fa-check"></i>Soluzioni</a>
+<ul>
+<li class="chapter" data-level="" data-path="esercitazione-1.html"><a href="esercitazione-1.html#esercizio-1-1"><i class="fa fa-check"></i>Esercizio 1</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-1.html"><a href="esercitazione-1.html#esercizio-2-1"><i class="fa fa-check"></i>Esercizio 2</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="esercitazione-2.html"><a href="esercitazione-2.html"><i class="fa fa-check"></i><b>2</b> Esercitazione 2</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="esercitazione-2.html"><a href="esercitazione-2.html#esercizio-1-2"><i class="fa fa-check"></i><b>2.1</b> Esercizio 1</a></li>
+<li class="chapter" data-level="2.2" data-path="esercitazione-2.html"><a href="esercitazione-2.html#esercizio-2-2"><i class="fa fa-check"></i><b>2.2</b> Esercizio 2</a></li>
+<li class="chapter" data-level="2.3" data-path="esercitazione-2.html"><a href="esercitazione-2.html#esercizio-3"><i class="fa fa-check"></i><b>2.3</b> Esercizio 3</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-2.html"><a href="esercitazione-2.html#soluzioni-1"><i class="fa fa-check"></i>Soluzioni</a>
+<ul>
+<li class="chapter" data-level="" data-path="esercitazione-2.html"><a href="esercitazione-2.html#esercizio-1-3"><i class="fa fa-check"></i>Esercizio 1</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-2.html"><a href="esercitazione-2.html#esercizio-2-3"><i class="fa fa-check"></i>Esercizio 2</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-2.html"><a href="esercitazione-2.html#esercizio-3-1"><i class="fa fa-check"></i>Esercizio 3</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="esercitazione-3.html"><a href="esercitazione-3.html"><i class="fa fa-check"></i><b>3</b> Esercitazione 3</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="esercitazione-3.html"><a href="esercitazione-3.html#esercizio-1-4"><i class="fa fa-check"></i><b>3.1</b> Esercizio 1</a></li>
+<li class="chapter" data-level="3.2" data-path="esercitazione-3.html"><a href="esercitazione-3.html#esercizio-2-4"><i class="fa fa-check"></i><b>3.2</b> Esercizio 2</a></li>
+<li class="chapter" data-level="3.3" data-path="esercitazione-3.html"><a href="esercitazione-3.html#esercizio-3-2"><i class="fa fa-check"></i><b>3.3</b> Esercizio 3</a></li>
+<li class="chapter" data-level="3.4" data-path="esercitazione-3.html"><a href="esercitazione-3.html#esercizio-4"><i class="fa fa-check"></i><b>3.4</b> Esercizio 4</a></li>
+<li class="chapter" data-level="3.5" data-path="esercitazione-3.html"><a href="esercitazione-3.html#esercizio-5"><i class="fa fa-check"></i><b>3.5</b> Esercizio 5</a></li>
+<li class="chapter" data-level="3.6" data-path="esercitazione-3.html"><a href="esercitazione-3.html#esercizio-6"><i class="fa fa-check"></i><b>3.6</b> Esercizio 6</a></li>
+<li class="chapter" data-level="3.7" data-path="esercitazione-3.html"><a href="esercitazione-3.html#esercizio-7"><i class="fa fa-check"></i><b>3.7</b> Esercizio 7</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-3.html"><a href="esercitazione-3.html#soluzioni-2"><i class="fa fa-check"></i>Soluzioni</a>
+<ul>
+<li class="chapter" data-level="" data-path="esercitazione-3.html"><a href="esercitazione-3.html#esercizio-1-5"><i class="fa fa-check"></i>Esercizio 1</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-3.html"><a href="esercitazione-3.html#esercizio-2-5"><i class="fa fa-check"></i>Esercizio 2</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-3.html"><a href="esercitazione-3.html#esercizio-3-3"><i class="fa fa-check"></i>Esercizio 3</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-3.html"><a href="esercitazione-3.html#esercizio-4-1"><i class="fa fa-check"></i>Esercizio 4</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-3.html"><a href="esercitazione-3.html#esercizio-5-1"><i class="fa fa-check"></i>Esercizio 5</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-3.html"><a href="esercitazione-3.html#esercizio-6-1"><i class="fa fa-check"></i>Esercizio 6</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-3.html"><a href="esercitazione-3.html#esercizio-7-1"><i class="fa fa-check"></i>Esercizio 7</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="esercitazione-4.html"><a href="esercitazione-4.html"><i class="fa fa-check"></i><b>4</b> Esercitazione 4</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="esercitazione-4.html"><a href="esercitazione-4.html#esercizio-1-6"><i class="fa fa-check"></i><b>4.1</b> Esercizio 1</a></li>
+<li class="chapter" data-level="4.2" data-path="esercitazione-4.html"><a href="esercitazione-4.html#esercizio-2-6"><i class="fa fa-check"></i><b>4.2</b> Esercizio 2</a></li>
+<li class="chapter" data-level="4.3" data-path="esercitazione-4.html"><a href="esercitazione-4.html#esercizio-3-4"><i class="fa fa-check"></i><b>4.3</b> Esercizio 3</a></li>
+<li class="chapter" data-level="4.4" data-path="esercitazione-4.html"><a href="esercitazione-4.html#esercizio-4-2"><i class="fa fa-check"></i><b>4.4</b> Esercizio 4</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-4.html"><a href="esercitazione-4.html#soluzioni-3"><i class="fa fa-check"></i>Soluzioni</a>
+<ul>
+<li class="chapter" data-level="" data-path="esercitazione-4.html"><a href="esercitazione-4.html#esercizio-1-7"><i class="fa fa-check"></i>Esercizio 1</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-4.html"><a href="esercitazione-4.html#esercizio-2-7"><i class="fa fa-check"></i>Esercizio 2</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-4.html"><a href="esercitazione-4.html#esercizio-3-5"><i class="fa fa-check"></i>Esercizio 3</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-4.html"><a href="esercitazione-4.html#esercizio-4-3"><i class="fa fa-check"></i>Esercizio 4</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="esercitazione-5.html"><a href="esercitazione-5.html"><i class="fa fa-check"></i><b>5</b> Esercitazione 5</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="esercitazione-5.html"><a href="esercitazione-5.html#esercizio-1-8"><i class="fa fa-check"></i><b>5.1</b> Esercizio 1</a></li>
+<li class="chapter" data-level="5.2" data-path="esercitazione-5.html"><a href="esercitazione-5.html#esercizio-2-8"><i class="fa fa-check"></i><b>5.2</b> Esercizio 2</a></li>
+<li class="chapter" data-level="5.3" data-path="esercitazione-5.html"><a href="esercitazione-5.html#esercizio-3-6"><i class="fa fa-check"></i><b>5.3</b> Esercizio 3</a></li>
+<li class="chapter" data-level="5.4" data-path="esercitazione-5.html"><a href="esercitazione-5.html#esercizio-4-4"><i class="fa fa-check"></i><b>5.4</b> Esercizio 4</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-5.html"><a href="esercitazione-5.html#soluzioni-4"><i class="fa fa-check"></i>Soluzioni</a>
+<ul>
+<li class="chapter" data-level="" data-path="esercitazione-5.html"><a href="esercitazione-5.html#esercizio-1-9"><i class="fa fa-check"></i>Esercizio 1</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-5.html"><a href="esercitazione-5.html#esercizio-2-9"><i class="fa fa-check"></i>Esercizio 2</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-5.html"><a href="esercitazione-5.html#esercizio-3-7"><i class="fa fa-check"></i>Esercizio 3</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-5.html"><a href="esercitazione-5.html#esercizio-4-5"><i class="fa fa-check"></i>Esercizio 4</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="esercitazione-6.html"><a href="esercitazione-6.html"><i class="fa fa-check"></i><b>6</b> Esercitazione 6</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="esercitazione-6.html"><a href="esercitazione-6.html#esercizio-1-10"><i class="fa fa-check"></i><b>6.1</b> Esercizio 1</a></li>
+<li class="chapter" data-level="6.2" data-path="esercitazione-6.html"><a href="esercitazione-6.html#esercizio-2-10"><i class="fa fa-check"></i><b>6.2</b> Esercizio 2</a></li>
+<li class="chapter" data-level="6.3" data-path="esercitazione-6.html"><a href="esercitazione-6.html#esercizio-3-8"><i class="fa fa-check"></i><b>6.3</b> Esercizio 3</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-6.html"><a href="esercitazione-6.html#soluzioni-5"><i class="fa fa-check"></i>Soluzioni</a>
+<ul>
+<li class="chapter" data-level="" data-path="esercitazione-6.html"><a href="esercitazione-6.html#esercizio-1-11"><i class="fa fa-check"></i>Esercizio 1</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-6.html"><a href="esercitazione-6.html#esercizio-2-11"><i class="fa fa-check"></i>Esercizio 2</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-6.html"><a href="esercitazione-6.html#esercizio-3-9"><i class="fa fa-check"></i>Esercizio 3</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="esercitazione-7.html"><a href="esercitazione-7.html"><i class="fa fa-check"></i><b>7</b> Esercitazione 7</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="esercitazione-7.html"><a href="esercitazione-7.html#esercizio-1-12"><i class="fa fa-check"></i><b>7.1</b> Esercizio 1</a></li>
+<li class="chapter" data-level="7.2" data-path="esercitazione-7.html"><a href="esercitazione-7.html#esercizio-2-12"><i class="fa fa-check"></i><b>7.2</b> Esercizio 2</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-7.html"><a href="esercitazione-7.html#soluzioni-6"><i class="fa fa-check"></i>Soluzioni</a>
+<ul>
+<li class="chapter" data-level="" data-path="esercitazione-7.html"><a href="esercitazione-7.html#esercizio-1-13"><i class="fa fa-check"></i>Esercizio 1</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-7.html"><a href="esercitazione-7.html#esercizio-2-13"><i class="fa fa-check"></i>Esercizio 2</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="esercitazione-8.html"><a href="esercitazione-8.html"><i class="fa fa-check"></i><b>8</b> Esercitazione 8</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="esercitazione-8.html"><a href="esercitazione-8.html#esercizio-1-14"><i class="fa fa-check"></i><b>8.1</b> Esercizio 1</a></li>
+<li class="chapter" data-level="8.2" data-path="esercitazione-8.html"><a href="esercitazione-8.html#esercizio-2-14"><i class="fa fa-check"></i><b>8.2</b> Esercizio 2</a></li>
+<li class="chapter" data-level="8.3" data-path="esercitazione-8.html"><a href="esercitazione-8.html#esercizio-3-10"><i class="fa fa-check"></i><b>8.3</b> Esercizio 3</a></li>
+<li class="chapter" data-level="8.4" data-path="esercitazione-8.html"><a href="esercitazione-8.html#esercizio-4-6"><i class="fa fa-check"></i><b>8.4</b> Esercizio 4</a></li>
+<li class="chapter" data-level="8.5" data-path="esercitazione-8.html"><a href="esercitazione-8.html#esercizio-5-2"><i class="fa fa-check"></i><b>8.5</b> Esercizio 5</a></li>
+<li class="chapter" data-level="8.6" data-path="esercitazione-8.html"><a href="esercitazione-8.html#esercizio-6-2"><i class="fa fa-check"></i><b>8.6</b> Esercizio 6</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-8.html"><a href="esercitazione-8.html#soluzioni-7"><i class="fa fa-check"></i>Soluzioni</a>
+<ul>
+<li class="chapter" data-level="" data-path="esercitazione-8.html"><a href="esercitazione-8.html#esercizio-1-15"><i class="fa fa-check"></i>Esercizio 1</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-8.html"><a href="esercitazione-8.html#esercizio-2-15"><i class="fa fa-check"></i>Esercizio 2</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-8.html"><a href="esercitazione-8.html#esercizio-3-11"><i class="fa fa-check"></i>Esercizio 3</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-8.html"><a href="esercitazione-8.html#esercizio-4-7"><i class="fa fa-check"></i>Esercizio 4</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-8.html"><a href="esercitazione-8.html#esercizio-5-3"><i class="fa fa-check"></i>Esercizio 5</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-8.html"><a href="esercitazione-8.html#esercizio-6-3"><i class="fa fa-check"></i>Esercizio 6</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="esercitazione-9.html"><a href="esercitazione-9.html"><i class="fa fa-check"></i><b>9</b> Esercitazione 9</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="esercitazione-9.html"><a href="esercitazione-9.html#esercizio-1-16"><i class="fa fa-check"></i><b>9.1</b> Esercizio 1</a></li>
+<li class="chapter" data-level="9.2" data-path="esercitazione-9.html"><a href="esercitazione-9.html#esercizio-2-16"><i class="fa fa-check"></i><b>9.2</b> Esercizio 2</a></li>
+<li class="chapter" data-level="9.3" data-path="esercitazione-9.html"><a href="esercitazione-9.html#esercizio-3-12"><i class="fa fa-check"></i><b>9.3</b> Esercizio 3</a></li>
+<li class="chapter" data-level="9.4" data-path="esercitazione-9.html"><a href="esercitazione-9.html#esercizio-4-8"><i class="fa fa-check"></i><b>9.4</b> Esercizio 4</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-9.html"><a href="esercitazione-9.html#soluzioni-8"><i class="fa fa-check"></i>Soluzioni</a>
+<ul>
+<li class="chapter" data-level="" data-path="esercitazione-9.html"><a href="esercitazione-9.html#esercizio-1-17"><i class="fa fa-check"></i>Esercizio 1</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-9.html"><a href="esercitazione-9.html#esercizio-2-17"><i class="fa fa-check"></i>Esercizio 2</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-9.html"><a href="esercitazione-9.html#esercizio-3-13"><i class="fa fa-check"></i>Esercizio 3</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-9.html"><a href="esercitazione-9.html#esercizio-4-9"><i class="fa fa-check"></i>Esercizio 4</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="esercitazione-10.html"><a href="esercitazione-10.html"><i class="fa fa-check"></i><b>10</b> Esercitazione 10</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="esercitazione-10.html"><a href="esercitazione-10.html#esercizio-1-18"><i class="fa fa-check"></i><b>10.1</b> Esercizio 1</a></li>
+<li class="chapter" data-level="10.2" data-path="esercitazione-10.html"><a href="esercitazione-10.html#esercizio-2-18"><i class="fa fa-check"></i><b>10.2</b> Esercizio 2</a></li>
+<li class="chapter" data-level="10.3" data-path="esercitazione-10.html"><a href="esercitazione-10.html#esercizio-3-14"><i class="fa fa-check"></i><b>10.3</b> Esercizio 3</a></li>
+<li class="chapter" data-level="10.4" data-path="esercitazione-10.html"><a href="esercitazione-10.html#esercizio-4-10"><i class="fa fa-check"></i><b>10.4</b> Esercizio 4</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-10.html"><a href="esercitazione-10.html#soluzioni-9"><i class="fa fa-check"></i>Soluzioni</a>
+<ul>
+<li class="chapter" data-level="" data-path="esercitazione-10.html"><a href="esercitazione-10.html#esercizio-1-19"><i class="fa fa-check"></i>Esercizio 1</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-10.html"><a href="esercitazione-10.html#esercizio-2-19"><i class="fa fa-check"></i>Esercizio 2</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-10.html"><a href="esercitazione-10.html#esercizio-3-15"><i class="fa fa-check"></i>Esercizio 3</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-10.html"><a href="esercitazione-10.html#esercizio-4-11"><i class="fa fa-check"></i>Esercizio 4</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="esercitazione-11.html"><a href="esercitazione-11.html"><i class="fa fa-check"></i><b>11</b> Esercitazione 11</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="esercitazione-11.html"><a href="esercitazione-11.html#esercizio-1-20"><i class="fa fa-check"></i><b>11.1</b> Esercizio 1</a></li>
+<li class="chapter" data-level="11.2" data-path="esercitazione-11.html"><a href="esercitazione-11.html#esercizio-2-20"><i class="fa fa-check"></i><b>11.2</b> Esercizio 2</a></li>
+<li class="chapter" data-level="11.3" data-path="esercitazione-11.html"><a href="esercitazione-11.html#esercizio-3-16"><i class="fa fa-check"></i><b>11.3</b> Esercizio 3</a></li>
+<li class="chapter" data-level="11.4" data-path="esercitazione-11.html"><a href="esercitazione-11.html#esercizio-4-12"><i class="fa fa-check"></i><b>11.4</b> Esercizio 4</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-11.html"><a href="esercitazione-11.html#soluzioni-10"><i class="fa fa-check"></i>Soluzioni</a>
+<ul>
+<li class="chapter" data-level="" data-path="esercitazione-11.html"><a href="esercitazione-11.html#esercizio-1-21"><i class="fa fa-check"></i>Esercizio 1</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-11.html"><a href="esercitazione-11.html#esercizio-2-21"><i class="fa fa-check"></i>Esercizio 2</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-11.html"><a href="esercitazione-11.html#esercizio-3-17"><i class="fa fa-check"></i>Esercizio 3</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-11.html"><a href="esercitazione-11.html#esercizio-4-13"><i class="fa fa-check"></i>Esercizio 4</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="esercitazione-12.html"><a href="esercitazione-12.html"><i class="fa fa-check"></i><b>12</b> Esercitazione 12</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="esercitazione-12.html"><a href="esercitazione-12.html#esercizio-1-22"><i class="fa fa-check"></i><b>12.1</b> Esercizio 1</a></li>
+<li class="chapter" data-level="12.2" data-path="esercitazione-12.html"><a href="esercitazione-12.html#esercizio-2-22"><i class="fa fa-check"></i><b>12.2</b> Esercizio 2</a></li>
+<li class="chapter" data-level="12.3" data-path="esercitazione-12.html"><a href="esercitazione-12.html#esercizio-3-18"><i class="fa fa-check"></i><b>12.3</b> Esercizio 3</a></li>
+<li class="chapter" data-level="12.4" data-path="esercitazione-12.html"><a href="esercitazione-12.html#esercizio-4-14"><i class="fa fa-check"></i><b>12.4</b> Esercizio 4</a></li>
+<li class="chapter" data-level="12.5" data-path="esercitazione-12.html"><a href="esercitazione-12.html#esercizio-5-4"><i class="fa fa-check"></i><b>12.5</b> Esercizio 5</a></li>
+<li class="chapter" data-level="12.6" data-path="esercitazione-12.html"><a href="esercitazione-12.html#esercizio-6-4"><i class="fa fa-check"></i><b>12.6</b> Esercizio 6</a></li>
+<li class="chapter" data-level="12.7" data-path="esercitazione-12.html"><a href="esercitazione-12.html#esercizio-7-2"><i class="fa fa-check"></i><b>12.7</b> Esercizio 7</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-12.html"><a href="esercitazione-12.html#soluzioni-11"><i class="fa fa-check"></i>Soluzioni</a>
+<ul>
+<li class="chapter" data-level="" data-path="esercitazione-12.html"><a href="esercitazione-12.html#esercizio-1-23"><i class="fa fa-check"></i>Esercizio 1</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-12.html"><a href="esercitazione-12.html#esercizio-2-23"><i class="fa fa-check"></i>Esercizio 2</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-12.html"><a href="esercitazione-12.html#esercizio-3-19"><i class="fa fa-check"></i>Esercizio 3</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-12.html"><a href="esercitazione-12.html#esercizio-4-15"><i class="fa fa-check"></i>Esercizio 4</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-12.html"><a href="esercitazione-12.html#esercizio-5-5"><i class="fa fa-check"></i>Esercizio 5</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-12.html"><a href="esercitazione-12.html#esercizio-6-5"><i class="fa fa-check"></i>Esercizio 6</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-12.html"><a href="esercitazione-12.html#esercizio-7-3"><i class="fa fa-check"></i>Esercizio 7</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="esercitazione-13.html"><a href="esercitazione-13.html"><i class="fa fa-check"></i><b>13</b> Esercitazione 13</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="esercitazione-13.html"><a href="esercitazione-13.html#esercizio-1-24"><i class="fa fa-check"></i><b>13.1</b> Esercizio 1</a></li>
+<li class="chapter" data-level="13.2" data-path="esercitazione-13.html"><a href="esercitazione-13.html#esercizio-3-20"><i class="fa fa-check"></i><b>13.2</b> Esercizio 3</a></li>
+<li class="chapter" data-level="13.3" data-path="esercitazione-13.html"><a href="esercitazione-13.html#esercizio-4-16"><i class="fa fa-check"></i><b>13.3</b> Esercizio 4</a></li>
+<li class="chapter" data-level="13.4" data-path="esercitazione-13.html"><a href="esercitazione-13.html#esercizio-6-6"><i class="fa fa-check"></i><b>13.4</b> Esercizio 6</a></li>
+<li class="chapter" data-level="13.5" data-path="esercitazione-13.html"><a href="esercitazione-13.html#esercizio-7-4"><i class="fa fa-check"></i><b>13.5</b> Esercizio 7</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-13.html"><a href="esercitazione-13.html#soluzioni-12"><i class="fa fa-check"></i>Soluzioni</a>
+<ul>
+<li class="chapter" data-level="" data-path="esercitazione-13.html"><a href="esercitazione-13.html#esercizio-1-25"><i class="fa fa-check"></i>Esercizio 1</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-13.html"><a href="esercitazione-13.html#esercizio-3-21"><i class="fa fa-check"></i>Esercizio 3</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-13.html"><a href="esercitazione-13.html#esercizio-4-17"><i class="fa fa-check"></i>Esercizio 4</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-13.html"><a href="esercitazione-13.html#esercizio-6-7"><i class="fa fa-check"></i>Esercizio 6</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-13.html"><a href="esercitazione-13.html#esercizio-7-5"><i class="fa fa-check"></i>Esercizio 7</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="./" target="blank"></a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Esercitazioni</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="esercitazione-8" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">8</span> Esercitazione 8<a href="esercitazione-8.html#esercitazione-8" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="esercizio-1-14" class="section level2 hasAnchor" number="8.1">
+<h2><span class="header-section-number">8.1</span> Esercizio 1<a href="esercitazione-8.html#esercizio-1-14" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+Si lancia un dado 2 volte. Determinare la probabilità che:
+<ol type="a">
+<li>
+entrambi i lanci diano luogo ad un numero pari;
+</li>
+<li>
+la somma dei due punteggi sia 5.
+</li>
+</ol>
+</div>
+<div id="esercizio-2-14" class="section level2 hasAnchor" number="8.2">
+<h2><span class="header-section-number">8.2</span> Esercizio 2<a href="esercitazione-8.html#esercizio-2-14" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Da un’urna contenente 5 palline numerate, delle quali le prime 3 rosse e le ultime 2 nere, ne vengono estratte 2. Considerando prima l’ipotesi di “<em>estrazioni con reinserimento</em>” e poi quella di “<em>estrazioni senza reinserimento</em>”, si determini la probabilità che:</p>
+<ol type="a">
+<li>
+entrambe siano rosse;
+</li>
+<li>
+la prima sia rossa e la seconda sia nera;
+</li>
+<li>
+una sola sia rossa.
+</li>
+</ol>
+</div>
+<div id="esercizio-3-10" class="section level2 hasAnchor" number="8.3">
+<h2><span class="header-section-number">8.3</span> Esercizio 3<a href="esercitazione-8.html#esercizio-3-10" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Due urne A e B, fra loro alla pari di fronte all’operazione di scelta, contengono:</p>
+<ul>
+<li>l’urna A è composta da 6 palline nere e 4 gialle;</li>
+<li>l’urna B è composta da 7 palline nere e 3 verdi.</li>
+</ul>
+Si risponda quindi ai seguenti quesiti.
+<ol type="a">
+<li>
+Scelta a caso un’urna, determinare la probabilità di ottenere da questa una pallina nera.
+</li>
+<li>
+Posto di avere ottenuto una pallina nera, qual è la probabilità che provenga dall’urna A?
+</li>
+</ol>
+</div>
+<div id="esercizio-4-6" class="section level2 hasAnchor" number="8.4">
+<h2><span class="header-section-number">8.4</span> Esercizio 4<a href="esercitazione-8.html#esercizio-4-6" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In inverno in una certa regione 1 individuo su 5 si vaccina contro l’influenza. La probabilità di contrarre l’inﬂuenza è di 0.05 per un individuo vaccinato e 0.65 per un individuo non vaccinato.</p>
+<ol type="a">
+<li>
+Qual è la probabilità di prendere l’inﬂuenza per un individuo della regione?
+</li>
+<li>
+Scelto a caso a ﬁne stagione un individuo, che si constata aver contratto l’inﬂuenza, qual è la probabilità che NON si fosse vaccinato?
+</li>
+<li>
+Come si modiﬁcherebbe la probabilità calcolata al punto b) se nella stessa regione si vaccinassero 3 individui su 5?
+</li>
+</ol>
+</div>
+<div id="esercizio-5-2" class="section level2 hasAnchor" number="8.5">
+<h2><span class="header-section-number">8.5</span> Esercizio 5<a href="esercitazione-8.html#esercizio-5-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Un sacchetto contiene 5 pennarelli di colore diverso: nero, blu, rosso, verde e giallo. Tizio prende dal secchetto 3 pennarelli in blocco.</p>
+<ol type="a">
+<li>
+Calcolare quante sono le possibili terne.
+</li>
+<li>
+Calcolare quante sono le possibili terne che contengono il pennarello nero.
+</li>
+<li>
+Calcolare la probabilità che Tizio estragga un pennarello nero.
+</li>
+<li>
+Sapendo che nella terna presa da Tizio c’è il pennarello giallo, calcolare la probabilità che Tizio estragga il pennarello nero.
+</li>
+</ol>
+</div>
+<div id="esercizio-6-2" class="section level2 hasAnchor" number="8.6">
+<h2><span class="header-section-number">8.6</span> Esercizio 6<a href="esercitazione-8.html#esercizio-6-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Una stanza contiene 10 poltrone. Entrano 7 persone e si siedono. Indicare in quanti modi le poltrone possono essere occupate, prima senza distinguere la persona che occupa la poltrona, poi distinguendola.</p>
+</div>
+<div id="soluzioni-7" class="section level2 unnumbered hasAnchor">
+<h2>Soluzioni<a href="esercitazione-8.html#soluzioni-7" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="esercizio-1-15" class="section level3 unnumbered hasAnchor">
+<h3>Esercizio 1<a href="esercitazione-8.html#esercizio-1-15" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Lo spazio degli eventi è <span class="math inline">\(\Omega={(i,j):\,\,i=1,…,6;\,\,j=1,…,6}\)</span> e consideriamo ciascun evento equiprobabile. Essendo <span class="math inline">\(N=|\Omega|=6\cdot6=36\)</span> la probabilità di ciascun evento elementare è <span class="math inline">\(\frac{1}{36}\)</span>.</p>
+<ol type="a">
+<li>
+<p>Indichiamo con <span class="math inline">\(A=\{\)</span><em>il primo lancio ha dato luogo ad un numero pari</em><span class="math inline">\(\}\)</span> e indichiamo con <span class="math inline">\(B=\{\)</span><em>il secondo lancio ha dato luogo ad un numero pari</em><span class="math inline">\(\}\)</span>, pertanto stiamo cercando la probabilità <span class="math display">\[P(A\cap B)\]</span> osservando che i due lanci sono indipendenti notiamo che anche gli eventi <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span> sono indipendenti tra di loro, pertanto <span class="math display">\[P(A\cap B)=P(A)P(B)\]</span></p>
+<p>Sappiamo che dal primo lancio tre numeri su sei sono pari <span class="math display">\[P(A)=\frac{3}{6}=\frac{1}{2}\]</span> analogamente nel secondo lancio <span class="math display">\[P(B)=\frac{3}{6}=\frac{1}{2}\]</span></p>
+In conclusione <span class="math display">\[P(A\cap B)=P(A)P(B)=\frac{1}{2}\cdot\frac{1}{2}=\frac{1}{4}\]</span>
+</li>
+<li>
+<span class="math inline">\(C=\{\)</span><em>la somma dei due punteggi è pari a 5</em><span class="math inline">\(\}\)</span>. Per determinare questa probabilità è opportuno riprodurre lo spazio degli eventi e per ogni evento calcolare la somma dei punteggi dei due dadi
+<table class=" lightable-classic" style="font-family: Computer Modern; margin-left: auto; margin-right: auto;">
+<tbody>
+<tr>
+<td style="text-align:center;font-weight: bold;border-left:1px solid;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+<span class="math inline">\(w_{ij}=i+j\)</span>
+</td>
+<td style="text-align:center;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+1
+</td>
+<td style="text-align:center;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+2
+</td>
+<td style="text-align:center;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+3
+</td>
+<td style="text-align:center;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+4
+</td>
+<td style="text-align:center;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+<strong>5</strong>
+</td>
+<td style="text-align:center;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+6
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;border-left:1px solid;border-right:1px solid;">
+1
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+<strong>5</strong>
+</td>
+<td style="text-align:center;">
+6
+</td>
+<td style="text-align:center;border-right:1px solid;">
+7
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;border-left:1px solid;border-right:1px solid;">
+2
+</td>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+<strong>5</strong>
+</td>
+<td style="text-align:center;">
+6
+</td>
+<td style="text-align:center;">
+7
+</td>
+<td style="text-align:center;border-right:1px solid;">
+8
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;border-left:1px solid;border-right:1px solid;">
+3
+</td>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+<strong>5</strong>
+</td>
+<td style="text-align:center;">
+6
+</td>
+<td style="text-align:center;">
+7
+</td>
+<td style="text-align:center;">
+8
+</td>
+<td style="text-align:center;border-right:1px solid;">
+9
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;border-left:1px solid;border-right:1px solid;">
+4
+</td>
+<td style="text-align:center;">
+<strong>5</strong>
+</td>
+<td style="text-align:center;">
+6
+</td>
+<td style="text-align:center;">
+7
+</td>
+<td style="text-align:center;">
+8
+</td>
+<td style="text-align:center;">
+9
+</td>
+<td style="text-align:center;border-right:1px solid;">
+10
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;border-left:1px solid;border-right:1px solid;">
+5
+</td>
+<td style="text-align:center;">
+6
+</td>
+<td style="text-align:center;">
+7
+</td>
+<td style="text-align:center;">
+8
+</td>
+<td style="text-align:center;">
+9
+</td>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;border-right:1px solid;">
+11
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;border-left:1px solid;border-right:1px solid;border-bottom: thin solid">
+6
+</td>
+<td style="text-align:center;border-bottom: thin solid">
+7
+</td>
+<td style="text-align:center;border-bottom: thin solid">
+8
+</td>
+<td style="text-align:center;border-bottom: thin solid">
+9
+</td>
+<td style="text-align:center;border-bottom: thin solid">
+10
+</td>
+<td style="text-align:center;border-bottom: thin solid">
+11
+</td>
+<td style="text-align:center;border-right:1px solid;border-bottom: thin solid">
+12
+</td>
+</tr>
+</tbody>
+</table>
+Notiamo che <span class="math inline">\(n(C)=4\)</span>, pertanto <span class="math inline">\(P(C)=\frac{n(C)}{N}=\frac{4}{36}=\frac{1}{9}\)</span>.
+A tale risultato possiamo arrivare anche attraverso la probabilità condizionata che fa uso dei due eventi
+<center>
+<span class="math inline">\(D=\{\)</span><em>al primo lancio numero al più pari a 4</em><span class="math inline">\(\}\)</span>
+</center>
+<center>
+<span class="math inline">\(E=\{\)</span><em>al secondo lancio unico numero che è complemento a 5</em><span class="math inline">\(\}\)</span>
+</center>
+<p>otteniamo quindi <span class="math inline">\(P(D)=\frac{4}{6}=\frac{2}{3}\)</span> e <span class="math inline">\(P(E│D)=\frac{1}{6}\)</span> e <span class="math inline">\(P(E│\overline{D})=0\)</span>
+Considerando che l’evento <span class="math inline">\(D\)</span> ed il suo complementare <span class="math inline">\(\overline{D}\)</span> sono una partizione dello spazio degli eventi, possiamo usare la formula delle probabilità totali
+<span class="math display">\[P(E)=P(E│D)P(D)+P(E│\overline{D})P(\overline{D})=\frac{1}{6}\cdot\frac{2}{3}+0\cdot\frac{1}{3}=\frac{1}{9}\]</span></p>
+</li>
+</ol>
+</div>
+<div id="esercizio-2-15" class="section level3 unnumbered hasAnchor">
+<h3>Esercizio 2<a href="esercitazione-8.html#esercizio-2-15" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<center>
+<h3>
+Estrazioni con reinserimento
+</center>
+</h3>
+<p>Le estrazioni con reinserimento implicano indipendenza nelle diverse estrazioni pertanto i diversi punti verranno risolti definendo l’evento <span class="math inline">\(A\)</span> alla prima estrazione e l’evento <span class="math inline">\(B\)</span> alla seconda estrazione e le rispettive probabilità, per ottenere la probabilità congiunta moltiplicando le due precedenti.</p>
+<ol>
+<li>
+<span class="math inline">\(P(A)=\frac{3}{5}, \quad P(B)=\frac{3}{5}, \quad P(A\cap B)=P(A)P(B)=\frac{3}{5}\cdot\frac{3}{5}=\frac{9}{25}\)</span>
+</li>
+<li>
+<span class="math inline">\(P(A)=\frac{3}{5},\quad P(B)=\frac{2}{5},\quad P(A\cap B)=P(A)P(B)=\frac{3}{5}\cdot\frac{2}{5}=\frac{6}{25}\)</span>
+</li>
+<li>
+Alla probabilità del punto precedente va sommata la probabilità dell’evento disgiunto: prima nera e seconda rossa <span class="math display">\[P(A)=\frac{2}{5},\quad P(B)=\frac{3}{5},\quad P(A\cap B)=\frac{6}{25}\]</span> pertanto il risultato finale è <span class="math display">\[\frac{6}{25}+\frac{6}{25}=\frac{12}{25}\]</span>
+</li>
+</ol>
+<center>
+<h3>
+Estrazioni senza reinserimento
+</center>
+</h3>
+<p>Le estrazioni senza reinserimento fanno cadere l’indipendenza poiché la composizione dell’urna cambia alla seconda estrazione. Pertanto, i diversi punti verranno risolti definendo l’evento <span class="math inline">\(A\)</span> alla prima estrazione e l’evento <span class="math inline">\(B\)</span> alla seconda estrazione e la probabilità dell’evento <span class="math inline">\(A\)</span>, la probabilità dell’evento <span class="math inline">\(B\)</span> <em>condizionatamente</em> al fatto che si sia verificato l’evento <span class="math inline">\(A\)</span>, e la probabilità congiunta moltiplicando le due precedenti.</p>
+<ol>
+<li>
+<span class="math inline">\(P(A)=\frac{3}{5},\quad P(B│A)=\frac{2}{4}=\frac{1}{2},\quad P(A\cap B)=P(A)P(B│A)=\frac{3}{5}\cdot\frac{1}{2}=\frac{3}{10}\)</span>
+</li>
+<li>
+<span class="math inline">\(P(A)=\frac{3}{4},\quad P(B│A)=\frac{2}{4}=\frac{1}{2},\quad P(A\cap B)=P(A)P(B│A)=\frac{3}{5}\cdot\frac{1}{2}=\frac{3}{10}\)</span>
+</li>
+<li>
+Alla probabilità del punto precedente va sommata la probabilità dell’evento disgiunto: prima nera e seconda rossa <span class="math display">\[P(A)=\frac{2}{5},\quad P(B|A)=\frac{3}{4},\quad P(A\cap B)=P(A)P(B│A)=\frac{2}{5}\cdot\frac{3}{4}=\frac{3}{10}\]</span> pertanto il risultato finale è <span class="math display">\[\frac{3}{10}+\frac{3}{10}=\frac{3}{5}\]</span>
+</li>
+</ol>
+</div>
+<div id="esercizio-3-11" class="section level3 unnumbered hasAnchor">
+<h3>Esercizio 3<a href="esercitazione-8.html#esercizio-3-11" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol type="a">
+<li>
+<span class="math inline">\(N=\{\)</span><em>pallina nera</em><span class="math inline">\(\}\)</span>, <span class="math inline">\(P(A)=P(B)\)</span>=, <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span> costituiscono una partizione dello spazio degli eventi, pertanto <span class="math display">\[P(N)=P(N│A)P(A)+P(N│B)P(B)=\frac{6}{10}\cdot\frac{1}{2}+\frac{7}{10}\cdot\frac{1}{2}=\frac{13}{20}\]</span>
+</li>
+<li>
+Applichiamo la formula di Bayes <span class="math display">\[P(A│N)=\frac{P(N│A)P(A)}{P(N)}=\frac{\frac{6}{10}\cdot\frac{1}{2}}{\frac{13}{20}}=\frac{6}{13}\]</span>
+</li>
+</ol>
+</div>
+<div id="esercizio-4-7" class="section level3 unnumbered hasAnchor">
+<h3>Esercizio 4<a href="esercitazione-8.html#esercizio-4-7" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol type="a">
+<li>
+<span class="math display">\[P(V)=\frac{1}{5},\quad P(\overline{V})=1-\frac{1}{5}=\frac{4}{5},\quad P(I│V)=0.05,\quad P(I│\overline{V})=0.65\]</span> <span class="math display">\[P(I)=P(I│V)P(V)+P(I│\overline{V})P(\overline{V})=0.05\cdot\frac{1}{5}+0.65\cdot\frac{4}{5}=0.53\]</span>
+</li>
+<li>
+<span class="math display">\[P(\overline{V}│I)=\frac{P(I│\overline{V})P(\overline{V})}{P(I)} =\frac{0.65\cdot\frac{4}{5}}{0.53}=0.9811\]</span>
+</li>
+<li>
+<span class="math display">\[P(I)=P(I│V)P(V)+P(I│\overline{V})P(\overline{V})=0.05\cdot\frac{3}{5}+0.65\cdot\frac{2}{5}=0.29\]</span> <span class="math display">\[P(\overline{V}│I)=\frac{P(I│\overline{V})P(\overline{V})}{P(I)} =\frac{0.65\cdot\frac{2}{5}}{0.29}=0.8966\]</span> diminuirebbe
+</li>
+</ol>
+</div>
+<div id="esercizio-5-3" class="section level3 unnumbered hasAnchor">
+<h3>Esercizio 5<a href="esercitazione-8.html#esercizio-5-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol type="a">
+<li>
+<span class="math display">\[\require{cancel} N=\begin{pmatrix}5\\ 3\end{pmatrix}=\frac{5!}{3!(5-3)!}=\frac{5\cdot4\cdot\cancel{3!}}{\cancel{3!}\cdot2}=10\]</span>
+</li>
+<li>
+A terne contenenti la pallina nera <span class="math display">\[n(A)=\begin{pmatrix}4\\2\end{pmatrix}=\frac{4!}{2!(4-2)!}=\frac{4\cdot3\cdot\cancel{2!}}{\cancel{2!}\cdot2}=6\]</span>
+</li>
+<li>
+<span class="math display">\[    P(A)=\frac{n(A)}{N}=\frac{6}{10}=0.6\]</span>
+</li>
+<li>
+<span class="math inline">\(B=\{\)</span><em>nella terna c’è il pennarello giallo</em><span class="math inline">\(\}\)</span>, <span class="math inline">\(P(B)=0.6\)</span> <span class="math display">\[n(A\cap B)=\begin{pmatrix}3\\1\end{pmatrix}=\frac{3!}{1!2!}=\frac{3\cdot2}{1\cdot2}=3\]</span> <span class="math display">\[P(A\cap B)=\frac{n(A\cap B)}{N}=\frac{3}{10}=0.3\]</span> <span class="math display">\[P(A│B)=\frac{P(A\cap B)}{P(B)} =\frac{3}{10}\cdot\frac{10}{6}=\frac{n(A\cap B)}{n(B)} =\frac{3}{6}=\frac{1}{2}\]</span>
+</li>
+</ol>
+</div>
+<div id="esercizio-6-3" class="section level3 unnumbered hasAnchor">
+<h3>Esercizio 6<a href="esercitazione-8.html#esercizio-6-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math display">\[C_{10,7}=\begin{pmatrix}10\\7\end{pmatrix}=\frac{10!}{7!(10-7)!}=\frac{10\cdot9\cdot8\cdot\cancel{7!}}{\cancel{7!}\cdot3!}=\frac{10\cdot9\cdot8}{3\cdot2}=10\cdot3\cdot4=120\]</span></p>
+<p>Volendo distinguere le persone che occupano ciascuna poltrona dobbiamo considerare che per ogni combinazione i 7 individui si possono disporre in <span class="math inline">\(7!\)</span> modi diversi, ovvero il rispettivo numero di permutazioni. Il risultato corrisponde alle disposizioni semplici di 10 elementi presi 7 alla volta</p>
+<p><span class="math display">\[D_{10,7}=\frac{10!}{(10-7)!}=C_{10,7} P_7=\begin{pmatrix}10\\7\end{pmatrix}7!=120\cdot7!=120\cdot5040=604800\]</span></p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="esercitazione-7.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="esercitazione-9.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,269 @@
+# Esercitazione 2
+
+<center>
+
+<h2>
+
+Frequenze e rappresentazioni grafiche
+
+</h2   >
+
+</center>
+
+## Esercizio 1
+
+Un certo materiale è stato sottoposto a un esperimento termico. Durante l'esperimento è stata rilevata 60 volte la sua temperatura $X$ (in gradi Celsius). La distribuzione di frequenze di $X$ è riportata nella seguente tabella:
+
+```{r, echo=FALSE}
+tab1 = data.frame("Classi"=c("$[5, 10]$","$(10, 13]$","$(13, 17]$",
+                             "$(17, 25]$", "$(25, 40]$", "Totale"), 
+                  "Frequenze"=c(8,18,8,16,10,60))
+colnames(tab1)[1] = 'Classi $X$'
+tab1%>%
+  format_cells(rows=6, col=1, 'italics')%>%
+  format_cells(rows=6, col=2, 'italics')%>%
+  kbl(align = 'rc')%>%
+  kable_classic(html_font = 'Computer Modern', full_width=F)%>%
+  row_spec(0, bold = T)%>%
+  row_spec(c(0,5,6), extra_css = 'border-top: thin solid;border-bottom: thin solid')
+  
+```
+
+<ol type="a">
+
+<li>
+
+Indicare il tipo di carattere e la scala di misurazione.
+
+</li>
+
+<li>
+
+Calcolare le frequenze cumulate e interpretare la quarta di esse.
+
+</li>
+
+<li>
+
+Rappresentare la distribuzione di frequenze relative.
+
+</li>
+
+<li>
+
+Calcolare la frequenza relativa della classe $[11,20)$.
+
+</li>
+
+<li>
+
+Rappresentare la funzione di ripartizione di $X$.
+
+</li>
+
+</ol>
+
+## Esercizio 2
+
+La seguente tabella riporta la distribuzione degli utenti di due social network **A** e **B** secondo il numero $X$ di post in un determinato pomeriggio:
+
+```{r echo=FALSE}
+tab2 = data.frame("Valori" = c("Valori di $X$",seq(0,5,1),"Totale"),
+                  "A" = c("Frequenze di A", 7,9,16,25,23,20,100),
+                  "B" = c("Frequenze di B",3,4,8,10,15,40,80))
+tab2%>%
+  format_cells(rows=8, col=c(1,2,3), 'italics')%>%
+  kbl(align = 'c', col.names = NULL)%>%
+  kable_classic(html_font = 'Computer Modern', full_width=F)%>%
+  column_spec(1, border_left = T, border_right = T)%>%
+  column_spec(2, border_left = T, border_right = T)%>%
+  column_spec(3, border_left = T, border_right = T)%>%
+  row_spec(c(7,8),extra_css = 'border-top: thin solid;border-bottom: thin solid')%>%
+  row_spec(1, bold = T, extra_css = 'border-top: thin solid;border-bottom: thin solid')
+```
+
+<ol type="a">
+
+<li>
+
+Indicare il tipo di carattere e la scala di misurazione.
+
+</li>
+
+<li>
+
+Rappresentare le due distribuzioni di frequenze in modo tale che siano confrontabili.
+
+</li>
+
+<li>
+
+In quale social network sono stati pubblicati più post tra gli utenti considerati?
+
+</li>
+
+<li>
+
+Rappresentare la funzione di ripartizione di $X$ considerando come collettivo statistico entrambi i social network.
+
+</li>
+
+</ol>
+
+## Esercizio 3
+
+In uno stabilimento lavorano 224 operai, di cui 160 sono uomini e 64 sono donne. La seguente tabella riporta la distribuzione degli operai secondo il tempo $X$ (in secondi) impiegato per produrre un pezzo:
+
+```{r echo=FALSE}
+tab3 = data.frame("Classi"=c("Classi di $X$","$[10,15)$","$[15,20)$","$[20,30)$","$[30,45)$","Totali"),
+                  "Uomini"=c("Frequenze (uomini)", 20,84,46,10,160),
+                  "Donne"=c("Frequenze (donne)",16,30,16,2,64))
+tab3[] <- lapply(tab3, as.character)
+tab3%>%
+  format_cells(rows=6, col=c(1,2,3), 'italics')%>%
+  kbl(align = 'lcc', col.names = NULL)%>%
+  kable_classic(html_font = 'Computer Modern', full_width=F)%>%
+  column_spec(1, border_left = T, border_right = T)%>%
+  column_spec(2, border_left = T, border_right = T)%>%
+  column_spec(3, border_left = T, border_right = T)%>%
+  row_spec(c(5,6),extra_css = 'border-top: thin solid;border-bottom: thin solid')%>%
+  row_spec(1, bold = T, extra_css = 'border-top: thin solid;border-bottom: thin solid')
+
+```
+
+<ol type="a">
+
+<li>
+
+Si rappresentino le due distribuzioni di frequenze in modo che possano essere confrontate.
+
+</li>
+
+<li>
+
+Si calcoli la frequenza assoluta degli uomini che impiegano tra 15 e 35 secondi per produrre un pezzo.
+
+</li>
+
+<li>
+
+Si calcoli la frequenza relativa degli operai (uomini e donne) che impiegano $[20,30)$ secondi a produrre un pezzo.
+
+</li>
+
+<li>
+
+Rappresentare la funzione di ripartizione di $X$ per entrambe le due sottopopolazioni.
+
+</li>
+
+<li>
+
+Calcolare qual è la proporzione di uomini che impiegano più di 25 secondi a produrre un pezzo.
+
+</li>
+
+</ol>
+
+## Soluzioni {-}
+
+### Esercizio 1 {-}
+
+
+```{r, echo=FALSE}
+tab1.sol = data.frame("j"=c('$j$', 1:5,"Totale"),
+  "Classi"=c('Classi $X$',"$[5, 10]$","$(10, 13]$","$(13, 17]$",
+                             "$(17, 25]$", "$(25, 40]$", " "), 
+                  "nj"=c('$n_j$',8,18,8,16,10,60),
+  "Nj"=c('$N_j$', 8, 26, 34, 50, 60,""),
+  "dj"=c('$d_j$', 5,3,4,8,15,""),
+  "fj"=c('$f_j=\\frac{n_j}{N}$', 0.133,0.3,0.133,0.267,0.167,""),
+  "rapp"=c('$\\frac{h_j}{N}=\\frac{f_j}{d_j}$', 0.027,0.1,0.033,0.033,0.011,""),
+  "Fj"=c('$F_j$', 0.133,0.433,0.566,0.833,1,""))
+
+
+tab1.sol%>%
+  format_cells(rows=7, col=c(1,3), 'italics')%>%
+  kbl(align = 'crcccccc',col.names = NULL)%>%
+  kable_classic(html_font = 'Computer Modern', full_width=F)%>%
+  column_spec(c(1:8), border_left = T, border_right = T)%>%
+  row_spec(1, bold = T)%>%
+  row_spec(c(1:7),extra_css = 'border-top: thin solid;border-bottom: thin solid')
+```
+
+<ol type="a">
+  <li> Carattere quantitativo continuo su scala di intervalli: lo 0 della scala Celsius è convenzionale e non rappresenta l’assenza di calore, quindi il calore a 30°C non è il doppio del calore a 15°C.</li>
+  <li> $N_4=50$ indica che ci sono 50 rilevazioni nelle quali si è osservata una temperatura minore o uguale a 25°Celsius.</li>
+  <li> **Istogramma**, le frequenze relative sono rappresentate dall’area dei rettangoli pertanto bisogna calcolare le frequenze relative specifiche. Le ampiezze delle classi di un carattere continuo sono; $$d_j=l_j^+-l_j^-$$</li>
+  <li>$$\begin{align}\frac{h_j}{N}([11,20)) & =  (13-11)\cdot\frac{h_2}{N}+\frac{h_3}{N}+(20-17)\cdot\frac{h_4}{N}=\\
+  & = 2\cdot 0.1+0.133+3\cdot 0.033 = 0.2 + 0.133+0.099=0.432\end{align}$$</li>
+  <li>	Funzione di ripartizione a scalini con altezze pari alla colonna $F_j$.</li>
+
+</ol>
+
+### Esercizio 2 {-}
+
+```{r echo=F}
+tab2.sol = data.frame("Valori"=c("Valori di $X$", 0:5, "Totale"),
+                      "fa"=c("$f_j^A$", 0.07,0.09,0.16,0.25,0.23,0.20,1),
+                      "fb"=c("$f_j^B$", 0.0375,0.05,0.1,0.125,0.1875,0.5,1),
+                        "n"=c("$n_j$", 10,13,24,35,38,60,180),
+                       "N"=c("$N_j$",10,23,47,82,120,180," "),
+                       "Fj"=c("$F_j$",0.056,0.128,0.261,0.456,0.667,1," "))
+
+tab2.sol%>%
+  format_cells(rows=8, col=c(1:4), 'italics')%>%
+  kbl(align = 'c', col.names = NULL,)%>%
+  kable_classic(html_font = 'Computer Modern', full_width=F)%>%
+  add_header_above(c(' '=3,'$X$'=3), extra_css = 'border-top: ')%>%
+  column_spec(1,  border_left = T, border_right = T)%>%
+  column_spec(c(2:6), border_right = T, border_left = T)%>%
+  column_spec(6, border_right = T)%>%
+  row_spec(c(0,1), bold = T)%>%
+  row_spec(c(0:8), extra_css = 'border-top: thin solid;border-bottom: thin solid')
+```
+<ol type="a">
+  <li>Carattere quantitativo discreto su scala di rapporti, 0 post indicano assenza di attività sul social network, quindi è uno zero assoluto.</li>
+  <li>Le due popolazioni hanno un numero diverso di osservazioni, quindi bisogna considerare le frequenze relative (fare un cenno alle tabelle a doppia entrata e confrontare le frequenze relative, per confrontare le distribuzioni di X nei due social network). **Aste**.</li>
+  <li>Nel primo social network sono stati pubblicati $0\cdot 7+1\cdot 9+2\cdot 16+3\cdot 25+4\cdot 23+5\cdot 20=308$ post, nel secondo social network sono stati pubblicati $0\cdot 3+1\cdot 4+2\cdot 8+3\cdot 10+4\cdot 15+5\cdot 40=310$ post.</li>
+  <li>Funzione di ripartizione a segmenti con altezze pari alla colonna $F_j$.</li>
+</ol>
+
+### Esercizio 3 {-}	
+
+```{r echo=FALSE}
+tab3.sol = data.frame("Classi"=c("Classi di $X$", "$[10,15)$", "$[15,20)$",
+                                 "$[20,30)$", "$[30,45)$", "Totali"),
+                      "fu"=c("$f_j^U$",0.125,0.525,0.287,0.063,1),
+                      "fd"=c("$f_j^D$",0.250,0.469,0.250,0.031,1),
+                      "dj"=c("$d_j$", 5,5,10,15,""),
+                      "fracu"=c("$\\frac{h_j^D}{N^U}$",0.025,0.105,0.029,0.004,""),
+                      "fracd"=c("$\\frac{h_j^D}{N^U}$",0.050,0.069,0.038,0.002,""),
+                      "Fu"=c("$F_j^U$",0.125,0.650,0.937,1,""),
+                      "Fd"=c("$F_j^D$",0.250,0.719,0.969,1,""))
+tab3.sol%>%
+  format_cells(rows=6, col=c(1:3), 'italics')%>%
+  kbl(align = 'lccccccc', col.names = NULL,)%>%
+  kable_classic(html_font = 'Computer Modern', full_width=F)%>%
+  column_spec(c(1:8), border_right = T, border_left = T)%>%
+  row_spec(1, bold = T)%>%
+  row_spec(c(1:6), extra_css = 'border-top: thin solid;border-bottom: thin solid')
+```
+<ol type="a">
+  <li> Istogramma di frequenze relative.</li>
+  <li>$$f^U([15,35])=0.525+0.287+5\cdot 0.004=0.832$$ $$n^U([15,35])=0.832\cdot 160 =133.12$$</li>
+  <li>$$f([20,30))=\frac{46+16}{224}=\frac{62}{224}=0.277$$</li>
+  <li>Funzioni di ripartizione a segmenti rispettivamente con altezze pari alle colonne $F_j^U$ e $F_j^D$</li>
+  <li>$$F^U(x)\begin{equation}\begin{cases}0, & \mathrm{per\ }x<l_1^-\\ F^U_{j-1}+\frac{h^U_j}{N^U}(x-l_j^-), & \mathrm{per\ }l_j^-\leq x<l_j^+,\,\, j=1,2,\ldots,k\\ 1, & \mathrm{per\ }x\geq l_k^+\end{cases}\end{equation}$$
+  $x=25$ cade nella terza classe, quindi $j=3$: $$\begin{align}F^U(25)& =  F^U_{3-1}+\frac{h_3^U}{N^U}(25-l_3^-)=\\ 
+  & = 0.650+0.029\cdot(25-20)=\\ &= 0.650+0.145=0.795 \end{align}$$ 
+  Questa è la proporzione di uomini che impiega al più 25 secondi a produrre un pezzo. 
+  
+  Per sapere qual è la proporzione di uomini che impiegano più di 25 secondi a produrre un pezzo è necessario fare il complemento a 1: $1 – 0.795 = 0.205$
+  </li>
+
+</ol
+
+
+
+

@@ -1,0 +1,1574 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>6 Esercitazione 6 | Esercitazioni</title>
+  <meta name="description" content="In questo libro sono presenti le esercitazioni di Statistica di Base" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="6 Esercitazione 6 | Esercitazioni" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="In questo libro sono presenti le esercitazioni di Statistica di Base" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="6 Esercitazione 6 | Esercitazioni" />
+  
+  <meta name="twitter:description" content="In questo libro sono presenti le esercitazioni di Statistica di Base" />
+  
+
+<meta name="author" content="Brunero Liseo" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="esercitazione-5.html"/>
+<link rel="next" href="esercitazione-7.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Esercitazioni di Statistica di Base</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduzione</a></li>
+<li class="chapter" data-level="1" data-path="esercitazione-1.html"><a href="esercitazione-1.html"><i class="fa fa-check"></i><b>1</b> Esercitazione 1</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="esercitazione-1.html"><a href="esercitazione-1.html#esercizio-1"><i class="fa fa-check"></i><b>1.1</b> Esercizio 1</a></li>
+<li class="chapter" data-level="1.2" data-path="esercitazione-1.html"><a href="esercitazione-1.html#esercizio-2"><i class="fa fa-check"></i><b>1.2</b> Esercizio 2</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-1.html"><a href="esercitazione-1.html#soluzioni"><i class="fa fa-check"></i>Soluzioni</a>
+<ul>
+<li class="chapter" data-level="" data-path="esercitazione-1.html"><a href="esercitazione-1.html#esercizio-1-1"><i class="fa fa-check"></i>Esercizio 1</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-1.html"><a href="esercitazione-1.html#esercizio-2-1"><i class="fa fa-check"></i>Esercizio 2</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="esercitazione-2.html"><a href="esercitazione-2.html"><i class="fa fa-check"></i><b>2</b> Esercitazione 2</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="esercitazione-2.html"><a href="esercitazione-2.html#esercizio-1-2"><i class="fa fa-check"></i><b>2.1</b> Esercizio 1</a></li>
+<li class="chapter" data-level="2.2" data-path="esercitazione-2.html"><a href="esercitazione-2.html#esercizio-2-2"><i class="fa fa-check"></i><b>2.2</b> Esercizio 2</a></li>
+<li class="chapter" data-level="2.3" data-path="esercitazione-2.html"><a href="esercitazione-2.html#esercizio-3"><i class="fa fa-check"></i><b>2.3</b> Esercizio 3</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-2.html"><a href="esercitazione-2.html#soluzioni-1"><i class="fa fa-check"></i>Soluzioni</a>
+<ul>
+<li class="chapter" data-level="" data-path="esercitazione-2.html"><a href="esercitazione-2.html#esercizio-1-3"><i class="fa fa-check"></i>Esercizio 1</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-2.html"><a href="esercitazione-2.html#esercizio-2-3"><i class="fa fa-check"></i>Esercizio 2</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-2.html"><a href="esercitazione-2.html#esercizio-3-1"><i class="fa fa-check"></i>Esercizio 3</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="esercitazione-3.html"><a href="esercitazione-3.html"><i class="fa fa-check"></i><b>3</b> Esercitazione 3</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="esercitazione-3.html"><a href="esercitazione-3.html#esercizio-1-4"><i class="fa fa-check"></i><b>3.1</b> Esercizio 1</a></li>
+<li class="chapter" data-level="3.2" data-path="esercitazione-3.html"><a href="esercitazione-3.html#esercizio-2-4"><i class="fa fa-check"></i><b>3.2</b> Esercizio 2</a></li>
+<li class="chapter" data-level="3.3" data-path="esercitazione-3.html"><a href="esercitazione-3.html#esercizio-3-2"><i class="fa fa-check"></i><b>3.3</b> Esercizio 3</a></li>
+<li class="chapter" data-level="3.4" data-path="esercitazione-3.html"><a href="esercitazione-3.html#esercizio-4"><i class="fa fa-check"></i><b>3.4</b> Esercizio 4</a></li>
+<li class="chapter" data-level="3.5" data-path="esercitazione-3.html"><a href="esercitazione-3.html#esercizio-5"><i class="fa fa-check"></i><b>3.5</b> Esercizio 5</a></li>
+<li class="chapter" data-level="3.6" data-path="esercitazione-3.html"><a href="esercitazione-3.html#esercizio-6"><i class="fa fa-check"></i><b>3.6</b> Esercizio 6</a></li>
+<li class="chapter" data-level="3.7" data-path="esercitazione-3.html"><a href="esercitazione-3.html#esercizio-7"><i class="fa fa-check"></i><b>3.7</b> Esercizio 7</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-3.html"><a href="esercitazione-3.html#soluzioni-2"><i class="fa fa-check"></i>Soluzioni</a>
+<ul>
+<li class="chapter" data-level="" data-path="esercitazione-3.html"><a href="esercitazione-3.html#esercizio-1-5"><i class="fa fa-check"></i>Esercizio 1</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-3.html"><a href="esercitazione-3.html#esercizio-2-5"><i class="fa fa-check"></i>Esercizio 2</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-3.html"><a href="esercitazione-3.html#esercizio-3-3"><i class="fa fa-check"></i>Esercizio 3</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-3.html"><a href="esercitazione-3.html#esercizio-4-1"><i class="fa fa-check"></i>Esercizio 4</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-3.html"><a href="esercitazione-3.html#esercizio-5-1"><i class="fa fa-check"></i>Esercizio 5</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-3.html"><a href="esercitazione-3.html#esercizio-6-1"><i class="fa fa-check"></i>Esercizio 6</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-3.html"><a href="esercitazione-3.html#esercizio-7-1"><i class="fa fa-check"></i>Esercizio 7</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="esercitazione-4.html"><a href="esercitazione-4.html"><i class="fa fa-check"></i><b>4</b> Esercitazione 4</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="esercitazione-4.html"><a href="esercitazione-4.html#esercizio-1-6"><i class="fa fa-check"></i><b>4.1</b> Esercizio 1</a></li>
+<li class="chapter" data-level="4.2" data-path="esercitazione-4.html"><a href="esercitazione-4.html#esercizio-2-6"><i class="fa fa-check"></i><b>4.2</b> Esercizio 2</a></li>
+<li class="chapter" data-level="4.3" data-path="esercitazione-4.html"><a href="esercitazione-4.html#esercizio-3-4"><i class="fa fa-check"></i><b>4.3</b> Esercizio 3</a></li>
+<li class="chapter" data-level="4.4" data-path="esercitazione-4.html"><a href="esercitazione-4.html#esercizio-4-2"><i class="fa fa-check"></i><b>4.4</b> Esercizio 4</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-4.html"><a href="esercitazione-4.html#soluzioni-3"><i class="fa fa-check"></i>Soluzioni</a>
+<ul>
+<li class="chapter" data-level="" data-path="esercitazione-4.html"><a href="esercitazione-4.html#esercizio-1-7"><i class="fa fa-check"></i>Esercizio 1</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-4.html"><a href="esercitazione-4.html#esercizio-2-7"><i class="fa fa-check"></i>Esercizio 2</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-4.html"><a href="esercitazione-4.html#esercizio-3-5"><i class="fa fa-check"></i>Esercizio 3</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-4.html"><a href="esercitazione-4.html#esercizio-4-3"><i class="fa fa-check"></i>Esercizio 4</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="esercitazione-5.html"><a href="esercitazione-5.html"><i class="fa fa-check"></i><b>5</b> Esercitazione 5</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="esercitazione-5.html"><a href="esercitazione-5.html#esercizio-1-8"><i class="fa fa-check"></i><b>5.1</b> Esercizio 1</a></li>
+<li class="chapter" data-level="5.2" data-path="esercitazione-5.html"><a href="esercitazione-5.html#esercizio-2-8"><i class="fa fa-check"></i><b>5.2</b> Esercizio 2</a></li>
+<li class="chapter" data-level="5.3" data-path="esercitazione-5.html"><a href="esercitazione-5.html#esercizio-3-6"><i class="fa fa-check"></i><b>5.3</b> Esercizio 3</a></li>
+<li class="chapter" data-level="5.4" data-path="esercitazione-5.html"><a href="esercitazione-5.html#esercizio-4-4"><i class="fa fa-check"></i><b>5.4</b> Esercizio 4</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-5.html"><a href="esercitazione-5.html#soluzioni-4"><i class="fa fa-check"></i>Soluzioni</a>
+<ul>
+<li class="chapter" data-level="" data-path="esercitazione-5.html"><a href="esercitazione-5.html#esercizio-1-9"><i class="fa fa-check"></i>Esercizio 1</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-5.html"><a href="esercitazione-5.html#esercizio-2-9"><i class="fa fa-check"></i>Esercizio 2</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-5.html"><a href="esercitazione-5.html#esercizio-3-7"><i class="fa fa-check"></i>Esercizio 3</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-5.html"><a href="esercitazione-5.html#esercizio-4-5"><i class="fa fa-check"></i>Esercizio 4</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="esercitazione-6.html"><a href="esercitazione-6.html"><i class="fa fa-check"></i><b>6</b> Esercitazione 6</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="esercitazione-6.html"><a href="esercitazione-6.html#esercizio-1-10"><i class="fa fa-check"></i><b>6.1</b> Esercizio 1</a></li>
+<li class="chapter" data-level="6.2" data-path="esercitazione-6.html"><a href="esercitazione-6.html#esercizio-2-10"><i class="fa fa-check"></i><b>6.2</b> Esercizio 2</a></li>
+<li class="chapter" data-level="6.3" data-path="esercitazione-6.html"><a href="esercitazione-6.html#esercizio-3-8"><i class="fa fa-check"></i><b>6.3</b> Esercizio 3</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-6.html"><a href="esercitazione-6.html#soluzioni-5"><i class="fa fa-check"></i>Soluzioni</a>
+<ul>
+<li class="chapter" data-level="" data-path="esercitazione-6.html"><a href="esercitazione-6.html#esercizio-1-11"><i class="fa fa-check"></i>Esercizio 1</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-6.html"><a href="esercitazione-6.html#esercizio-2-11"><i class="fa fa-check"></i>Esercizio 2</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-6.html"><a href="esercitazione-6.html#esercizio-3-9"><i class="fa fa-check"></i>Esercizio 3</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="esercitazione-7.html"><a href="esercitazione-7.html"><i class="fa fa-check"></i><b>7</b> Esercitazione 7</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="esercitazione-7.html"><a href="esercitazione-7.html#esercizio-1-12"><i class="fa fa-check"></i><b>7.1</b> Esercizio 1</a></li>
+<li class="chapter" data-level="7.2" data-path="esercitazione-7.html"><a href="esercitazione-7.html#esercizio-2-12"><i class="fa fa-check"></i><b>7.2</b> Esercizio 2</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-7.html"><a href="esercitazione-7.html#soluzioni-6"><i class="fa fa-check"></i>Soluzioni</a>
+<ul>
+<li class="chapter" data-level="" data-path="esercitazione-7.html"><a href="esercitazione-7.html#esercizio-1-13"><i class="fa fa-check"></i>Esercizio 1</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-7.html"><a href="esercitazione-7.html#esercizio-2-13"><i class="fa fa-check"></i>Esercizio 2</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="esercitazione-8.html"><a href="esercitazione-8.html"><i class="fa fa-check"></i><b>8</b> Esercitazione 8</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="esercitazione-8.html"><a href="esercitazione-8.html#esercizio-1-14"><i class="fa fa-check"></i><b>8.1</b> Esercizio 1</a></li>
+<li class="chapter" data-level="8.2" data-path="esercitazione-8.html"><a href="esercitazione-8.html#esercizio-2-14"><i class="fa fa-check"></i><b>8.2</b> Esercizio 2</a></li>
+<li class="chapter" data-level="8.3" data-path="esercitazione-8.html"><a href="esercitazione-8.html#esercizio-3-10"><i class="fa fa-check"></i><b>8.3</b> Esercizio 3</a></li>
+<li class="chapter" data-level="8.4" data-path="esercitazione-8.html"><a href="esercitazione-8.html#esercizio-4-6"><i class="fa fa-check"></i><b>8.4</b> Esercizio 4</a></li>
+<li class="chapter" data-level="8.5" data-path="esercitazione-8.html"><a href="esercitazione-8.html#esercizio-5-2"><i class="fa fa-check"></i><b>8.5</b> Esercizio 5</a></li>
+<li class="chapter" data-level="8.6" data-path="esercitazione-8.html"><a href="esercitazione-8.html#esercizio-6-2"><i class="fa fa-check"></i><b>8.6</b> Esercizio 6</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-8.html"><a href="esercitazione-8.html#soluzioni-7"><i class="fa fa-check"></i>Soluzioni</a>
+<ul>
+<li class="chapter" data-level="" data-path="esercitazione-8.html"><a href="esercitazione-8.html#esercizio-1-15"><i class="fa fa-check"></i>Esercizio 1</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-8.html"><a href="esercitazione-8.html#esercizio-2-15"><i class="fa fa-check"></i>Esercizio 2</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-8.html"><a href="esercitazione-8.html#esercizio-3-11"><i class="fa fa-check"></i>Esercizio 3</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-8.html"><a href="esercitazione-8.html#esercizio-4-7"><i class="fa fa-check"></i>Esercizio 4</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-8.html"><a href="esercitazione-8.html#esercizio-5-3"><i class="fa fa-check"></i>Esercizio 5</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-8.html"><a href="esercitazione-8.html#esercizio-6-3"><i class="fa fa-check"></i>Esercizio 6</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="esercitazione-9.html"><a href="esercitazione-9.html"><i class="fa fa-check"></i><b>9</b> Esercitazione 9</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="esercitazione-9.html"><a href="esercitazione-9.html#esercizio-1-16"><i class="fa fa-check"></i><b>9.1</b> Esercizio 1</a></li>
+<li class="chapter" data-level="9.2" data-path="esercitazione-9.html"><a href="esercitazione-9.html#esercizio-2-16"><i class="fa fa-check"></i><b>9.2</b> Esercizio 2</a></li>
+<li class="chapter" data-level="9.3" data-path="esercitazione-9.html"><a href="esercitazione-9.html#esercizio-3-12"><i class="fa fa-check"></i><b>9.3</b> Esercizio 3</a></li>
+<li class="chapter" data-level="9.4" data-path="esercitazione-9.html"><a href="esercitazione-9.html#esercizio-4-8"><i class="fa fa-check"></i><b>9.4</b> Esercizio 4</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-9.html"><a href="esercitazione-9.html#soluzioni-8"><i class="fa fa-check"></i>Soluzioni</a>
+<ul>
+<li class="chapter" data-level="" data-path="esercitazione-9.html"><a href="esercitazione-9.html#esercizio-1-17"><i class="fa fa-check"></i>Esercizio 1</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-9.html"><a href="esercitazione-9.html#esercizio-2-17"><i class="fa fa-check"></i>Esercizio 2</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-9.html"><a href="esercitazione-9.html#esercizio-3-13"><i class="fa fa-check"></i>Esercizio 3</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-9.html"><a href="esercitazione-9.html#esercizio-4-9"><i class="fa fa-check"></i>Esercizio 4</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="esercitazione-10.html"><a href="esercitazione-10.html"><i class="fa fa-check"></i><b>10</b> Esercitazione 10</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="esercitazione-10.html"><a href="esercitazione-10.html#esercizio-1-18"><i class="fa fa-check"></i><b>10.1</b> Esercizio 1</a></li>
+<li class="chapter" data-level="10.2" data-path="esercitazione-10.html"><a href="esercitazione-10.html#esercizio-2-18"><i class="fa fa-check"></i><b>10.2</b> Esercizio 2</a></li>
+<li class="chapter" data-level="10.3" data-path="esercitazione-10.html"><a href="esercitazione-10.html#esercizio-3-14"><i class="fa fa-check"></i><b>10.3</b> Esercizio 3</a></li>
+<li class="chapter" data-level="10.4" data-path="esercitazione-10.html"><a href="esercitazione-10.html#esercizio-4-10"><i class="fa fa-check"></i><b>10.4</b> Esercizio 4</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-10.html"><a href="esercitazione-10.html#soluzioni-9"><i class="fa fa-check"></i>Soluzioni</a>
+<ul>
+<li class="chapter" data-level="" data-path="esercitazione-10.html"><a href="esercitazione-10.html#esercizio-1-19"><i class="fa fa-check"></i>Esercizio 1</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-10.html"><a href="esercitazione-10.html#esercizio-2-19"><i class="fa fa-check"></i>Esercizio 2</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-10.html"><a href="esercitazione-10.html#esercizio-3-15"><i class="fa fa-check"></i>Esercizio 3</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-10.html"><a href="esercitazione-10.html#esercizio-4-11"><i class="fa fa-check"></i>Esercizio 4</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="esercitazione-11.html"><a href="esercitazione-11.html"><i class="fa fa-check"></i><b>11</b> Esercitazione 11</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="esercitazione-11.html"><a href="esercitazione-11.html#esercizio-1-20"><i class="fa fa-check"></i><b>11.1</b> Esercizio 1</a></li>
+<li class="chapter" data-level="11.2" data-path="esercitazione-11.html"><a href="esercitazione-11.html#esercizio-2-20"><i class="fa fa-check"></i><b>11.2</b> Esercizio 2</a></li>
+<li class="chapter" data-level="11.3" data-path="esercitazione-11.html"><a href="esercitazione-11.html#esercizio-3-16"><i class="fa fa-check"></i><b>11.3</b> Esercizio 3</a></li>
+<li class="chapter" data-level="11.4" data-path="esercitazione-11.html"><a href="esercitazione-11.html#esercizio-4-12"><i class="fa fa-check"></i><b>11.4</b> Esercizio 4</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-11.html"><a href="esercitazione-11.html#soluzioni-10"><i class="fa fa-check"></i>Soluzioni</a>
+<ul>
+<li class="chapter" data-level="" data-path="esercitazione-11.html"><a href="esercitazione-11.html#esercizio-1-21"><i class="fa fa-check"></i>Esercizio 1</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-11.html"><a href="esercitazione-11.html#esercizio-2-21"><i class="fa fa-check"></i>Esercizio 2</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-11.html"><a href="esercitazione-11.html#esercizio-3-17"><i class="fa fa-check"></i>Esercizio 3</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-11.html"><a href="esercitazione-11.html#esercizio-4-13"><i class="fa fa-check"></i>Esercizio 4</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="esercitazione-12.html"><a href="esercitazione-12.html"><i class="fa fa-check"></i><b>12</b> Esercitazione 12</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="esercitazione-12.html"><a href="esercitazione-12.html#esercizio-1-22"><i class="fa fa-check"></i><b>12.1</b> Esercizio 1</a></li>
+<li class="chapter" data-level="12.2" data-path="esercitazione-12.html"><a href="esercitazione-12.html#esercizio-2-22"><i class="fa fa-check"></i><b>12.2</b> Esercizio 2</a></li>
+<li class="chapter" data-level="12.3" data-path="esercitazione-12.html"><a href="esercitazione-12.html#esercizio-3-18"><i class="fa fa-check"></i><b>12.3</b> Esercizio 3</a></li>
+<li class="chapter" data-level="12.4" data-path="esercitazione-12.html"><a href="esercitazione-12.html#esercizio-4-14"><i class="fa fa-check"></i><b>12.4</b> Esercizio 4</a></li>
+<li class="chapter" data-level="12.5" data-path="esercitazione-12.html"><a href="esercitazione-12.html#esercizio-5-4"><i class="fa fa-check"></i><b>12.5</b> Esercizio 5</a></li>
+<li class="chapter" data-level="12.6" data-path="esercitazione-12.html"><a href="esercitazione-12.html#esercizio-6-4"><i class="fa fa-check"></i><b>12.6</b> Esercizio 6</a></li>
+<li class="chapter" data-level="12.7" data-path="esercitazione-12.html"><a href="esercitazione-12.html#esercizio-7-2"><i class="fa fa-check"></i><b>12.7</b> Esercizio 7</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-12.html"><a href="esercitazione-12.html#soluzioni-11"><i class="fa fa-check"></i>Soluzioni</a>
+<ul>
+<li class="chapter" data-level="" data-path="esercitazione-12.html"><a href="esercitazione-12.html#esercizio-1-23"><i class="fa fa-check"></i>Esercizio 1</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-12.html"><a href="esercitazione-12.html#esercizio-2-23"><i class="fa fa-check"></i>Esercizio 2</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-12.html"><a href="esercitazione-12.html#esercizio-3-19"><i class="fa fa-check"></i>Esercizio 3</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-12.html"><a href="esercitazione-12.html#esercizio-4-15"><i class="fa fa-check"></i>Esercizio 4</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-12.html"><a href="esercitazione-12.html#esercizio-5-5"><i class="fa fa-check"></i>Esercizio 5</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-12.html"><a href="esercitazione-12.html#esercizio-6-5"><i class="fa fa-check"></i>Esercizio 6</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-12.html"><a href="esercitazione-12.html#esercizio-7-3"><i class="fa fa-check"></i>Esercizio 7</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="esercitazione-13.html"><a href="esercitazione-13.html"><i class="fa fa-check"></i><b>13</b> Esercitazione 13</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="esercitazione-13.html"><a href="esercitazione-13.html#esercizio-1-24"><i class="fa fa-check"></i><b>13.1</b> Esercizio 1</a></li>
+<li class="chapter" data-level="13.2" data-path="esercitazione-13.html"><a href="esercitazione-13.html#esercizio-3-20"><i class="fa fa-check"></i><b>13.2</b> Esercizio 3</a></li>
+<li class="chapter" data-level="13.3" data-path="esercitazione-13.html"><a href="esercitazione-13.html#esercizio-4-16"><i class="fa fa-check"></i><b>13.3</b> Esercizio 4</a></li>
+<li class="chapter" data-level="13.4" data-path="esercitazione-13.html"><a href="esercitazione-13.html#esercizio-6-6"><i class="fa fa-check"></i><b>13.4</b> Esercizio 6</a></li>
+<li class="chapter" data-level="13.5" data-path="esercitazione-13.html"><a href="esercitazione-13.html#esercizio-7-4"><i class="fa fa-check"></i><b>13.5</b> Esercizio 7</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-13.html"><a href="esercitazione-13.html#soluzioni-12"><i class="fa fa-check"></i>Soluzioni</a>
+<ul>
+<li class="chapter" data-level="" data-path="esercitazione-13.html"><a href="esercitazione-13.html#esercizio-1-25"><i class="fa fa-check"></i>Esercizio 1</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-13.html"><a href="esercitazione-13.html#esercizio-3-21"><i class="fa fa-check"></i>Esercizio 3</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-13.html"><a href="esercitazione-13.html#esercizio-4-17"><i class="fa fa-check"></i>Esercizio 4</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-13.html"><a href="esercitazione-13.html#esercizio-6-7"><i class="fa fa-check"></i>Esercizio 6</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-13.html"><a href="esercitazione-13.html#esercizio-7-5"><i class="fa fa-check"></i>Esercizio 7</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="./" target="blank"></a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Esercitazioni</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="esercitazione-6" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">6</span> Esercitazione 6<a href="esercitazione-6.html#esercitazione-6" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="esercizio-1-10" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Esercizio 1<a href="esercitazione-6.html#esercizio-1-10" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>La seguente tabella riporta le serie storiche mensili dei valori (in migliaia di Euro) dei contratti stipulati dalle due filiali di Milano (<span class="math inline">\(X\)</span>) e Torino (<span class="math inline">\(Y\)</span>) di un’azienda nel corso dell’ultimo semestre del 2017:</p>
+<table class=" lightable-classic" style="font-family: Computer Modern; width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+Mese
+</th>
+<th style="text-align:center;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+<span class="math inline">\(X\)</span>
+</th>
+<th style="text-align:center;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+<span class="math inline">\(Y\)</span>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+Luglio
+</td>
+<td style="text-align:center;">
+203
+</td>
+<td style="text-align:center;">
+231
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+Agosto
+</td>
+<td style="text-align:center;">
+158
+</td>
+<td style="text-align:center;">
+143
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+Settembre
+</td>
+<td style="text-align:center;">
+87
+</td>
+<td style="text-align:center;">
+134
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+Ottobre
+</td>
+<td style="text-align:center;">
+114
+</td>
+<td style="text-align:center;">
+123
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+Novembre
+</td>
+<td style="text-align:center;">
+225
+</td>
+<td style="text-align:center;">
+214
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;border-bottom: thin solid">
+Dicembre
+</td>
+<td style="text-align:center;border-bottom: thin solid">
+253
+</td>
+<td style="text-align:center;border-bottom: thin solid">
+249
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+Totale
+</td>
+<td style="text-align:center;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+1040
+</td>
+<td style="text-align:center;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+1094
+</td>
+</tr>
+</tbody>
+</table>
+<ol type="a">
+<li>
+Si calcolino le medie aritmetiche di <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span>.
+</li>
+<li>
+Si calcolino i tassi di variazione medi mensili di <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> per l’intero periodo.
+</li>
+<li>
+Quali conclusioni si possono dedurre dai risultati ottenuti nei due punti precedenti?
+</li>
+</ol>
+</div>
+<div id="esercizio-2-10" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Esercizio 2<a href="esercitazione-6.html#esercizio-2-10" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>I redditi annui (in migliaia di Euro) di 7 individui sono dati da
+<span class="math display">\[26,\,\,21,\,\,58,\,\,33,\,\,35,\,\,19,\,\,41.\]</span>
+Si stabilisca se la distribuzione dei redditi è simmetrica rispetto alla mediana. In caso contrario si calcoli l’indice di verso di asimmetria.</p>
+</div>
+<div id="esercizio-3-8" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Esercizio 3<a href="esercitazione-6.html#esercizio-3-8" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>La seguente tabella riporta gli esiti di un esame <span class="math inline">\(X\)</span> di 484 studenti suddivisi in base al corso di studi <span class="math inline">\(Y\)</span>.</p>
+<table class=" lightable-classic" style="font-family: Computer Modern; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="empty-cells: hide;font-weight: bold;border-top: thin solid;border-bottom: thin solid" colspan="1">
+</th>
+<th style="padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; border-top: font-weight: bold;border-top: thin solid;border-bottom: thin solid" colspan="3">
+<div style="border-bottom: 1px solid #111111; margin-bottom: -1px; ">
+<span class="math inline">\(Y\)</span>
+</div>
+</th>
+<th style="empty-cells: hide;font-weight: bold;border-top: thin solid;border-bottom: thin solid" colspan="1">
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;font-weight: bold;border-left:1px solid;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+<span class="math inline">\(X\)</span>
+</td>
+<td style="text-align:center;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+C1
+</td>
+<td style="text-align:center;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+C2
+</td>
+<td style="text-align:center;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+C3
+</td>
+<td style="text-align:center;font-weight: bold;border-left:1px solid;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+Totale
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;border-left:1px solid;border-right:1px solid;">
+Insufficiente
+</td>
+<td style="text-align:center;">
+39
+</td>
+<td style="text-align:center;">
+42
+</td>
+<td style="text-align:center;">
+24
+</td>
+<td style="text-align:center;font-weight: bold;border-left:1px solid;border-right:1px solid;">
+105
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;border-left:1px solid;border-right:1px solid;">
+Sufficiente
+</td>
+<td style="text-align:center;">
+45
+</td>
+<td style="text-align:center;">
+65
+</td>
+<td style="text-align:center;">
+76
+</td>
+<td style="text-align:center;font-weight: bold;border-left:1px solid;border-right:1px solid;">
+186
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;border-left:1px solid;border-right:1px solid;">
+Buono
+</td>
+<td style="text-align:center;">
+53
+</td>
+<td style="text-align:center;">
+44
+</td>
+<td style="text-align:center;">
+39
+</td>
+<td style="text-align:center;font-weight: bold;border-left:1px solid;border-right:1px solid;">
+136
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;border-left:1px solid;border-right:1px solid;border-bottom: thin solid">
+Ottimo
+</td>
+<td style="text-align:center;border-bottom: thin solid">
+23
+</td>
+<td style="text-align:center;border-bottom: thin solid">
+18
+</td>
+<td style="text-align:center;border-bottom: thin solid">
+16
+</td>
+<td style="text-align:center;font-weight: bold;border-left:1px solid;border-right:1px solid;border-bottom: thin solid">
+57
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;border-left:1px solid;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+Totale
+</td>
+<td style="text-align:center;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+160
+</td>
+<td style="text-align:center;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+169
+</td>
+<td style="text-align:center;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+155
+</td>
+<td style="text-align:center;font-weight: bold;border-left:1px solid;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+484
+</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>
+Si determini la mediana di <span class="math inline">\(X\)</span>.
+</li>
+<li>
+Si determini la moda di <span class="math inline">\(Y\)</span> e se ne valuti la rappresentatività.
+</li>
+<li>
+Si calcolino le distribuzioni di frequenze relative parziali e la distribuzione di frequenze relative marginali del carattere <span class="math inline">\(X\)</span>.
+</li>
+<li>
+Si stabilisca, giustificando la risposta, se fra i due caratteri considerati esiste indipendenza distributiva. In caso di risposta negativa, si costruisca la tabella delle frequenze congiunte in modo che i due caratteri risultino indipendenti.
+</li>
+<li>
+Si fornisca un indice che misuri il grado di dipendenza tra <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span>.
+</li>
+</ol>
+<p>Si consideri ora il carattere <span class="math inline">\(Z=\)</span>“<em>voto conseguito all’esame</em>”, esso può essere organizzato in classi in base alle modalità del carattere <span class="math inline">\(X\)</span>.</p>
+<p><span class="math display">\[\begin{equation*}Z=\begin{cases}[0,17]\quad\,\,\, \mathrm{per\ } X=\mathrm{``Insufficiente&quot;}\\ [18,21]\quad \mathrm{per\ } X=\mathrm{``Sufficiente&quot;}\\ [22,26]\quad \mathrm{per\ } X=\mathrm{``Buono&quot;}\\ [27,30]\quad\mathrm{per\ } X=\mathrm{``Ottimo&quot;}\end{cases}\end{equation*}\]</span></p>
+<ol start="6">
+<li>
+Si valuti il grado di dipendenza in media di <span class="math inline">\(Z\)</span> da <span class="math inline">\(Y\)</span> commentando il risultato ottenuto.
+</li>
+</ol>
+</div>
+<div id="soluzioni-5" class="section level2 unnumbered hasAnchor">
+<h2>Soluzioni<a href="esercitazione-6.html#soluzioni-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="esercizio-1-11" class="section level3 unnumbered hasAnchor">
+<h3>Esercizio 1<a href="esercitazione-6.html#esercizio-1-11" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol type="a">
+<li>
+<span class="math display">\[\overline{x}=\frac{1040}{6}=173.3333\,\,\mathrm{mila\ Euro\ al\ mese}\]</span> <span class="math display">\[\overline{y}=\frac{1094}{6}=182.3333\,\,\mathrm{mila\ Euro\ al\ mese}\]</span>
+</li>
+<li>
+<span class="math display">\[\overline{V}_X=\sqrt[5]{\frac{253}{203}}-1=0.0450\]</span> <span class="math display">\[\overline{V}_Y=\sqrt[5]{\frac{249}{231}}-1=0.0151\]</span>
+</li>
+<li>
+<p>Mediamente, ogni mese la filiale di Torino a prodotto contratti per un valore superiore rispetto alla filiale di Milano.</p>
+Mediamente il valore dei contratti prodotti dalla filiale di Milano è cresciuto del 4.5% al mese, mentre per quelli prodotti dalla filiale di Torino il valore è cresciuto mediante dell’1.51% al mese.
+</li>
+</ol>
+</div>
+<div id="esercizio-2-11" class="section level3 unnumbered hasAnchor">
+<h3>Esercizio 2<a href="esercitazione-6.html#esercizio-2-11" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Valori ordinati: <span class="math display">\[19,\,\, 21,\,\, 26,\,\, \mathbf{\underline{33}},\,\, 35,\,\, 41,\,\, 58\]</span>
+La mediana è pari a 33. Ora si immagini che i dati siano una distribuzione di frequenze con frequenze unitarie e facciamo la rappresentazione grafica.</p>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="esercitazione-6.html#cb157-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span>
+<span id="cb157-2"><a href="esercitazione-6.html#cb157-2" aria-hidden="true" tabindex="-1"></a>val <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">26</span>,<span class="dv">21</span>,<span class="dv">58</span>,<span class="dv">33</span>,<span class="dv">35</span>,<span class="dv">19</span>,<span class="dv">41</span>)</span>
+<span id="cb157-3"><a href="esercitazione-6.html#cb157-3" aria-hidden="true" tabindex="-1"></a>val <span class="ot">&lt;-</span> <span class="fu">sort</span>(val)</span>
+<span id="cb157-4"><a href="esercitazione-6.html#cb157-4" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">length</span>(val)</span>
+<span id="cb157-5"><a href="esercitazione-6.html#cb157-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(val, <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">/</span>n,n), <span class="at">xlab=</span><span class="st">&#39;X&#39;</span>, <span class="at">ylab=</span><span class="st">&#39;frequenze relative specifiche&#39;</span>, </span>
+<span id="cb157-6"><a href="esercitazione-6.html#cb157-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">type =</span> <span class="st">&#39;h&#39;</span>, <span class="at">axes =</span> F, <span class="at">lwd=</span><span class="dv">2</span>)</span>
+<span id="cb157-7"><a href="esercitazione-6.html#cb157-7" aria-hidden="true" tabindex="-1"></a><span class="fu">segments</span>(<span class="fu">median</span>(val),<span class="dv">0</span>,<span class="fu">median</span>(val),<span class="dv">1</span><span class="sc">/</span>n, <span class="at">col =</span> <span class="st">&#39;red&#39;</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb157-8"><a href="esercitazione-6.html#cb157-8" aria-hidden="true" tabindex="-1"></a><span class="fu">box</span>()</span>
+<span id="cb157-9"><a href="esercitazione-6.html#cb157-9" aria-hidden="true" tabindex="-1"></a><span class="fu">axis</span>(<span class="dv">1</span>, <span class="at">at =</span> val, <span class="at">labels =</span> val)</span>
+<span id="cb157-10"><a href="esercitazione-6.html#cb157-10" aria-hidden="true" tabindex="-1"></a><span class="fu">axis</span>(<span class="dv">2</span>, <span class="at">at =</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="fl">0.2</span>))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-76-1.png" width="960" style="display: block; margin: auto;" />
+Affinché la distribuzione sia simmetrica deve verificarsi che <span class="math inline">\(frs(Me+c)=frs(Me-c),\,\forall c&gt;0.\)</span> Assumendo <span class="math inline">\(c=2\)</span>, <span class="math inline">\(frs(Me+c)=frs(35)=0.142\neq frs(Me-c)=frs(31)=0\)</span>. Quindi la distribuzione non è simmetrica rispetto la mediana.</p>
+<p>Inoltre, si nota che le osservazioni a destra della mediana si allontanano di più di quelle alla sua sinistra, pertanto ci possiamo aspettare asimmetria positiva (media maggiore della mediana).</p>
+<p>Per verificare ciò calcoliamo l’indice di verso di asimmetria: <span class="math display">\[a_1=(M_1-Me)=(33.2857-33)=0.2857\]</span></p>
+</div>
+<div id="esercizio-3-9" class="section level3 unnumbered hasAnchor">
+<h3>Esercizio 3<a href="esercitazione-6.html#esercizio-3-9" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<table class=" lightable-classic" style="font-family: Computer Modern; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="empty-cells: hide;font-weight: bold;border-top: thin solid;border-bottom: thin solid" colspan="1">
+</th>
+<th style="padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; border-top: font-weight: bold;border-top: thin solid;border-bottom: thin solid" colspan="3">
+<div style="border-bottom: 1px solid #111111; margin-bottom: -1px; ">
+<span class="math inline">\(Y\)</span>
+</div>
+</th>
+<th style="empty-cells: hide;font-weight: bold;border-top: thin solid;border-bottom: thin solid" colspan="1">
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;font-weight: bold;border-left:1px solid;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+<span class="math inline">\(X\)</span>
+</td>
+<td style="text-align:center;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+C1
+</td>
+<td style="text-align:center;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+C2
+</td>
+<td style="text-align:center;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+C3
+</td>
+<td style="text-align:center;font-weight: bold;border-left:1px solid;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+Totale
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;border-left:1px solid;border-right:1px solid;">
+Insufficiente
+</td>
+<td style="text-align:center;">
+39
+</td>
+<td style="text-align:center;">
+42
+</td>
+<td style="text-align:center;">
+24
+</td>
+<td style="text-align:center;font-weight: bold;border-left:1px solid;border-right:1px solid;">
+105
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;border-left:1px solid;border-right:1px solid;">
+Sufficiente
+</td>
+<td style="text-align:center;">
+45
+</td>
+<td style="text-align:center;">
+65
+</td>
+<td style="text-align:center;">
+76
+</td>
+<td style="text-align:center;font-weight: bold;border-left:1px solid;border-right:1px solid;">
+186
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;border-left:1px solid;border-right:1px solid;">
+Buono
+</td>
+<td style="text-align:center;">
+53
+</td>
+<td style="text-align:center;">
+44
+</td>
+<td style="text-align:center;">
+39
+</td>
+<td style="text-align:center;font-weight: bold;border-left:1px solid;border-right:1px solid;">
+136
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;border-left:1px solid;border-right:1px solid;border-bottom: thin solid">
+Ottimo
+</td>
+<td style="text-align:center;border-bottom: thin solid">
+23
+</td>
+<td style="text-align:center;border-bottom: thin solid">
+18
+</td>
+<td style="text-align:center;border-bottom: thin solid">
+16
+</td>
+<td style="text-align:center;font-weight: bold;border-left:1px solid;border-right:1px solid;border-bottom: thin solid">
+57
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;border-left:1px solid;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+Totale
+</td>
+<td style="text-align:center;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+160
+</td>
+<td style="text-align:center;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+169
+</td>
+<td style="text-align:center;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+155
+</td>
+<td style="text-align:center;font-weight: bold;border-left:1px solid;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+484
+</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>
+La posizione della mediana è <span class="math inline">\(\frac{N+1}{2}=242.2\)</span>. Le frequenze cumulate del carattere <span class="math inline">\(X\)</span> sono:
+<table class=" lightable-classic" style="font-family: Computer Modern; width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+<span class="math inline">\(X\)</span>
+</th>
+<th style="text-align:center;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+<span class="math inline">\(C_i\)</span>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+Insufficiente
+</td>
+<td style="text-align:center;">
+105
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+Sufficiente
+</td>
+<td style="text-align:center;">
+291
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+Buono
+</td>
+<td style="text-align:center;">
+427
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;border-bottom: thin solid">
+Ottimo
+</td>
+<td style="text-align:center;border-bottom: thin solid">
+484
+</td>
+</tr>
+</tbody>
+</table>
+Pertanto, la mediana corrisponde alla modalità “<em>Sufficiente</em>”.
+</li>
+<li>
+La moda del carattere Y corrisponde alla modalità con frequenza più elevata, essa è <em>C2</em> con 169 studenti. Essa rappresenta il 34.92% della popolazione.
+</li>
+<li>
+<table class=" lightable-classic" style="font-family: Computer Modern; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="empty-cells: hide;font-weight: bold;border-top: thin solid;border-bottom: thin solid" colspan="1">
+</th>
+<th style="padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; border-top: font-weight: bold;border-top: thin solid;border-bottom: thin solid" colspan="3">
+<div style="border-bottom: 1px solid #111111; margin-bottom: -1px; ">
+<span class="math inline">\(Y\)</span>
+</div>
+</th>
+<th style="empty-cells: hide;font-weight: bold;border-top: thin solid;border-bottom: thin solid" colspan="1">
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;font-weight: bold;border-left:1px solid;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+<span class="math inline">\(X\)</span>
+</td>
+<td style="text-align:center;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+C1
+</td>
+<td style="text-align:center;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+C2
+</td>
+<td style="text-align:center;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+C3
+</td>
+<td style="text-align:center;font-weight: bold;border-left:1px solid;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+Totale
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;border-left:1px solid;border-right:1px solid;">
+Insufficiente
+</td>
+<td style="text-align:center;">
+0.2438
+</td>
+<td style="text-align:center;">
+0.2485
+</td>
+<td style="text-align:center;">
+0.1548
+</td>
+<td style="text-align:center;font-weight: bold;border-left:1px solid;border-right:1px solid;">
+0.2169
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;border-left:1px solid;border-right:1px solid;">
+Sufficiente
+</td>
+<td style="text-align:center;">
+0.2812
+</td>
+<td style="text-align:center;">
+0.3846
+</td>
+<td style="text-align:center;">
+0.4903
+</td>
+<td style="text-align:center;font-weight: bold;border-left:1px solid;border-right:1px solid;">
+0.3843
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;border-left:1px solid;border-right:1px solid;">
+Buono
+</td>
+<td style="text-align:center;">
+0.3312
+</td>
+<td style="text-align:center;">
+0.2604
+</td>
+<td style="text-align:center;">
+0.2516
+</td>
+<td style="text-align:center;font-weight: bold;border-left:1px solid;border-right:1px solid;">
+0.281
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;border-left:1px solid;border-right:1px solid;border-bottom: thin solid">
+Ottimo
+</td>
+<td style="text-align:center;border-bottom: thin solid">
+0.1438
+</td>
+<td style="text-align:center;border-bottom: thin solid">
+0.1065
+</td>
+<td style="text-align:center;border-bottom: thin solid">
+0.1032
+</td>
+<td style="text-align:center;font-weight: bold;border-left:1px solid;border-right:1px solid;border-bottom: thin solid">
+0.1178
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;border-left:1px solid;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+Totale
+</td>
+<td style="text-align:center;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+1
+</td>
+<td style="text-align:center;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+1
+</td>
+<td style="text-align:center;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+1
+</td>
+<td style="text-align:center;font-weight: bold;border-left:1px solid;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+1
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+Le distribuzioni parziali di <span class="math inline">\(X\)</span> sono tutte diverse tra di loro e sono diverse dalla distribuzione marginale, pertanto <span class="math inline">\(X\)</span> non è indipendente in distribuzione da <span class="math inline">\(Y\)</span>. Nel caso non si fossero già calcolate le distribuzioni parziali per rispondere a questa domanda è sufficiente calcolare una frequenza congiunta teorica nel caso di indipendenza distributiva <span class="math inline">\(\hat{n}_{ij}=\frac{n_{i.}n_{.j}}{N}\)</span> e mostrare che questa è diversa da quelle effettive. Si noti che è sufficiente trovare un’eccezione per confermare che non c’è indipendenza distributiva.
+<table class=" lightable-classic" style="font-family: Computer Modern; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="empty-cells: hide;font-weight: bold;border-top: thin solid;border-bottom: thin solid" colspan="1">
+</th>
+<th style="padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; border-top: font-weight: bold;border-top: thin solid;border-bottom: thin solid" colspan="3">
+<div style="border-bottom: 1px solid #111111; margin-bottom: -1px; ">
+<span class="math inline">\(Y\)</span>
+</div>
+</th>
+<th style="empty-cells: hide;font-weight: bold;border-top: thin solid;border-bottom: thin solid" colspan="1">
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;font-weight: bold;border-left:1px solid;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+<span class="math inline">\(X\)</span>
+</td>
+<td style="text-align:center;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+C1
+</td>
+<td style="text-align:center;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+C2
+</td>
+<td style="text-align:center;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+C3
+</td>
+<td style="text-align:center;font-weight: bold;border-left:1px solid;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+Totale
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;border-left:1px solid;border-right:1px solid;">
+Insufficiente
+</td>
+<td style="text-align:center;">
+34.71
+</td>
+<td style="text-align:center;">
+36.66
+</td>
+<td style="text-align:center;">
+33.63
+</td>
+<td style="text-align:center;font-weight: bold;border-left:1px solid;border-right:1px solid;">
+105
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;border-left:1px solid;border-right:1px solid;">
+Sufficiente
+</td>
+<td style="text-align:center;">
+61.49
+</td>
+<td style="text-align:center;">
+64.95
+</td>
+<td style="text-align:center;">
+59.57
+</td>
+<td style="text-align:center;font-weight: bold;border-left:1px solid;border-right:1px solid;">
+186
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;border-left:1px solid;border-right:1px solid;">
+Buono
+</td>
+<td style="text-align:center;">
+44.96
+</td>
+<td style="text-align:center;">
+47.49
+</td>
+<td style="text-align:center;">
+43.55
+</td>
+<td style="text-align:center;font-weight: bold;border-left:1px solid;border-right:1px solid;">
+136
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;border-left:1px solid;border-right:1px solid;border-bottom: thin solid">
+Ottimo
+</td>
+<td style="text-align:center;border-bottom: thin solid">
+18.84
+</td>
+<td style="text-align:center;border-bottom: thin solid">
+19.9
+</td>
+<td style="text-align:center;border-bottom: thin solid">
+18.25
+</td>
+<td style="text-align:center;font-weight: bold;border-left:1px solid;border-right:1px solid;border-bottom: thin solid">
+57
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;border-left:1px solid;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+Totale
+</td>
+<td style="text-align:center;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+160
+</td>
+<td style="text-align:center;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+169
+</td>
+<td style="text-align:center;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+155
+</td>
+<td style="text-align:center;font-weight: bold;border-left:1px solid;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+484
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><span class="math display">\[M_2\left(|\rho|\right)=\left\{\frac{1}{N}\sum_{i=1}^r\sum_{j=1}^c|\rho_{ij}|^2\cdot\hat{n}_{ij}\right\}^{\frac{1}{2}}=\left\{\frac{1}{N}\sum_{i=1}^r\sum_{j=1}^c\left|\frac{C_{ij}}{\hat{n}_{ij}}\right|^2\cdot\hat{n}_{ij}\right\}^{\frac{1}{2}}=\left\{\frac{1}{N}\sum_{i=1}^r\sum_{j=1}^c\frac{C_{ij}^2}{\hat{n}_{ij}}\right\}^{\frac{1}{2}}\]</span></p>
+<p>Contingenze assolute <span class="math inline">\(C_{ij}=n_{ij}-\hat{n}_{ij}\)</span></p>
+<table class=" lightable-classic" style="font-family: Computer Modern; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="empty-cells: hide;font-weight: bold;border-top: thin solid;border-bottom: thin solid" colspan="1">
+</th>
+<th style="padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; border-top: font-weight: bold;border-top: thin solid;border-bottom: thin solid" colspan="3">
+<div style="border-bottom: 1px solid #111111; margin-bottom: -1px; ">
+<span class="math inline">\(Y\)</span>
+</div>
+</th>
+<th style="empty-cells: hide;font-weight: bold;border-top: thin solid;border-bottom: thin solid" colspan="1">
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;font-weight: bold;border-left:1px solid;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+<span class="math inline">\(X\)</span>
+</td>
+<td style="text-align:center;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+C1
+</td>
+<td style="text-align:center;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+C2
+</td>
+<td style="text-align:center;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+C3
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+Totale
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;border-left:1px solid;border-right:1px solid;">
+Insufficiente
+</td>
+<td style="text-align:center;">
+4.29
+</td>
+<td style="text-align:center;">
+5.34
+</td>
+<td style="text-align:center;">
+-9.63
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;border-left:1px solid;border-right:1px solid;">
+Sufficiente
+</td>
+<td style="text-align:center;">
+-16.49
+</td>
+<td style="text-align:center;">
+0.05
+</td>
+<td style="text-align:center;">
+16.43
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;border-left:1px solid;border-right:1px solid;">
+Buono
+</td>
+<td style="text-align:center;">
+8.04
+</td>
+<td style="text-align:center;">
+-3.49
+</td>
+<td style="text-align:center;">
+-4.55
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;border-left:1px solid;border-right:1px solid;border-bottom: thin solid">
+Ottimo
+</td>
+<td style="text-align:center;border-bottom: thin solid">
+4.16
+</td>
+<td style="text-align:center;border-bottom: thin solid">
+-1.9
+</td>
+<td style="text-align:center;border-bottom: thin solid">
+-2.25
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-bottom: thin solid">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+Totale
+</td>
+<td style="text-align:center;border-top: thin solid;border-bottom: thin solid">
+0
+</td>
+<td style="text-align:center;border-top: thin solid;border-bottom: thin solid">
+0
+</td>
+<td style="text-align:center;border-top: thin solid;border-bottom: thin solid">
+0
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0
+</td>
+</tr>
+</tbody>
+</table>
+<span class="math display">\[C_{ij}^2\]</span>
+<table class=" lightable-classic" style="font-family: Computer Modern; width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="empty-cells: hide;font-weight: bold;border-top: thin solid;border-bottom: thin solid" colspan="1">
+</th>
+<th style="padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; border-top: font-weight: bold;border-top: thin solid;border-bottom: thin solid" colspan="3">
+<div style="border-bottom: 1px solid #111111; margin-bottom: -1px; ">
+<span class="math inline">\(Y\)</span>
+</div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;font-weight: bold;border-left:1px solid;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+<span class="math inline">\(X\)</span>
+</td>
+<td style="text-align:center;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+C1
+</td>
+<td style="text-align:center;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+C2
+</td>
+<td style="text-align:center;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+C3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;border-left:1px solid;border-right:1px solid;">
+Insufficiente
+</td>
+<td style="text-align:center;">
+18.4
+</td>
+<td style="text-align:center;">
+28.52
+</td>
+<td style="text-align:center;border-right:1px solid;">
+92.74
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;border-left:1px solid;border-right:1px solid;">
+Sufficiente
+</td>
+<td style="text-align:center;">
+271.92
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;border-right:1px solid;">
+269.94
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;border-left:1px solid;border-right:1px solid;">
+Buono
+</td>
+<td style="text-align:center;">
+64.64
+</td>
+<td style="text-align:center;">
+12.18
+</td>
+<td style="text-align:center;border-right:1px solid;">
+20.7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;border-left:1px solid;border-right:1px solid;border-bottom: thin solid">
+Ottimo
+</td>
+<td style="text-align:center;border-bottom: thin solid">
+17.31
+</td>
+<td style="text-align:center;border-bottom: thin solid">
+3.61
+</td>
+<td style="text-align:center;border-right:1px solid;border-bottom: thin solid">
+5.06
+</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">\[\frac{C_{ij}^2}{\hat{n}_{ij}}\]</span></p>
+<table class=" lightable-classic" style="font-family: Computer Modern; width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="empty-cells: hide;font-weight: bold;border-top: thin solid;border-bottom: thin solid" colspan="1">
+</th>
+<th style="padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; border-top: font-weight: bold;border-top: thin solid;border-bottom: thin solid" colspan="3">
+<div style="border-bottom: 1px solid #111111; margin-bottom: -1px; ">
+<span class="math inline">\(Y\)</span>
+</div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;font-weight: bold;border-left:1px solid;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+<span class="math inline">\(X\)</span>
+</td>
+<td style="text-align:center;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+C1
+</td>
+<td style="text-align:center;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+C2
+</td>
+<td style="text-align:center;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+C3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;border-left:1px solid;border-right:1px solid;">
+Insufficiente
+</td>
+<td style="text-align:center;">
+0.5302
+</td>
+<td style="text-align:center;">
+0.7778
+</td>
+<td style="text-align:center;border-right:1px solid;">
+2.7576
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;border-left:1px solid;border-right:1px solid;">
+Sufficiente
+</td>
+<td style="text-align:center;">
+4.4222
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;border-right:1px solid;">
+4.5316
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;border-left:1px solid;border-right:1px solid;">
+Buono
+</td>
+<td style="text-align:center;">
+1.4378
+</td>
+<td style="text-align:center;">
+0.2565
+</td>
+<td style="text-align:center;border-right:1px solid;">
+0.4754
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;border-left:1px solid;border-right:1px solid;border-bottom: thin solid">
+Ottimo
+</td>
+<td style="text-align:center;border-bottom: thin solid">
+0.9186
+</td>
+<td style="text-align:center;border-bottom: thin solid">
+0.1814
+</td>
+<td style="text-align:center;border-right:1px solid;border-bottom: thin solid">
+0.2774
+</td>
+</tr>
+</tbody>
+</table>
+<span class="math display">\[M_2(|\rho|)=\sqrt{\frac{16.5665}{484}}=0.1850\]</span> mediamente le frequenze effettive si discostano da quelle teoriche di indipendenza distributiva del 18.5%.
+</li>
+<li>
+È necessario sostituire le classi di <span class="math inline">\(Z\)</span> con il loro valore centrale per poter calcolare le medie parziali.
+<table class=" lightable-classic" style="font-family: Computer Modern; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="empty-cells: hide;font-weight: bold;border-top: thin solid;border-bottom: thin solid" colspan="1">
+</th>
+<th style="padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; border-top: font-weight: bold;border-top: thin solid;border-bottom: thin solid" colspan="3">
+<div style="border-bottom: 1px solid #111111; margin-bottom: -1px; ">
+<span class="math inline">\(Y\)</span>
+</div>
+</th>
+<th style="empty-cells: hide;font-weight: bold;border-top: thin solid;border-bottom: thin solid" colspan="1">
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;font-weight: bold;border-left:1px solid;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+<span class="math inline">\(Z\)</span>
+</td>
+<td style="text-align:center;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+C1
+</td>
+<td style="text-align:center;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+C2
+</td>
+<td style="text-align:center;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+C3
+</td>
+<td style="text-align:center;font-weight: bold;border-left:1px solid;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+Totale
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;border-left:1px solid;border-right:1px solid;">
+8.5
+</td>
+<td style="text-align:center;">
+39
+</td>
+<td style="text-align:center;">
+42
+</td>
+<td style="text-align:center;">
+24
+</td>
+<td style="text-align:center;font-weight: bold;border-left:1px solid;border-right:1px solid;">
+105
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;border-left:1px solid;border-right:1px solid;">
+19.5
+</td>
+<td style="text-align:center;">
+45
+</td>
+<td style="text-align:center;">
+65
+</td>
+<td style="text-align:center;">
+76
+</td>
+<td style="text-align:center;font-weight: bold;border-left:1px solid;border-right:1px solid;">
+186
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;border-left:1px solid;border-right:1px solid;">
+24
+</td>
+<td style="text-align:center;">
+53
+</td>
+<td style="text-align:center;">
+44
+</td>
+<td style="text-align:center;">
+39
+</td>
+<td style="text-align:center;font-weight: bold;border-left:1px solid;border-right:1px solid;">
+136
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;border-left:1px solid;border-right:1px solid;border-bottom: thin solid">
+28.5
+</td>
+<td style="text-align:center;border-bottom: thin solid">
+23
+</td>
+<td style="text-align:center;border-bottom: thin solid">
+18
+</td>
+<td style="text-align:center;border-bottom: thin solid">
+16
+</td>
+<td style="text-align:center;font-weight: bold;border-left:1px solid;border-right:1px solid;border-bottom: thin solid">
+57
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;border-left:1px solid;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+Totale
+</td>
+<td style="text-align:center;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+160
+</td>
+<td style="text-align:center;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+169
+</td>
+<td style="text-align:center;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+155
+</td>
+<td style="text-align:center;font-weight: bold;border-left:1px solid;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+484
+</td>
+</tr>
+</tbody>
+</table>
+<p>Medie parziali <span class="math display">\[\overline{z}_1=19.6; \quad \overline{z}_2=18.9;\quad   \overline{z}_3=19.86\]</span></p>
+<p>Media complessiva di Z <span class="math display">\[\overline{z}=19.44\]</span></p>
+<p>Varianze parziali di Z <span class="math display">\[\sigma_1^2=47.96;\quad \sigma_2^2=43.47;\quad \sigma_3^2=31.99\]</span></p>
+<p>Varianza complessiva di Z <span class="math display">\[\sigma^2=41.4\]</span></p>
+<p>Varianza fra le medie <span class="math display">\[\begin{align*}V_F &amp; =\frac{\displaystyle\sum_{j=1}^c(\overline{z}_j-\overline{z})^2 n_{.j}}{N}=\\ &amp;=\frac{(19.6-19.44)^2\cdot 160+(18.9-19.44)^2\cdot 169+(19.86-19.44)^2\cdot 155}{484}=\\ &amp;=\frac{80.7312}{484}=0.1668 \end{align*}\]</span></p>
+<p>Varianza nei gruppi <span class="math display">\[V_N=\frac{\displaystyle\sum_{j=1}^c\sigma_j^2 n_{.j}}{N}=\frac{47.96\cdot160+43.47\cdot169+31.99\cdot155}{484}=\frac{20037.6}{484}=41.4\]</span></p>
+<p>Verifica <span class="math display">\[V_T=\sigma_Z^2=\frac{198924}{484}=41.4\simeq V_F+V_N=\frac{20118.3312}{484}=41.5668\]</span></p>
+<p>Le differenze sono dovute a errori di arrotondamento.</p>
+<p><span class="math display">\[\eta_{Z│Y}^2=\frac{V_F}{V_T} =\frac{0.1638}{40.15}=0.004\]</span>
+Il grado di dipendenza in media è pari allo 0.4% del suo massimo valore teorico.
+(consiglio: a meno che non venga chiesto di verificare la scomposizione della varianza, scegliere tra <span class="math inline">\(V_T\)</span>, <span class="math inline">\(V_N\)</span> e <span class="math inline">\(V_F\)</span> e scegliere le due che si preferisce e ricavare la terza dalle altre due).</p>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="esercitazione-5.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="esercitazione-7.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

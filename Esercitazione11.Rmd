@@ -1,0 +1,173 @@
+# Esercitazione 11
+
+## Esercizio 1
+
+Ad una fermata, l’orario di arrivo dell’autobus fra le 8:00 e le 8:10 segue la legge uniforme continua. Avendo indicato con $X$ il tempo trascorso dalle 8:00 (in minuti), 
+
+<ol type='a'> 
+  <li>	Si determini la funzione di ripartizione di X e la si rappresenti graficamente.</li>
+  <li>	Si calcoli la probabilità che l’autobus passi fra le 8:04 e le 8:08.</li>
+  <li> Supponendo che uno studente arrivi alle 8:06, si determini la probabilità che l’autobus sia già passato.</li>
+  <li>Considerando 6 mattine, si calcoli la probabilità che in almeno 3 mattine l’autobus passi prima delle 8:06.</li>
+</ol>
+
+## Esercizio 2
+
+In un magazzino ortofrutticolo ci sono due lotti di patate: il lotto $A$, che costituisce il 30% della scorta, formato da patate dal peso medio di 1 $hg$ e deviazione standard pari a 0.3 $hg$; il lotto $B$, formato da patate dal peso medio di 1.5 $hg$ e deviazione standard pari a 0.2 $hg$. Si supponga che il peso di ciascun lotto sia distribuito normalmente.
+
+<ol type='a'> 
+  <li>Si lancia una moneta e se esce testa si prende una patata dal lotto $A$, altrimenti dal lotto $B$. Si calcoli la probabilità che il peso sia superiore a 1.3 $hg$.</li>
+  <li>Si è estratta una patata il cui peso è superiore a 1.3 $kg$. Qual è la probabilità che il lancio della moneta abbia dato croce?</li>
+  <li>Si calcolino le probabilità del punto a) e del punto b) supponendo che il lotto da cui si estrae venga selezionato con probabilità proporzionale alla composizione della scorta del magazzino.</li>
+</ol>
+
+## Esercizio 3
+
+L’altezza media dei dipendenti di un’azienda è di 179 $cm$ e presenta una deviazione standard pari a 7 $cm$. Si supponga che l’altezza dei dipendenti si distribuisca come una v.c. Normale.
+
+<ol type='a'> 
+  <li>Si determini qual è la probabilità che l’altezza di un dipendente si discosti almeno di 10 $cm$ dal valore medio.</li>
+  <li>Si confronti il risultato precedente con la diseguaglianza di Chebyshev.</li>
+  <li>Si determinino il terzo decile ed il settantottesimo percentile.</li>
+</ol>
+	
+## Esercizio 4
+
+Si analizza un processo produttivo in base al contenuto medio di zucchero. Si osserva che il 1.5% dei prodotti viene scartato perché hanno un contenuto di zucchero inferiore a 35 grammi: mentre il 3% viene scartato perché presentano un contenuto di zucchero superiore a 50 grammi.
+
+<ol type='a'> 
+  <li>Ammettendo che il contenuto di zucchero abbia una distribuzione normale, qual è il modello normale che meglio rappresenta l’intero processo produttivo.</li>
+  <li>Sapendo che nell’arco di un minuto vengono realizzati 50 prodotti (ogni prodotto viene realizzato indipendentemente dagli altri) determinare la probabilità che siano scartati al più tre prodotti al minuto. </li>
+</ol>
+	
+
+## Soluzioni {-}
+
+### Esercizio 1 {-}
+
+<ol type='a'> 
+  <li>$$X\sim UnifContinua(a=0,b=10)$$ $$F(x)=\begin{cases}\frac{x-a}{b-a},& \mathrm{per\ } a\leq x\leq b \\ 0 & \mathrm{altrove}\end{cases}$$ $$F(x)=\begin{cases}\frac{x}{10},  & \mathrm{per\ }  0\leq x\leq10 \\ 0, &  \mathrm{altrove} \end{cases}$$</li>
+  <li>$$P(4<X\leq8)=F(8)-F(4)=\frac{8}{10}-\frac{4}{10}=\frac{4}{10}=0.4$$</li>
+  <li>$$	P(X\leq6)=P(X\leq6)=F(6)=\frac{6}{10}=0.6$$</li>
+  <li><center>$Y=$"*"numero di volte che l'autobus passa prima delle 8:06 in 6 prove indipendenti" *"</center> $$Y\sim Binom(n=6,p=0.6)$$ $$P(Y\geq3)=1-P(X<3)=1-f_Y(0)+f_Y(1)+f_Y(2)$$ $$f_Y (0)=\begin{pmatrix}6\\0\end{pmatrix} 0.6^0\cdot 0.4^6=0.4^6=0.0041$$ $$f_Y (0)=\begin{pmatrix}6\\1\end{pmatrix} 0.6^1 \cdot0.4^5=6\cdot0.6\cdot0.4^5=0.0369$$ $$\require{cancel}f_Y (0)=\begin{pmatrix}6\\2\end{pmatrix} 0.6^2 \cdot0.4^4=\frac{6\cdot 5\cdot \cancel{4!}}{\cancel{4!}\cdot2}0.6^2\cdot 0.4^4=15\cdot0.6^2\cdot0.4^4=0.1382$$ $$P(Y\geq3)=1-0.0041-0.0369-0.1382=0.8208$$</li>
+</ol>
+
+
+
+
+
+### Esercizio 2 {-}
+
+<ol type='a'> 
+  <li>$$	P(A)=P(\overline{A})=0.5$$ $$X|A\sim Norm(\mu=1,\sigma^2=0.09)$$ $$X|\overline{A}\sim Norm(\mu=1.5,\sigma^2=0.04)$$ $$P(X>1.3)=P(X>1.3│A)P(A)+P(X>1.3│\overline{A})P(\overline{A})$$ $$P(X>1.3|A)=1-\Phi\left(\frac{1.3-1}{0.3}\right)=1-\Phi(1)= 1-0.8413=0.1587$$ $$P(X>1.3│\overline{A})=1-\Phi\left(\frac{1.3-1.5}{0.2}\right)=1-\Phi(-1)=1-[1-\Phi(1)]=\Phi(1)=0.8416$$ $$P(X>1.3)=0.1587\cdot0.5+0.8416\cdot0.5=0.5$$
+```{r}
+# E2
+
+0.3^2
+1-0.8413
+```
+  
+  </li>
+  <li>$$P(\overline{A}│X>1.3)=\frac{P(X>1.3│\overline{A})P(\overline{A})}{P(X>1.3)}=\frac{0.8416\cdot0.5}{0.5}=0.8416$$</li>
+  <li>$P(A)=0.3,$ $P(B)=0.7$ $$P(X>1.3)=0.1587\cdot0.3+0.8416\cdot0.7=0.6367$$ $$P(\overline{A}│X>1.3)=\frac{P(X>1.3│\overline{A})P(\overline{A})}{P(X>1.3)}=\frac{0.8416\cdot0.7}{0.6367}=0.9253$$
+```{r}
+0.1587*0.3+0.8416*0.7
+(0.8416*0.7)/0.6367
+```
+  
+  </li>
+</ol>
+
+
+
+### Esercizio 3 {-}
+
+<ol type='a'> 
+  <li>$$\begin{align*}P(X>189)+P(X<169)&=1-\Phi\left(\frac{189-179}{7}\right)+\Phi\left(\frac{169-179}{7}\right)=\\ & = 1-Phi(1.43)+\Phi(-1.43)=1-\Phi(1.43)+[1-\Phi(1.43)]=\\ &=2\cdot[1-\Phi(1.43)]=2\cdot[1-0.9082]=0.1836\end{align*}$$
+```{r}
+# E3
+
+10/7
+2*0.9082-1
+2*(1-0.9082)
+```
+  
+  </li>
+  <li>$$P\left(|X-\mu|≥\delta\right)\leq\frac{\sigma^2}{\delta^2} $$ $$P(|X-179|\geq10)\leq\frac{7^2}{10^2} =0.7^2=0.49$$
+```{r}
+7*(-0.52)+179
+```
+  
+  </li>
+  <li>$$x_{(0.3)}=\sigma\cdot z_{(0.3)}+\mu$$ $$z_{(0.3)}=-z_{(1-0.3)}=-z_{(0.7)}$$ $$z\approx-0.52$$ $$x_{(0.3)}\approx7\cdot(-0.52)+179=175.36$$ $$x_{(0.78)}=\sigma \cdot z_{(0.78)}+\mu$$ $$z_{(0.78)}\approx0.77$$ $$x_{(0.78)}\approx7\cdot0.78+179=184.46$$
+```{r}
+7*0.78+179
+```
+  
+  </li>
+</ol>
+
+
+
+### Esercizio 4 {-}
+
+<ol type='a'> 
+  <li>$$x_{(0.015)}=35$$  $$x_{(0.97)}=50$$ $$x_{(0.015)}=\sigma\cdot z_{(0.015)}+\mu$$ $$x_{(0.97)}=\sigma\cdot z_{(0.97)}+\mu$$ $$z_{(0.015)}=-z_{(1-0.015)}=-z_{(0.985)}=-2.17$$ $$z_{(0.97)}\approx1.88$$ $$\begin{cases}35=\sigma\cdot(-2.17)+\mu\\50=\sigma\cdot1.88+\mu\end{cases}$$ $$\mu=50-\sigma\cdot1.88$$ $$35=-\sigma\cdot2.17+50-\sigma\cdot1.88$$ $$35-50=-\sigma(2.17+1.88)$$ $$-15=-\sigma\cdot4.05$$ $$\sigma=\frac{-15}{-4.05}=3.7037$$ $$\mu=50-\sigma\cdot1.88=50-3.7037\cdot1.88=43.0370$$
+```{r}
+# E4
+(0.015 + 0.03) * 70
+70 / (0.015 + 0.03)
+1-0.015
+2.17+1.88
+15 / 4.05
+50-3.7037*1.88
+```
+  
+  </li>
+
+  <li><center>$S=$"*numero di prodotti scartati*"</center> $$S\sim Binom(n=50,p=0.015+0.03=0.045)$$ $$P(S\leq3)=f(0)+f(1)+f(2)+f(3)$$ $$f(0)=\begin{pmatrix}50\\0\end{pmatrix} 0.045^0 (1-0.045)^{50}=1\cdot1\cdot0.1=0.1$$ $$f(1)=\begin{pmatrix}50\\1\end{pmatrix} 0.045^1 (1-0.045)^{49}=50\cdot0.045\cdot0.1048=0.2358$$ $$\begin{align*}f(2)&=\begin{pmatrix}50\\2\end{pmatrix} 0.045^2 (1-0.045)^{48}=\frac{50!}{2\cdot48!}  0.045^2 \cdot0.955^{48}=\\&=\frac{50\cdot49\cdot\cancel{48!}}{2\cdot\cancel{48!}}0.045^2\cdot0.955^{48}=0.2720\end{align*}$$ $$\begin{align*}f(3)&=\begin{pmatrix}50\\3\end{pmatrix} 0.045^3 (1-0.045)^{47}=\frac{50!}{3!\cdot47!}0.045^3\cdot 0.955^{47}=\\&=\frac{50\cdot49\cdot48\cdot\cancel{47!}}{6\cdot\cancel{47!}}0.045^3\cdot0.955^{47}=0.2051\end{align*}$$ $$P(S\leq3)=0.1+0.2358+0.2720+0.2051=0.8129$$ Notare che: $\frac{n}{p}=\frac{50}{0.045}=1111.111>500$ pertanto si può approssimare $$S\approx Poisson(\lambda=50\cdot0.045=2.25)$$ $$f(0)\approx \frac{\lambda^x}{x!} e^{-λ}=\frac{2.25^0}{0!} e^{-2.25}=0.1053$$  $$f(1)\approx\frac{2.25^1}{1!}e^{-2.25}=0.2371$$ $$f(2)\approx\frac{2.25^2}{2!} e^{-2.25}=0.2668$$ $$f(3)\approx\frac{2.25^3}{3!} e^{-2.25}=0.2001$$ $$P(S\leq3)\approx0.1053+0.2371+0.2668+0.2001=0.8093$$
+```{r}
+(1-0.045)^50
+choose(50, 0)
+(1-0.045)^49
+50*0.045*0.1048
+1-0.045
+choose(50, 2) * 0.045^2 * 0.955^48
+choose(50, 3) * 0.045^3 * 0.955^47
+0.1+0.2358+0.2720+0.2051
+50/0.045
+50*0.045
+2.25^0/1* exp(-2.25)
+2.25^1/1* exp(-2.25)
+2.25^2/2* exp(-2.25)
+2.25^3/6* exp(-2.25)
+0.1053+0.2371+0.2668+0.2001
+```
+
+  </li>
+
+
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

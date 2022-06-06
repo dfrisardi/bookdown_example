@@ -1,0 +1,168 @@
+# Esercitazione 13
+
+<h2> (continua undicesima esercitazione) </h2>
+
+## Esercizio 1
+Per confrontare le statistiche a livello nazionale con quelle del proprio comune, un assessore alla sanità di un comune di media grandezza ha indetto un sondaggio tra gli abitanti del comune. Dopo aver scelto casualmente 200 cittadini, è stato chiesto loro se avevano mai contratto la varicella. I risultati mostrano che 130 di essi hanno già contratto la varicella.
+
+<ol type='a' start=3>
+  <li> Si verifichi l’ipotesi, con un livello di significatività del 5%, che almeno il 67% dei cittadini abbia già contratto la varicella.</li>
+</ol>
+
+## Esercizio 3
+
+Sia $X$ la statura (in cm) degli allievi iscritti ad una polisportiva e si indichi con $\mu$ il suo valore medio. Dall’esperienza passata, si può ritenere che la deviazione standard $\sigma$ di $X$ sia pari a 5 cm.
+
+<ol type='a' start=3>
+  <li>Si verifichi l’ipotesi, con un livello di significatività del 7%, che l’altezza media sia pari a 175 cm.</li>
+</ol>
+
+## Esercizio 4
+
+Un giornalaio ha rilevato che, in un campione di 30 giorni, ha venduto complessivamente 3142 quotidiani. In base all’esperienza passata gli è noto che la deviazione standard del numero di quotidiani venduti in un giorno è pari a 12.
+
+<ol type='a' start=4>
+  <li>Si valuti l’ipotesi, con un livello di significatività del 4%, che il giornalaio venda al più 100 quotidiani al mese.</li>
+</ol>
+
+## Esercizio 6 
+
+Una grande società è interessata a determinare la proporzione $p$ dei propri impiegati che sarebbero disponibili a svolgere un orario settimanale di 36 ore in 5 giorni. A tal fine, la società promuove un’indagine al proprio interno e rileva che, in un campione casuale (con ripetizione) di 160 impiegati, 95 accetterebbero l’orario proposto.
+
+<ol type='a' start=3>
+  <li>Si valuti l’ipotesi, con un livello di significatività del 3%, se almeno la metà degli impiegati accetterebbe l’orario proposto.</li>
+</ol>
+
+## Esercizio 7
+
+Vengono intervistati 20 individui chiedendo qual è il loro consumo annuale di bevande alcoliche (espresso in litri). Si sono ricavate quindi le seguenti statistiche $$\sum_{i=1}^{20}x_i =2600;\quad \sum_{i=1}^{20}x_i^2=419244$$
+Supponendo che il carattere si distribuisca come una normale:
+
+<ol type='a' start=3>
+  <li>Si verifichi l’ipotesi, con un livello di significatività dell’5%, che il consumo annuale di bevande alcoliche sia almeno pari a 140 litri.</li>
+  <li>	Si verifichi l'ipotesi, con un livello di significatività del 5%, che la varianza del consumo annuale di bevande alcoliche sia pari a 4300. </li>
+</ol>
+
+## Soluzioni {-}
+
+### Esercizio 1 {-}
+
+```{r}
+# E1 
+
+n <- 200
+p <-130 / 200; p
+```
+
+
+c.	$$H_0:\,\,p\geq0.67$$ $$H_1:\,\,p<0.67$$ $$R=\{z_{\hat{P}}:\,\,z_{\hat{P}} <-z_{1-α} \}$$ $$R=\{z_{\hat{P}}:\,\,z_{\hat{P}} <-z_{1-α} \}$$ $$z_{\hat{P}} =\frac{\hat{p}-p_0}{\sqrt{\frac{p_0 (1-p_0 )}{n}}}=\frac{0.65-0.67}{0.0337}=-0.59$$ $$-z_{1-\alpha}=-z_{0.95}=-1.645$$ **non** rifiuto $H_0$ (i dati non mostrano evidenze contro $H_0$) 
+  
+Livello di confidenza osservato $$\Phi\left(z_{\hat{P}}  \right)=\Phi(-0.59)=1-\Phi(0.59)=1-0.7224=0.2776>0.05$$
+
+```{r}
+# c)
+sqrt(p*(1-p)/n)
+(p-0.67)/sqrt(p*(1-p)/n)
+-0.59 < -1.645
+1-0.7224
+```
+
+
+
+
+### Esercizio 3 {-}
+
+```{r}
+# E3 
+
+rm(list = ls())
+
+s <- 5
+n <- 134
+m <- 174
+a <- 0.07
+z <- 1.81
+d <- z*s/sqrt(n)
+```
+
+c. 	$$H_0:\,\,\mu=175$$ $$H_1:\,\,\mu\neq 175$$ $$R=\left\{z_{\overline{X}}:\left|z_{\overline{X}} \right|>z_{1-\frac{\alpha}{2}} \right\}$$ $$z_{\overline{X}}=\frac{\overline{x}-\mu_0}{\sigma\sqrt{n}}=\frac{174-175}{\frac{5}{\sqrt{134}}}=-2.315$$ $$z_{1-\frac{\alpha}{2}}=z_{0.965}\approx 1.81$$ rifiuto $H_0$ (i dati portano evidenze contro $H_0$)
+
+
+Livello di confidenza osservato $$2\left[1-\Phi\left(\left|z_\overline{X}\right|\right)\right]=2\left[1-\Phi\left(2.315\right)\right]=2[1-0.98975]=0.0205<0.07$$ 
+
+```{r}
+# c)
+(m - 175) / (5/sqrt(n))
+2*(1-0.98975)
+```
+
+
+
+### Esercizio 4 {-}
+
+```{r}
+# E4 
+
+rm(list = ls())
+
+n <- 30
+m <- 3142 / n; m
+s <- 12
+```
+
+
+d. 	$$H_0: \,\,\mu\leq100$$ $$H_1:\,\,\mu>100$$ $$R=\left\{z_{\overline{X}}:z_{\overline{X}} >z_{1-α} \right\}$$ $$z_{\overline{X}} =\frac{\overline{x}-\mu_0}{\frac{\sigma}{n}}=\frac{104.7333-100}{\frac{12}{\sqrt{30}}}=2.160$$ $$z_{1-\alpha}=z_{0.96}\approx1.75$$ rifiuto $H_0$
+
+
+Livello di confidenza osservato $$1-Φ\left(z_{\overline{X}}\right)=1-\Phi(2.16)=1-0.9846=0.0154<0.04$$
+
+```{r}
+# d)
+(m - 100) / (12 / sqrt(30))
+1-0.9846
+```
+
+
+### Esercizio 6 {-}
+
+
+d. 		$$H_0:\,\, p\geq0.5$$ $$H_1:\,\,p<0.5$$ $$R=\left\{z_{\hat{P}}:\,\,z_{\hat{P}} <-z_{1-\alpha} \right\}$$ $$z_{\hat{P}}=\frac{\hat{p}-p_0}{\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}}=\frac{0.59375-0.5}{\sqrt{\frac{0.59375(1-0.59375)}{160}}}=2.41$$ $$-z_{1-\alpha}=-z_{0.97}\approx-1.88$$ **non** rifiuto $H_0$
+
+Livello di confidenza osservato $$\Phi\left(z_{\overline{X}}\right)=\Phi(2.41)= 0.992 >0.03$$
+
+
+
+### Esercizio 7 {-}
+
+```{r}
+# E7 
+
+sx <- 2600
+sx2 <- 419244
+n <- 20
+m <- sx / n; m
+s2d <- sx2 / n - m^2; s2d
+s2 <- s2d * n / (n - 1); s2
+```
+
+c. 	$$H_0:\,\,\mu\geq 140$$ $$H_1:\,\,\mu<140$$ $$R=\left\{t_{\overline{X}}:t_{\overline{X}}<-t_{1-\alpha} \right\}$$ $$t_{\overline{X}}=\frac{\overline{x}-\mu_0}{\sqrt{\frac{s^2}{n}}}=\frac{130-140}{\sqrt{\frac{4276}{20}}}=-0.6839$$ $$r=n-1=19$$ $$-t_{1-\alpha}=-t_{0.95}=-1.729 $$ **non** rifiuto $H_0$
+
+Livello di confidenza osservato $$F\left(t_{\overline{X}}\right)=F(-0.6839)=1-F(0.6839)>0.2>0.05$$
+
+nota: $F(0,861)=0.8\Rightarrow F(0.6839)<0.8$ quindi il livello di confidenza osservato è maggiore del 20%.
+
+```{r}
+# c)
+(m - 140) / sqrt(s2 / n)
+-0.6839 < -1.729
+```
+
+d. 	$$H_0:\,\,\sigma^2=4300$$ $$H_1:\,\,\sigma^2\neq4300$$ $$R=\left\{v:\left(v<\chi_{\frac{\alpha}{2}}^2\right)\cup\left(v>\chi_{1-\frac{\alpha}{2}}^2 \right)\right\}$$ $$v=\frac{(n-1) s^2}{(σ_0^2 )}=\frac{19\cdot4276}{4300}=18.89$$ $$r=n-1=19$$ quantili già osservati $$\chi_{\frac{\alpha}{2}}^2=8.91;\quad \chi_{1-\frac{\alpha}{2}}^2=32.85$$ **non** rifiuto l’ipotesi nulla
+
+Livello di confidenza osservato $$2\min\left[P\left(V<v|\sigma^2=\sigma_0^2 \right),\quad P\left(V>v│\sigma^2=\sigma_0^2 \right)\right]$$ $$P\left(V<v│\sigma^2=\sigma_0^2 \right)=P(V<18.89)>0.5$$ $$P\left(V>v│\sigma^2=\sigma_0^2\right)=1-P(V<18.89)>1-0.75=0.25$$ quindi il livello di confidenza osservato è maggiore di $$2 \min(0.5,\,\,0.25)=2\cdot0.25=0.5$$
+```{r}
+# d)
+v <- (n - 1)*s2 / 4300; v
+```
+
+

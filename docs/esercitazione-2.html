@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 Esercitazione 2 | Esercitazioni</title>
+  <meta name="description" content="In questo libro sono presenti le esercitazioni di Statistica di Base" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 Esercitazione 2 | Esercitazioni" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="In questo libro sono presenti le esercitazioni di Statistica di Base" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 Esercitazione 2 | Esercitazioni" />
+  
+  <meta name="twitter:description" content="In questo libro sono presenti le esercitazioni di Statistica di Base" />
+  
+
+<meta name="author" content="Brunero Liseo" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="esercitazione-1.html"/>
+<link rel="next" href="esercitazione-3.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Esercitazioni di Statistica di Base</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduzione</a></li>
+<li class="chapter" data-level="1" data-path="esercitazione-1.html"><a href="esercitazione-1.html"><i class="fa fa-check"></i><b>1</b> Esercitazione 1</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="esercitazione-1.html"><a href="esercitazione-1.html#esercizio-1"><i class="fa fa-check"></i><b>1.1</b> Esercizio 1</a></li>
+<li class="chapter" data-level="1.2" data-path="esercitazione-1.html"><a href="esercitazione-1.html#esercizio-2"><i class="fa fa-check"></i><b>1.2</b> Esercizio 2</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-1.html"><a href="esercitazione-1.html#soluzioni"><i class="fa fa-check"></i>Soluzioni</a>
+<ul>
+<li class="chapter" data-level="" data-path="esercitazione-1.html"><a href="esercitazione-1.html#esercizio-1-1"><i class="fa fa-check"></i>Esercizio 1</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-1.html"><a href="esercitazione-1.html#esercizio-2-1"><i class="fa fa-check"></i>Esercizio 2</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="esercitazione-2.html"><a href="esercitazione-2.html"><i class="fa fa-check"></i><b>2</b> Esercitazione 2</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="esercitazione-2.html"><a href="esercitazione-2.html#esercizio-1-2"><i class="fa fa-check"></i><b>2.1</b> Esercizio 1</a></li>
+<li class="chapter" data-level="2.2" data-path="esercitazione-2.html"><a href="esercitazione-2.html#esercizio-2-2"><i class="fa fa-check"></i><b>2.2</b> Esercizio 2</a></li>
+<li class="chapter" data-level="2.3" data-path="esercitazione-2.html"><a href="esercitazione-2.html#esercizio-3"><i class="fa fa-check"></i><b>2.3</b> Esercizio 3</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-2.html"><a href="esercitazione-2.html#soluzioni-1"><i class="fa fa-check"></i>Soluzioni</a>
+<ul>
+<li class="chapter" data-level="" data-path="esercitazione-2.html"><a href="esercitazione-2.html#esercizio-1-3"><i class="fa fa-check"></i>Esercizio 1</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-2.html"><a href="esercitazione-2.html#esercizio-2-3"><i class="fa fa-check"></i>Esercizio 2</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-2.html"><a href="esercitazione-2.html#esercizio-3-1"><i class="fa fa-check"></i>Esercizio 3</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="esercitazione-3.html"><a href="esercitazione-3.html"><i class="fa fa-check"></i><b>3</b> Esercitazione 3</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="esercitazione-3.html"><a href="esercitazione-3.html#esercizio-1-4"><i class="fa fa-check"></i><b>3.1</b> Esercizio 1</a></li>
+<li class="chapter" data-level="3.2" data-path="esercitazione-3.html"><a href="esercitazione-3.html#esercizio-2-4"><i class="fa fa-check"></i><b>3.2</b> Esercizio 2</a></li>
+<li class="chapter" data-level="3.3" data-path="esercitazione-3.html"><a href="esercitazione-3.html#esercizio-3-2"><i class="fa fa-check"></i><b>3.3</b> Esercizio 3</a></li>
+<li class="chapter" data-level="3.4" data-path="esercitazione-3.html"><a href="esercitazione-3.html#esercizio-4"><i class="fa fa-check"></i><b>3.4</b> Esercizio 4</a></li>
+<li class="chapter" data-level="3.5" data-path="esercitazione-3.html"><a href="esercitazione-3.html#esercizio-5"><i class="fa fa-check"></i><b>3.5</b> Esercizio 5</a></li>
+<li class="chapter" data-level="3.6" data-path="esercitazione-3.html"><a href="esercitazione-3.html#esercizio-6"><i class="fa fa-check"></i><b>3.6</b> Esercizio 6</a></li>
+<li class="chapter" data-level="3.7" data-path="esercitazione-3.html"><a href="esercitazione-3.html#esercizio-7"><i class="fa fa-check"></i><b>3.7</b> Esercizio 7</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-3.html"><a href="esercitazione-3.html#soluzioni-2"><i class="fa fa-check"></i>Soluzioni</a>
+<ul>
+<li class="chapter" data-level="" data-path="esercitazione-3.html"><a href="esercitazione-3.html#esercizio-1-5"><i class="fa fa-check"></i>Esercizio 1</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-3.html"><a href="esercitazione-3.html#esercizio-2-5"><i class="fa fa-check"></i>Esercizio 2</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-3.html"><a href="esercitazione-3.html#esercizio-3-3"><i class="fa fa-check"></i>Esercizio 3</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-3.html"><a href="esercitazione-3.html#esercizio-4-1"><i class="fa fa-check"></i>Esercizio 4</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-3.html"><a href="esercitazione-3.html#esercizio-5-1"><i class="fa fa-check"></i>Esercizio 5</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-3.html"><a href="esercitazione-3.html#esercizio-6-1"><i class="fa fa-check"></i>Esercizio 6</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-3.html"><a href="esercitazione-3.html#esercizio-7-1"><i class="fa fa-check"></i>Esercizio 7</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="esercitazione-4.html"><a href="esercitazione-4.html"><i class="fa fa-check"></i><b>4</b> Esercitazione 4</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="esercitazione-4.html"><a href="esercitazione-4.html#esercizio-1-6"><i class="fa fa-check"></i><b>4.1</b> Esercizio 1</a></li>
+<li class="chapter" data-level="4.2" data-path="esercitazione-4.html"><a href="esercitazione-4.html#esercizio-2-6"><i class="fa fa-check"></i><b>4.2</b> Esercizio 2</a></li>
+<li class="chapter" data-level="4.3" data-path="esercitazione-4.html"><a href="esercitazione-4.html#esercizio-3-4"><i class="fa fa-check"></i><b>4.3</b> Esercizio 3</a></li>
+<li class="chapter" data-level="4.4" data-path="esercitazione-4.html"><a href="esercitazione-4.html#esercizio-4-2"><i class="fa fa-check"></i><b>4.4</b> Esercizio 4</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-4.html"><a href="esercitazione-4.html#soluzioni-3"><i class="fa fa-check"></i>Soluzioni</a>
+<ul>
+<li class="chapter" data-level="" data-path="esercitazione-4.html"><a href="esercitazione-4.html#esercizio-1-7"><i class="fa fa-check"></i>Esercizio 1</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-4.html"><a href="esercitazione-4.html#esercizio-2-7"><i class="fa fa-check"></i>Esercizio 2</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-4.html"><a href="esercitazione-4.html#esercizio-3-5"><i class="fa fa-check"></i>Esercizio 3</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-4.html"><a href="esercitazione-4.html#esercizio-4-3"><i class="fa fa-check"></i>Esercizio 4</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="esercitazione-5.html"><a href="esercitazione-5.html"><i class="fa fa-check"></i><b>5</b> Esercitazione 5</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="esercitazione-5.html"><a href="esercitazione-5.html#esercizio-1-8"><i class="fa fa-check"></i><b>5.1</b> Esercizio 1</a></li>
+<li class="chapter" data-level="5.2" data-path="esercitazione-5.html"><a href="esercitazione-5.html#esercizio-2-8"><i class="fa fa-check"></i><b>5.2</b> Esercizio 2</a></li>
+<li class="chapter" data-level="5.3" data-path="esercitazione-5.html"><a href="esercitazione-5.html#esercizio-3-6"><i class="fa fa-check"></i><b>5.3</b> Esercizio 3</a></li>
+<li class="chapter" data-level="5.4" data-path="esercitazione-5.html"><a href="esercitazione-5.html#esercizio-4-4"><i class="fa fa-check"></i><b>5.4</b> Esercizio 4</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-5.html"><a href="esercitazione-5.html#soluzioni-4"><i class="fa fa-check"></i>Soluzioni</a>
+<ul>
+<li class="chapter" data-level="" data-path="esercitazione-5.html"><a href="esercitazione-5.html#esercizio-1-9"><i class="fa fa-check"></i>Esercizio 1</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-5.html"><a href="esercitazione-5.html#esercizio-2-9"><i class="fa fa-check"></i>Esercizio 2</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-5.html"><a href="esercitazione-5.html#esercizio-3-7"><i class="fa fa-check"></i>Esercizio 3</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-5.html"><a href="esercitazione-5.html#esercizio-4-5"><i class="fa fa-check"></i>Esercizio 4</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="esercitazione-6.html"><a href="esercitazione-6.html"><i class="fa fa-check"></i><b>6</b> Esercitazione 6</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="esercitazione-6.html"><a href="esercitazione-6.html#esercizio-1-10"><i class="fa fa-check"></i><b>6.1</b> Esercizio 1</a></li>
+<li class="chapter" data-level="6.2" data-path="esercitazione-6.html"><a href="esercitazione-6.html#esercizio-2-10"><i class="fa fa-check"></i><b>6.2</b> Esercizio 2</a></li>
+<li class="chapter" data-level="6.3" data-path="esercitazione-6.html"><a href="esercitazione-6.html#esercizio-3-8"><i class="fa fa-check"></i><b>6.3</b> Esercizio 3</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-6.html"><a href="esercitazione-6.html#soluzioni-5"><i class="fa fa-check"></i>Soluzioni</a>
+<ul>
+<li class="chapter" data-level="" data-path="esercitazione-6.html"><a href="esercitazione-6.html#esercizio-1-11"><i class="fa fa-check"></i>Esercizio 1</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-6.html"><a href="esercitazione-6.html#esercizio-2-11"><i class="fa fa-check"></i>Esercizio 2</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-6.html"><a href="esercitazione-6.html#esercizio-3-9"><i class="fa fa-check"></i>Esercizio 3</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="esercitazione-7.html"><a href="esercitazione-7.html"><i class="fa fa-check"></i><b>7</b> Esercitazione 7</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="esercitazione-7.html"><a href="esercitazione-7.html#esercizio-1-12"><i class="fa fa-check"></i><b>7.1</b> Esercizio 1</a></li>
+<li class="chapter" data-level="7.2" data-path="esercitazione-7.html"><a href="esercitazione-7.html#esercizio-2-12"><i class="fa fa-check"></i><b>7.2</b> Esercizio 2</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-7.html"><a href="esercitazione-7.html#soluzioni-6"><i class="fa fa-check"></i>Soluzioni</a>
+<ul>
+<li class="chapter" data-level="" data-path="esercitazione-7.html"><a href="esercitazione-7.html#esercizio-1-13"><i class="fa fa-check"></i>Esercizio 1</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-7.html"><a href="esercitazione-7.html#esercizio-2-13"><i class="fa fa-check"></i>Esercizio 2</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="esercitazione-8.html"><a href="esercitazione-8.html"><i class="fa fa-check"></i><b>8</b> Esercitazione 8</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="esercitazione-8.html"><a href="esercitazione-8.html#esercizio-1-14"><i class="fa fa-check"></i><b>8.1</b> Esercizio 1</a></li>
+<li class="chapter" data-level="8.2" data-path="esercitazione-8.html"><a href="esercitazione-8.html#esercizio-2-14"><i class="fa fa-check"></i><b>8.2</b> Esercizio 2</a></li>
+<li class="chapter" data-level="8.3" data-path="esercitazione-8.html"><a href="esercitazione-8.html#esercizio-3-10"><i class="fa fa-check"></i><b>8.3</b> Esercizio 3</a></li>
+<li class="chapter" data-level="8.4" data-path="esercitazione-8.html"><a href="esercitazione-8.html#esercizio-4-6"><i class="fa fa-check"></i><b>8.4</b> Esercizio 4</a></li>
+<li class="chapter" data-level="8.5" data-path="esercitazione-8.html"><a href="esercitazione-8.html#esercizio-5-2"><i class="fa fa-check"></i><b>8.5</b> Esercizio 5</a></li>
+<li class="chapter" data-level="8.6" data-path="esercitazione-8.html"><a href="esercitazione-8.html#esercizio-6-2"><i class="fa fa-check"></i><b>8.6</b> Esercizio 6</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-8.html"><a href="esercitazione-8.html#soluzioni-7"><i class="fa fa-check"></i>Soluzioni</a>
+<ul>
+<li class="chapter" data-level="" data-path="esercitazione-8.html"><a href="esercitazione-8.html#esercizio-1-15"><i class="fa fa-check"></i>Esercizio 1</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-8.html"><a href="esercitazione-8.html#esercizio-2-15"><i class="fa fa-check"></i>Esercizio 2</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-8.html"><a href="esercitazione-8.html#esercizio-3-11"><i class="fa fa-check"></i>Esercizio 3</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-8.html"><a href="esercitazione-8.html#esercizio-4-7"><i class="fa fa-check"></i>Esercizio 4</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-8.html"><a href="esercitazione-8.html#esercizio-5-3"><i class="fa fa-check"></i>Esercizio 5</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-8.html"><a href="esercitazione-8.html#esercizio-6-3"><i class="fa fa-check"></i>Esercizio 6</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="esercitazione-9.html"><a href="esercitazione-9.html"><i class="fa fa-check"></i><b>9</b> Esercitazione 9</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="esercitazione-9.html"><a href="esercitazione-9.html#esercizio-1-16"><i class="fa fa-check"></i><b>9.1</b> Esercizio 1</a></li>
+<li class="chapter" data-level="9.2" data-path="esercitazione-9.html"><a href="esercitazione-9.html#esercizio-2-16"><i class="fa fa-check"></i><b>9.2</b> Esercizio 2</a></li>
+<li class="chapter" data-level="9.3" data-path="esercitazione-9.html"><a href="esercitazione-9.html#esercizio-3-12"><i class="fa fa-check"></i><b>9.3</b> Esercizio 3</a></li>
+<li class="chapter" data-level="9.4" data-path="esercitazione-9.html"><a href="esercitazione-9.html#esercizio-4-8"><i class="fa fa-check"></i><b>9.4</b> Esercizio 4</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-9.html"><a href="esercitazione-9.html#soluzioni-8"><i class="fa fa-check"></i>Soluzioni</a>
+<ul>
+<li class="chapter" data-level="" data-path="esercitazione-9.html"><a href="esercitazione-9.html#esercizio-1-17"><i class="fa fa-check"></i>Esercizio 1</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-9.html"><a href="esercitazione-9.html#esercizio-2-17"><i class="fa fa-check"></i>Esercizio 2</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-9.html"><a href="esercitazione-9.html#esercizio-3-13"><i class="fa fa-check"></i>Esercizio 3</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-9.html"><a href="esercitazione-9.html#esercizio-4-9"><i class="fa fa-check"></i>Esercizio 4</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="esercitazione-10.html"><a href="esercitazione-10.html"><i class="fa fa-check"></i><b>10</b> Esercitazione 10</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="esercitazione-10.html"><a href="esercitazione-10.html#esercizio-1-18"><i class="fa fa-check"></i><b>10.1</b> Esercizio 1</a></li>
+<li class="chapter" data-level="10.2" data-path="esercitazione-10.html"><a href="esercitazione-10.html#esercizio-2-18"><i class="fa fa-check"></i><b>10.2</b> Esercizio 2</a></li>
+<li class="chapter" data-level="10.3" data-path="esercitazione-10.html"><a href="esercitazione-10.html#esercizio-3-14"><i class="fa fa-check"></i><b>10.3</b> Esercizio 3</a></li>
+<li class="chapter" data-level="10.4" data-path="esercitazione-10.html"><a href="esercitazione-10.html#esercizio-4-10"><i class="fa fa-check"></i><b>10.4</b> Esercizio 4</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-10.html"><a href="esercitazione-10.html#soluzioni-9"><i class="fa fa-check"></i>Soluzioni</a>
+<ul>
+<li class="chapter" data-level="" data-path="esercitazione-10.html"><a href="esercitazione-10.html#esercizio-1-19"><i class="fa fa-check"></i>Esercizio 1</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-10.html"><a href="esercitazione-10.html#esercizio-2-19"><i class="fa fa-check"></i>Esercizio 2</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-10.html"><a href="esercitazione-10.html#esercizio-3-15"><i class="fa fa-check"></i>Esercizio 3</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-10.html"><a href="esercitazione-10.html#esercizio-4-11"><i class="fa fa-check"></i>Esercizio 4</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="esercitazione-11.html"><a href="esercitazione-11.html"><i class="fa fa-check"></i><b>11</b> Esercitazione 11</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="esercitazione-11.html"><a href="esercitazione-11.html#esercizio-1-20"><i class="fa fa-check"></i><b>11.1</b> Esercizio 1</a></li>
+<li class="chapter" data-level="11.2" data-path="esercitazione-11.html"><a href="esercitazione-11.html#esercizio-2-20"><i class="fa fa-check"></i><b>11.2</b> Esercizio 2</a></li>
+<li class="chapter" data-level="11.3" data-path="esercitazione-11.html"><a href="esercitazione-11.html#esercizio-3-16"><i class="fa fa-check"></i><b>11.3</b> Esercizio 3</a></li>
+<li class="chapter" data-level="11.4" data-path="esercitazione-11.html"><a href="esercitazione-11.html#esercizio-4-12"><i class="fa fa-check"></i><b>11.4</b> Esercizio 4</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-11.html"><a href="esercitazione-11.html#soluzioni-10"><i class="fa fa-check"></i>Soluzioni</a>
+<ul>
+<li class="chapter" data-level="" data-path="esercitazione-11.html"><a href="esercitazione-11.html#esercizio-1-21"><i class="fa fa-check"></i>Esercizio 1</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-11.html"><a href="esercitazione-11.html#esercizio-2-21"><i class="fa fa-check"></i>Esercizio 2</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-11.html"><a href="esercitazione-11.html#esercizio-3-17"><i class="fa fa-check"></i>Esercizio 3</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-11.html"><a href="esercitazione-11.html#esercizio-4-13"><i class="fa fa-check"></i>Esercizio 4</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="esercitazione-12.html"><a href="esercitazione-12.html"><i class="fa fa-check"></i><b>12</b> Esercitazione 12</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="esercitazione-12.html"><a href="esercitazione-12.html#esercizio-1-22"><i class="fa fa-check"></i><b>12.1</b> Esercizio 1</a></li>
+<li class="chapter" data-level="12.2" data-path="esercitazione-12.html"><a href="esercitazione-12.html#esercizio-2-22"><i class="fa fa-check"></i><b>12.2</b> Esercizio 2</a></li>
+<li class="chapter" data-level="12.3" data-path="esercitazione-12.html"><a href="esercitazione-12.html#esercizio-3-18"><i class="fa fa-check"></i><b>12.3</b> Esercizio 3</a></li>
+<li class="chapter" data-level="12.4" data-path="esercitazione-12.html"><a href="esercitazione-12.html#esercizio-4-14"><i class="fa fa-check"></i><b>12.4</b> Esercizio 4</a></li>
+<li class="chapter" data-level="12.5" data-path="esercitazione-12.html"><a href="esercitazione-12.html#esercizio-5-4"><i class="fa fa-check"></i><b>12.5</b> Esercizio 5</a></li>
+<li class="chapter" data-level="12.6" data-path="esercitazione-12.html"><a href="esercitazione-12.html#esercizio-6-4"><i class="fa fa-check"></i><b>12.6</b> Esercizio 6</a></li>
+<li class="chapter" data-level="12.7" data-path="esercitazione-12.html"><a href="esercitazione-12.html#esercizio-7-2"><i class="fa fa-check"></i><b>12.7</b> Esercizio 7</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-12.html"><a href="esercitazione-12.html#soluzioni-11"><i class="fa fa-check"></i>Soluzioni</a>
+<ul>
+<li class="chapter" data-level="" data-path="esercitazione-12.html"><a href="esercitazione-12.html#esercizio-1-23"><i class="fa fa-check"></i>Esercizio 1</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-12.html"><a href="esercitazione-12.html#esercizio-2-23"><i class="fa fa-check"></i>Esercizio 2</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-12.html"><a href="esercitazione-12.html#esercizio-3-19"><i class="fa fa-check"></i>Esercizio 3</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-12.html"><a href="esercitazione-12.html#esercizio-4-15"><i class="fa fa-check"></i>Esercizio 4</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-12.html"><a href="esercitazione-12.html#esercizio-5-5"><i class="fa fa-check"></i>Esercizio 5</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-12.html"><a href="esercitazione-12.html#esercizio-6-5"><i class="fa fa-check"></i>Esercizio 6</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-12.html"><a href="esercitazione-12.html#esercizio-7-3"><i class="fa fa-check"></i>Esercizio 7</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="esercitazione-13.html"><a href="esercitazione-13.html"><i class="fa fa-check"></i><b>13</b> Esercitazione 13</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="esercitazione-13.html"><a href="esercitazione-13.html#esercizio-1-24"><i class="fa fa-check"></i><b>13.1</b> Esercizio 1</a></li>
+<li class="chapter" data-level="13.2" data-path="esercitazione-13.html"><a href="esercitazione-13.html#esercizio-3-20"><i class="fa fa-check"></i><b>13.2</b> Esercizio 3</a></li>
+<li class="chapter" data-level="13.3" data-path="esercitazione-13.html"><a href="esercitazione-13.html#esercizio-4-16"><i class="fa fa-check"></i><b>13.3</b> Esercizio 4</a></li>
+<li class="chapter" data-level="13.4" data-path="esercitazione-13.html"><a href="esercitazione-13.html#esercizio-6-6"><i class="fa fa-check"></i><b>13.4</b> Esercizio 6</a></li>
+<li class="chapter" data-level="13.5" data-path="esercitazione-13.html"><a href="esercitazione-13.html#esercizio-7-4"><i class="fa fa-check"></i><b>13.5</b> Esercizio 7</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-13.html"><a href="esercitazione-13.html#soluzioni-12"><i class="fa fa-check"></i>Soluzioni</a>
+<ul>
+<li class="chapter" data-level="" data-path="esercitazione-13.html"><a href="esercitazione-13.html#esercizio-1-25"><i class="fa fa-check"></i>Esercizio 1</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-13.html"><a href="esercitazione-13.html#esercizio-3-21"><i class="fa fa-check"></i>Esercizio 3</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-13.html"><a href="esercitazione-13.html#esercizio-4-17"><i class="fa fa-check"></i>Esercizio 4</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-13.html"><a href="esercitazione-13.html#esercizio-6-7"><i class="fa fa-check"></i>Esercizio 6</a></li>
+<li class="chapter" data-level="" data-path="esercitazione-13.html"><a href="esercitazione-13.html#esercizio-7-5"><i class="fa fa-check"></i>Esercizio 7</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="./" target="blank"></a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Esercitazioni</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="esercitazione-2" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">2</span> Esercitazione 2<a href="esercitazione-2.html#esercitazione-2" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<center>
+<h2>
+<p>Frequenze e rappresentazioni grafiche</p>
+</h2   >
+</center>
+<div id="esercizio-1-2" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Esercizio 1<a href="esercitazione-2.html#esercizio-1-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Un certo materiale è stato sottoposto a un esperimento termico. Durante l’esperimento è stata rilevata 60 volte la sua temperatura <span class="math inline">\(X\)</span> (in gradi Celsius). La distribuzione di frequenze di <span class="math inline">\(X\)</span> è riportata nella seguente tabella:</p>
+<table class=" lightable-classic" style="font-family: Computer Modern; width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:right;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+Classi <span class="math inline">\(X\)</span>
+</th>
+<th style="text-align:center;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+Frequenze
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+<span class="math inline">\([5, 10]\)</span>
+</td>
+<td style="text-align:center;">
+8
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<span class="math inline">\((10, 13]\)</span>
+</td>
+<td style="text-align:center;">
+18
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<span class="math inline">\((13, 17]\)</span>
+</td>
+<td style="text-align:center;">
+8
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<span class="math inline">\((17, 25]\)</span>
+</td>
+<td style="text-align:center;">
+16
+</td>
+</tr>
+<tr>
+<td style="text-align:right;border-top: thin solid;border-bottom: thin solid">
+<span class="math inline">\((25, 40]\)</span>
+</td>
+<td style="text-align:center;border-top: thin solid;border-bottom: thin solid">
+10
+</td>
+</tr>
+<tr>
+<td style="text-align:right;border-top: thin solid;border-bottom: thin solid">
+<em>Totale</em>
+</td>
+<td style="text-align:center;border-top: thin solid;border-bottom: thin solid">
+<em>60</em>
+</td>
+</tr>
+</tbody>
+</table>
+<ol type="a">
+<li>
+<p>Indicare il tipo di carattere e la scala di misurazione.</p>
+</li>
+<li>
+<p>Calcolare le frequenze cumulate e interpretare la quarta di esse.</p>
+</li>
+<li>
+<p>Rappresentare la distribuzione di frequenze relative.</p>
+</li>
+<li>
+<p>Calcolare la frequenza relativa della classe <span class="math inline">\([11,20)\)</span>.</p>
+</li>
+<li>
+<p>Rappresentare la funzione di ripartizione di <span class="math inline">\(X\)</span>.</p>
+</li>
+</ol>
+</div>
+<div id="esercizio-2-2" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Esercizio 2<a href="esercitazione-2.html#esercizio-2-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>La seguente tabella riporta la distribuzione degli utenti di due social network <strong>A</strong> e <strong>B</strong> secondo il numero <span class="math inline">\(X\)</span> di post in un determinato pomeriggio:</p>
+<table class=" lightable-classic" style="font-family: Computer Modern; width: auto !important; margin-left: auto; margin-right: auto;">
+<tbody>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+Valori di <span class="math inline">\(X\)</span>
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+Frequenze di A
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+Frequenze di B
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+0
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+7
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+1
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+9
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+2
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+16
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+8
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+3
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+25
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+10
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+4
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+23
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+15
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+5
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+20
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+40
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+<em>Totale</em>
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+<em>100</em>
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+<em>80</em>
+</td>
+</tr>
+</tbody>
+</table>
+<ol type="a">
+<li>
+<p>Indicare il tipo di carattere e la scala di misurazione.</p>
+</li>
+<li>
+<p>Rappresentare le due distribuzioni di frequenze in modo tale che siano confrontabili.</p>
+</li>
+<li>
+<p>In quale social network sono stati pubblicati più post tra gli utenti considerati?</p>
+</li>
+<li>
+<p>Rappresentare la funzione di ripartizione di <span class="math inline">\(X\)</span> considerando come collettivo statistico entrambi i social network.</p>
+</li>
+</ol>
+</div>
+<div id="esercizio-3" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Esercizio 3<a href="esercitazione-2.html#esercizio-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In uno stabilimento lavorano 224 operai, di cui 160 sono uomini e 64 sono donne. La seguente tabella riporta la distribuzione degli operai secondo il tempo <span class="math inline">\(X\)</span> (in secondi) impiegato per produrre un pezzo:</p>
+<table class=" lightable-classic" style="font-family: Computer Modern; width: auto !important; margin-left: auto; margin-right: auto;">
+<tbody>
+<tr>
+<td style="text-align:left;border-left:1px solid;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+Classi di <span class="math inline">\(X\)</span>
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+Frequenze (uomini)
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+Frequenze (donne)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;border-left:1px solid;border-right:1px solid;">
+<span class="math inline">\([10,15)\)</span>
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+20
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+16
+</td>
+</tr>
+<tr>
+<td style="text-align:left;border-left:1px solid;border-right:1px solid;">
+<span class="math inline">\([15,20)\)</span>
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+84
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+30
+</td>
+</tr>
+<tr>
+<td style="text-align:left;border-left:1px solid;border-right:1px solid;">
+<span class="math inline">\([20,30)\)</span>
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+46
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;">
+16
+</td>
+</tr>
+<tr>
+<td style="text-align:left;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+<span class="math inline">\([30,45)\)</span>
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+10
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+<em>Totali</em>
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+<em>160</em>
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+<em>64</em>
+</td>
+</tr>
+</tbody>
+</table>
+<ol type="a">
+<li>
+<p>Si rappresentino le due distribuzioni di frequenze in modo che possano essere confrontate.</p>
+</li>
+<li>
+<p>Si calcoli la frequenza assoluta degli uomini che impiegano tra 15 e 35 secondi per produrre un pezzo.</p>
+</li>
+<li>
+<p>Si calcoli la frequenza relativa degli operai (uomini e donne) che impiegano <span class="math inline">\([20,30)\)</span> secondi a produrre un pezzo.</p>
+</li>
+<li>
+<p>Rappresentare la funzione di ripartizione di <span class="math inline">\(X\)</span> per entrambe le due sottopopolazioni.</p>
+</li>
+<li>
+<p>Calcolare qual è la proporzione di uomini che impiegano più di 25 secondi a produrre un pezzo.</p>
+</li>
+</ol>
+</div>
+<div id="soluzioni-1" class="section level2 unnumbered hasAnchor">
+<h2>Soluzioni<a href="esercitazione-2.html#soluzioni-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="esercizio-1-3" class="section level3 unnumbered hasAnchor">
+<h3>Esercizio 1<a href="esercitazione-2.html#esercizio-1-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<table class=" lightable-classic" style="font-family: Computer Modern; width: auto !important; margin-left: auto; margin-right: auto;">
+<tbody>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+<span class="math inline">\(j\)</span>
+</td>
+<td style="text-align:right;border-left:1px solid;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+Classi <span class="math inline">\(X\)</span>
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+<span class="math inline">\(n_j\)</span>
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+<span class="math inline">\(N_j\)</span>
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+<span class="math inline">\(d_j\)</span>
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+<span class="math inline">\(f_j=\frac{n_j}{N}\)</span>
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+<span class="math inline">\(\frac{h_j}{N}=\frac{f_j}{d_j}\)</span>
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+<span class="math inline">\(F_j\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+1
+</td>
+<td style="text-align:right;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+<span class="math inline">\([5, 10]\)</span>
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+8
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+8
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+5
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0.133
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0.027
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0.133
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+2
+</td>
+<td style="text-align:right;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+<span class="math inline">\((10, 13]\)</span>
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+18
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+26
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+3
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0.3
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0.1
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0.433
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+3
+</td>
+<td style="text-align:right;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+<span class="math inline">\((13, 17]\)</span>
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+8
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+34
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+4
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0.133
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0.033
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0.566
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+4
+</td>
+<td style="text-align:right;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+<span class="math inline">\((17, 25]\)</span>
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+16
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+50
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+8
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0.267
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0.033
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0.833
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+5
+</td>
+<td style="text-align:right;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+<span class="math inline">\((25, 40]\)</span>
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+10
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+60
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+15
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0.167
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0.011
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+<em>Totale</em>
+</td>
+<td style="text-align:right;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+<em>60</em>
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+</td>
+</tr>
+</tbody>
+</table>
+<ol type="a">
+<li>
+Carattere quantitativo continuo su scala di intervalli: lo 0 della scala Celsius è convenzionale e non rappresenta l’assenza di calore, quindi il calore a 30°C non è il doppio del calore a 15°C.
+</li>
+<li>
+<span class="math inline">\(N_4=50\)</span> indica che ci sono 50 rilevazioni nelle quali si è osservata una temperatura minore o uguale a 25°Celsius.
+</li>
+<li>
+<strong>Istogramma</strong>, le frequenze relative sono rappresentate dall’area dei rettangoli pertanto bisogna calcolare le frequenze relative specifiche. Le ampiezze delle classi di un carattere continuo sono; <span class="math display">\[d_j=l_j^+-l_j^-\]</span>
+</li>
+<li>
+<span class="math display">\[\begin{align}\frac{h_j}{N}([11,20)) &amp; =  (13-11)\cdot\frac{h_2}{N}+\frac{h_3}{N}+(20-17)\cdot\frac{h_4}{N}=\\
+  &amp; = 2\cdot 0.1+0.133+3\cdot 0.033 = 0.2 + 0.133+0.099=0.432\end{align}\]</span>
+</li>
+<li>
+Funzione di ripartizione a scalini con altezze pari alla colonna <span class="math inline">\(F_j\)</span>.
+</li>
+</ol>
+</div>
+<div id="esercizio-2-3" class="section level3 unnumbered hasAnchor">
+<h3>Esercizio 2<a href="esercitazione-2.html#esercizio-2-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<table class=" lightable-classic" style="font-family: Computer Modern; width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="empty-cells: hide;font-weight: bold;border-top: thin solid;border-bottom: thin solid" colspan="3">
+</th>
+<th style="padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; border-top: font-weight: bold;border-top: thin solid;border-bottom: thin solid" colspan="3">
+<div style="border-bottom: 1px solid #111111; margin-bottom: -1px; ">
+<span class="math inline">\(X\)</span>
+</div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+Valori di <span class="math inline">\(X\)</span>
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+<span class="math inline">\(f_j^A\)</span>
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+<span class="math inline">\(f_j^B\)</span>
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+<span class="math inline">\(n_j\)</span>
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+<span class="math inline">\(N_j\)</span>
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+<span class="math inline">\(F_j\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0.07
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0.0375
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+10
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+10
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0.056
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+1
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0.09
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0.05
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+13
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+23
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0.128
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+2
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0.16
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0.1
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+24
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+47
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0.261
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+3
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0.25
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0.125
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+35
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+82
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0.456
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+4
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0.23
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0.1875
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+38
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+120
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0.667
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+5
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0.2
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0.5
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+60
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+180
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+<em>Totale</em>
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+<em>1</em>
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+<em>1</em>
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+<em>180</em>
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+</td>
+</tr>
+</tbody>
+</table>
+<ol type="a">
+<li>
+Carattere quantitativo discreto su scala di rapporti, 0 post indicano assenza di attività sul social network, quindi è uno zero assoluto.
+</li>
+<li>
+Le due popolazioni hanno un numero diverso di osservazioni, quindi bisogna considerare le frequenze relative (fare un cenno alle tabelle a doppia entrata e confrontare le frequenze relative, per confrontare le distribuzioni di X nei due social network). <strong>Aste</strong>.
+</li>
+<li>
+Nel primo social network sono stati pubblicati <span class="math inline">\(0\cdot 7+1\cdot 9+2\cdot 16+3\cdot 25+4\cdot 23+5\cdot 20=308\)</span> post, nel secondo social network sono stati pubblicati <span class="math inline">\(0\cdot 3+1\cdot 4+2\cdot 8+3\cdot 10+4\cdot 15+5\cdot 40=310\)</span> post.
+</li>
+<li>
+Funzione di ripartizione a segmenti con altezze pari alla colonna <span class="math inline">\(F_j\)</span>.
+</li>
+</ol>
+</div>
+<div id="esercizio-3-1" class="section level3 unnumbered hasAnchor">
+<h3>Esercizio 3<a href="esercitazione-2.html#esercizio-3-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<table class=" lightable-classic" style="font-family: Computer Modern; width: auto !important; margin-left: auto; margin-right: auto;">
+<tbody>
+<tr>
+<td style="text-align:left;border-left:1px solid;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+Classi di <span class="math inline">\(X\)</span>
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+<span class="math inline">\(f_j^U\)</span>
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+<span class="math inline">\(f_j^D\)</span>
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+<span class="math inline">\(d_j\)</span>
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+<span class="math inline">\(\frac{h_j^D}{N^U}\)</span>
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+<span class="math inline">\(\frac{h_j^D}{N^U}\)</span>
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+<span class="math inline">\(F_j^U\)</span>
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;font-weight: bold;border-top: thin solid;border-bottom: thin solid">
+<span class="math inline">\(F_j^D\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+<span class="math inline">\([10,15)\)</span>
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0.125
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0.25
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+5
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0.025
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0.05
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0.125
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0.25
+</td>
+</tr>
+<tr>
+<td style="text-align:left;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+<span class="math inline">\([15,20)\)</span>
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0.525
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0.469
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+5
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0.105
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0.069
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0.65
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0.719
+</td>
+</tr>
+<tr>
+<td style="text-align:left;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+<span class="math inline">\([20,30)\)</span>
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0.287
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0.25
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+10
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0.029
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0.038
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0.937
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0.969
+</td>
+</tr>
+<tr>
+<td style="text-align:left;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+<span class="math inline">\([30,45)\)</span>
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0.063
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0.031
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+15
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0.004
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+0.002
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+1
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+<em>Totali</em>
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+<em>1</em>
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+<em>1</em>
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+</td>
+<td style="text-align:center;border-left:1px solid;border-right:1px solid;border-top: thin solid;border-bottom: thin solid">
+</td>
+</tr>
+</tbody>
+</table>
+<ol type="a">
+<li>
+Istogramma di frequenze relative.
+</li>
+<li>
+<span class="math display">\[f^U([15,35])=0.525+0.287+5\cdot 0.004=0.832\]</span> <span class="math display">\[n^U([15,35])=0.832\cdot 160 =133.12\]</span>
+</li>
+<li>
+<span class="math display">\[f([20,30))=\frac{46+16}{224}=\frac{62}{224}=0.277\]</span>
+</li>
+<li>
+Funzioni di ripartizione a segmenti rispettivamente con altezze pari alle colonne <span class="math inline">\(F_j^U\)</span> e <span class="math inline">\(F_j^D\)</span>
+</li>
+<li>
+<p><span class="math display">\[F^U(x)\begin{equation}\begin{cases}0, &amp; \mathrm{per\ }x&lt;l_1^-\\ F^U_{j-1}+\frac{h^U_j}{N^U}(x-l_j^-), &amp; \mathrm{per\ }l_j^-\leq x&lt;l_j^+,\,\, j=1,2,\ldots,k\\ 1, &amp; \mathrm{per\ }x\geq l_k^+\end{cases}\end{equation}\]</span>
+<span class="math inline">\(x=25\)</span> cade nella terza classe, quindi <span class="math inline">\(j=3\)</span>: <span class="math display">\[\begin{align}F^U(25)&amp; =  F^U_{3-1}+\frac{h_3^U}{N^U}(25-l_3^-)=\\
+  &amp; = 0.650+0.029\cdot(25-20)=\\ &amp;= 0.650+0.145=0.795 \end{align}\]</span>
+Questa è la proporzione di uomini che impiega al più 25 secondi a produrre un pezzo.</p>
+Per sapere qual è la proporzione di uomini che impiegano più di 25 secondi a produrre un pezzo è necessario fare il complemento a 1: <span class="math inline">\(1 – 0.795 = 0.205\)</span>
+</li>
+</ol
+
+
+
+
+
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="esercitazione-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="esercitazione-3.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

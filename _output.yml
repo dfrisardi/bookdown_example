@@ -1,0 +1,14 @@
+bookdown::gitbook:
+  css: style.css
+  config:
+    toc:
+      before: |
+        <li><a href="./">Esercitazioni di Statistica di Base</a></li>
+      after: |
+        <li><a href="./" target="blank"></a></li>
+      collapse: section
+    edit: 
+    #https://github.com/USERNAME/REPO/edit/BRANCH/%s
+    download: 
+    #["pdf", "epub"]
+

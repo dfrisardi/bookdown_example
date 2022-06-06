@@ -1,0 +1,23 @@
+ESERCITAZIONE 3
+Soluzioni
+Es 2-3-4
+
+ESERCITAZIONE 4
+Soluzioni 
+Es 1: disegno istogramma e funzione ripartizione (a,b); risultato punto (f) sbagliato su word
+Es 2: risultato (a) sbagliato su word e anche ultime due colonne tabella iniziale; (b) aggiunti calcoli su R
+
+ESERCITAZIONE 5
+Soluzioni
+Es 1: Grafico su R aggiunti
+Es 2: Grafico e calcoli su R aggiunti
+Es 3: Grafico e calcoli su R aggiunti
+
+ESERCITAZIONE 7
+Soluzioni
+Es 1: Cambiate le approssimazioni
+
+ESERCITAZIONE 9
+Soluzioni
+Es 4: nel punto d) manca la soluzione, viene risposto il punto c). La domanda dell'esercizio è un'altra
+

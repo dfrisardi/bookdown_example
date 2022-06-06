@@ -1,0 +1,376 @@
+# Esercitazione 12
+
+## Esercizio 1
+
+Per confrontare le statistiche a livello nazionale con quelle del proprio comune, un assessore alla sanità di un comune di media grandezza ha indetto un sondaggio tra gli abitanti del comune. Dopo aver scelto casualmente 200 cittadini, è stato chiesto loro se avevano mai contratto la varicella. I risultati mostrano che 130 di essi hanno già contratto la varicella. 
+
+<ol type='a'>
+  <li>	Si determini l’intervallo di confidenza a livello del 95% per l’ignota proporzione $p$ di abitanti del comune che hanno contratto la varicella.</li>
+  <li>	Utilizzando l’informazione campionaria, quanti cittadini si dovrebbero intervistare affinché l’intervallo di confidenza per $p$ al 95% abbia ampiezza inferiore a 0.01?</li>
+</ol>
+
+## Esercizio 2
+
+In un’indagine sull’ascolto televisivo, è stato selezionato un campione casuale di 300 adulti ed è stato rilevato il tempo giornaliero (espresso in ore) trascorso a guardare la televisione; i dati ottenuti sono stati riportati nella seguente tabella:
+
+```{r echo=FALSE}
+freq = c(25,72,158,45)
+data.frame(rbind(c("Tempo","$(0,0.5]$","$(0.5,1]$", "$(1,2]$", "$(2,5]$", "Totale"),c("Frequenze",freq, sum(freq))))%>%
+  kbl(align = 'lccccl', col.names = NULL)%>%
+  kable_classic(html_font = 'Computer Modern', full_width=T)%>%
+  column_spec(1, bold=T, border_left = T, border_right = T)%>%
+  column_spec(6, bold=T, border_left = T, border_right = T)%>%
+  row_spec(1, bold = T)%>%
+  row_spec(c(1,2),
+           extra_css = 'border-top: thin solid;border-bottom: thin solid')
+```
+<ol type='a'>
+  <li>	Si fornisca, attraverso uno stimatore corretto, la stima puntuale della varianza $\sigma^2$ del tempo giornaliero trascorso a guardare la televisione.</li>
+  <li>Si costruisca l’intervallo di confidenza per l’ignoto tempo $\mu$ trascorso a guardare la televisione al livello di confidenza del 95%.</li>
+  <li>Si indichi come varierebbe l’ampiezza dell’intervallo di confidenza se il livello di confidenza venisse alzato al 98% (motivare la risposta senza effettuare calcoli). </li>
+  <li>Si costruisca l’intervallo di confidenza per la varianza $\sigma^2$ del tempo trascorso a guardare la televisione al livello di confidenza del 95%.</li>
+  <li>Sulla base di precedenti indagini, si può ritenere che la varianza $\sigma^2$ del tempo giornaliero trascorso a guardare la televisione si pari a 0.9. Si determini la numerosità del campione necessaria affinché la varianza della media campionaria sia inferiore o uguale a 0.0015.</li>
+</ol>
+
+## Esercizio 3
+
+Sia $X$ la statura (in cm) degli allievi iscritti ad una polisportiva e si indichi con $\mu$ il suo valore medio. Dall’esperienza passata, si può ritenere che la deviazione standard $\sigma$ di $X$ sia pari a 5cm.
+	
+<ol type='a'>
+  <li>Sapendo che l’altezza media campionaria di un campione di 134 iscritti è risultata pari a 174, si determini l’intervallo di confidenza al livello del 93% per l’altezza media $\mu$ degli iscritti.</li>
+  <li>Si determini la numerosità campionaria necessaria affinché risulti $P(|\overline{X}-\mu|\leq0.25)=0.95$.</li>
+</ol>
+	
+	
+## Esercizio 4
+
+Un giornalaio ha rilevato che, in un campione di 30 giorni, ha venduto complessivamente 3142 quotidiani. In base all’esperienza passata gli è noto che la deviazione standard del numero di quotidiani venduti in un giorno è pari a 12.
+
+<ol type='a'>
+  <li>Si calcoli l’intervallo di confidenza al 96% per il numero medio di $\mu$ di quotidiani venduti giornalmente.</li>
+  <li>Come varierebbe l’ampiezza dell’intervallo di confidenza determinato al punto precedente se aumentasse il numero di giorni di rilevazione?</li>
+  <li>Per quanti giorni il giornalaio dovrebbe continuare la rilevazione se vuole che la deviazione standard della media campionaria del numero di quotidiani venduti in un giorno si dimezzi?</li>
+</ol>
+	
+	
+## Esercizio 5
+
+Sia $X$ la quantità (in quintali) di uva prodotta da un ettaro di vigna in un grande vigneto. Scegliendo casualmente 135 ettari di vigna si sono ottenute le seguenti sintesi campionarie: $$\sum_{i=1}^{135}x_i =2345;\quad \sum_{i=1}^{135}x_i^2 =47425$$
+<ol type='a'>
+  <li>Si determini l’intervallo di confidenza per l’ignota quantità media $\mu$ di uva prodotta ad un livello di confidenza del 95%.</li>
+  <li>Come cambierebbe l’ampiezza dell’intervallo di confidenza per $\mu$ determinato al punto precedente se il livello di confidenza fosse del 90%?</li>
+  <li>Ulteriori indagini suggeriscono che la varianza $\sigma^2$ di $X$ sia pari a 25. Considerando questa informazione, si determini la numerosità $n$ del campione che garantisce $P(|\overline{X}-\mu|\leq0.9)=0.9$.</li>
+</ol>
+
+## Esercizio 6
+
+Una grande società è interessata a determinare la proporzione $p$ dei propri impiegati che sarebbero disponibili a svolgere un orario settimanale di 36 ore in 5 giorni. A tal fine, la società promuove un’indagine al proprio interno e rileva che, in un campione casuale (con ripetizione) di 160 impiegati, 95 accetterebbero l’orario proposto.
+
+<ol type='a'>
+  <li>Si determini l’intervallo di confidenza per l’ignota proporzione $p$ al libello del 97%.</li>
+  <li>Si determini il numero di impiegati ancora da intervistare affinché l’ampiezza dell’intervallo di confidenza calcolato al punto precedente sia inferiore a 0.16 sia tenendo conto dell’informazione campionaria sia non tenendo conto di tale informazione.</li>
+</ol>
+	
+## Esercizio 7
+
+Vengono intervistati 20 individui chiedendo qual è il loro consumo annuale di bevande alcoliche (espresso in litri). Si sono ricavate quindi le seguenti statistiche $$\sum_{i=1}^{20}x_i =2600;\quad\sum_{i=1}^{20}x_i^2=419244$$
+Supponendo che il carattere si distribuisca come una normale:
+
+<ol type='a'>
+  <li>Si determini l’intervallo di confidenza al 95% per la media incognita $\mu$.</li>
+  <li>Si determini l’intervallo di confidenza al 95% per la varianza incognita $\sigma^2$.</li>
+</ol>
+	
+## Soluzioni {-}
+
+### Esercizio 1 {-}
+
+```{r}
+# E1 
+n <- 200
+p <-130 / 200; p
+```
+
+
+<ol  type='a'>
+
+Popolazione Bernoulliana, $n=200$ ampia numerosità campionaria, $\hat{p}=\frac{130}{200}=0.65$.
+  <li> $$(L_1,L_2 )=\left(\hat{P}\pm z_{1-\frac{\alpha}{2}} \sqrt{\frac{\hat{P}(1-\hat{P})}{n}}\right)$$ $$1-\alpha=0.95;\quad \alpha=0.05;\quad z_{1-\frac{\alpha}{2}}=z_{0.975}=1.96$$ $$l_1=\hat{p}-z_{0.975}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}=0.65-1.96\sqrt{\frac{0.65 (1-0.65)}{200}}=0.65-0.0661=0.5839$$ $$l_2=\hat{p}+z_{0.975}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}=0.65+0.0661=0.7161$$
+```{r}
+# a)
+a <- 0.05
+z <- round(qnorm(1-a/2), 4); z
+d <- round(z * sqrt(p*(1-p)/n), 4); d
+p-d; p+d
+```
+  
+  </li>
+  <li> $$ A=2\cdot z_{0.975}\cdot\frac{\sqrt{\hat{p}(1-\hat{p})}}{\sqrt{n}}<0.01$$ $$ 2\cdot z_{0.975}\cdot\frac{\sqrt{\hat{p}(1-\hat{p})}}{\sqrt{n}}<0.01$$ $$ A=2\cdot z_{0.975}\cdot\frac{\sqrt{\hat{p}(1-\hat{p})}}{0.001}<\sqrt{n}$$ $$n>4\cdot z_{0.975}^2\cdot\frac{\hat{p}(1-\hat{p})}{0.01^2} =34958.56$$
+```{r}
+# b)
+A <- 0.01
+4*z^2*p*(1-p)/A^2
+```
+  
+</li>
+</ol>	
+
+
+
+### Esercizio 2 {-}	
+
+
+```{r}
+# E2 
+
+rm(list = ls())
+
+x <- c(0.25, 0.75, 1.5, 3.5)
+nn <- c(25, 72, 158, 45)
+n <- sum(nn)
+x2 <- x^2
+xn <- x*nn
+x2n <- x^2*nn
+d <- data.frame(x, nn, xn, x2, x2n); d
+colSums(d)
+```
+
+```{r echo=FALSE}
+data.frame(cbind(c(1:4, "Tot."),rbind(d, colSums(d))))%>%
+  kbl(align = 'c', col.names = c("$j$", "$x_j$", "$n_j$", "$x_jn_j$", "$x_j^2$","$x_j^2n_j$"))%>%
+  kable_classic(html_font = 'Computer Modern', full_width=T)%>%
+  column_spec(1, bold=T)%>%
+  row_spec(c(0,5), bold = T, extra_css = 'border-top: thin solid;border-bottom: thin solid')%>%
+  row_spec(4, extra_css = 'border-bottom: thin solid')
+```
+
+<ol  type='a'>
+  <li>$$\overline{x}=\frac{454.75}{300}=1.515833;$$ $$\quad  \hat{\sigma}^2=\frac{948.8125}{300}-1.515833^2=0.8649576;\quad s^2=\frac{300}{299} 0.8649576=0.8678505$$
+```{r}
+# a
+m <- sum(xn) / n; m
+sd <- sum(x2n)/n - m^2; sd
+s2 <- sd*n/(n-1);s2
+```
+  
+  </li>
+  <li>	Numerosità campionaria ampia $$z_{1-\frac{\alpha}{2}}=z_{0.975}=1.96$$ $$l_1=\overline{x}-z_{0.975}\sqrt{\frac{s^2}{n}}=1.5158-1.96\sqrt{\frac{0.8679}{300}}=1.5158-0.1054=1.4104$$ $$l_2=1.5158+0.1054=1.6213 $$
+```{r}
+# b
+a <- 0.05
+z <- qnorm(1-a/2); z
+
+d <- z*sqrt(s2/n); d
+m - d; m + d
+```
+</li>
+  <li>	L’ampiezza dell’intervallo di confidenza è $$A=2\cdot z_{1-\frac{\alpha}{2}}\sqrt{\frac{s^2}{n}}$$ se il livello di confidenza aumenta, $\alpha$ diminuisce, $1-\frac{\alpha}{2}$ aumenta, la funzione quantile è una funzione monotona crescente, pertanto $z_{1-\frac{\alpha}{2}}$ aumenta, e a parità di altre condizioni $A$ aumenta.
+</li>
+  <li>	$r=n-1=299$ gdl, approssimiamo con la normale $$\chi_{1-\frac{\alpha}{2}}^2\approx r+\sqrt{2r}  z_{1-\frac{\alpha}{2}}=346.929 \,\,(348.7943)$$ $$L_1=\frac{(n-1) S^2}{\chi_{1-\frac{\alpha}{2}}^2}\approx \frac{299\cdot0.8649576}{346.929}=0.747955$$ $$\chi_{\frac{\alpha}{2}}^2\approx r+\sqrt{2r}  z_{\frac{\alpha}{2}}=r-\sqrt{2r}  z_{1-\frac{\alpha}{2}}=251.071\,\, (252.9924)$$ $$L_2=\frac{(n-1) S^2}{\chi_{\frac{\alpha}{2}}^2}\approx \frac{299\cdot0.8649576}{251.071}=1.033522$$
+```{r}
+# d
+r <- n - 1
+chi1 <- r + sqrt(2*r)*z; chi1
+qchisq(1-a/2, r)
+L1 <- s2*r/chi1; L1
+
+chi2 <- r - sqrt(2*r)*z; chi2
+qchisq(a/2, r)
+L2 <- s2*r/chi2; L2
+
+r <- 1000000; r + sqrt(2*r)*qnorm(a/2); qchisq(a/2, r)
+```
+  
+</li>
+  <li>	$$\sigma_{\overline{X}}^2=\frac{\sigma^2}{n}\leq 0.0015$$ $$\frac{0.9}{n}\leq 0.0015$$ $$n\geq\frac{0.9}{0.0015}=600$$
+
+```{r}
+# e
+0.9 / 0.0015
+```
+
+  </li>
+</ol>
+
+### Esercizio 3 {-}
+
+```{r}
+# E3 
+
+rm(list = ls())
+
+s <- 5
+```
+
+
+<ol  type='a'>
+  <li>	$\sigma=5;\,\,n=134;\,\, \overline{x}=174;$ numerosità campionaria elevata $$1-\alpha=0.93; \quad \alpha=0.07;\quad 1-\frac{\alpha}{2}=0.965;\quad z_{0.965}\simeq1.81$$ $$l_1=\overline{x}-z_{0.965}\frac{\sigma}{\sqrt{n}}=174-1.81 \frac{5}{\sqrt{134}}=174-0.7818=173.2182$$ $$l_2=\overline{x}+z_{0.965}  \frac{\sigma}{\sqrt{n}}=174.7818$$
+```{r}
+# a)
+n <- 134
+m <- 174
+a <- 0.07
+1 - a/2
+z <- 1.81
+d <- z*s/sqrt(n); d
+m - d; m + d
+```
+  
+</li>
+  <li>
+  $$P(|\overline{X}-\mu|\leq0.25)=0.95=1-α$$ $$d=z_{1-\frac{\alpha}{2}}  \frac{\sigma}{\sqrt{n}}$$ $$0.25=z_{0.975}  \frac{5}{\sqrt{n}}$$ $$n=\left(z_{0.975}  \frac{5}{0.25}\right)^2=\left(1.96\frac{5}{0.25}\right)^2=1521$$
+
+```{r}
+# b)
+(1.95*5/0.25)^2
+```
+  
+  </li>
+</ol>
+
+### Esercizio 4 {-}
+$$n=30;\quad \overline{x}=\frac{3142}{30}=104.7333;\quad \sigma=12$$
+```{r}
+# E4 
+
+rm(list = ls())
+
+n <- 30
+m <- 3142 / n; m
+s <- 12
+```
+
+<ol  type='a'>
+  <li>	Numerosità campionaria ampia... quasi $1-\alpha=0.96;\,\, \alpha=0.04;\,\,1-\frac{\alpha}{2}=0.98;\,\,z_{0.98}=2.05 $ $$l_1=\overline{x}-z_{0.98}\frac{\sigma}{\sqrt{n}}=104.7333-4.491325=100.242$$ $$l_2=104.7333+4.491325=109.2247$$
+```{r}
+# a)
+z <- 2.05
+d <- z*s/sqrt(n); d
+m - d; m + d
+```
+  
+</li>
+  <li>	$$A=2\cdot z_{0.98}  \frac{\sigma}{\sqrt{n}}$$ l’ampiezza diminuirebbe.
+</li>
+  <li>	$$\sigma_{\overline{X}} =\frac{\sigma}{\sqrt{n}}$$ $$\sigma_{\overline{X}}^*=\frac{\sigma}{\sqrt{n^*}}=\frac{\sigma_{\overline{X}}}{2}=\frac{\sigma}{2\sqrt{n}}$$ $$\frac{\sigma}{\sqrt{n^*}}=\frac{1}{2\sqrt{n}}$$ $$\frac{1}{\sqrt{n^*}}=\frac{1}{2\sqrt{n}}$$ $$\sqrt{n^*}=2\sqrt{n}$$ $$n^*=4n$$ la numerosità campionaria deve quadruplicare, quindi oltre ai 30 giorni iniziali deve continuare per altri 90 giorni.
+</li>
+</ol>
+
+### Esercizio 5 {-}
+
+$$\overline{x}=17.37037;\quad \hat{\sigma}^2=\frac{47425}{135}-\overline{x}^2=49.56653;\quad s^2=49.93643$$
+```{r}
+# E5 
+
+rm(list = ls())
+
+n <- 135
+sx <- 2345
+sx2 <- 47425
+
+m <- sx / n; m
+sd <-sx2 / n - m^2; sd 
+s2 <- sd * n / (n - 1); s2
+```
+
+<ol  type='a'>
+  <li>	$n=135$ numerosità campionaria elevata; $z_{1-\frac{\alpha}{2}}=1.96$ $$l_1=\overline{x}-z_{0.975} \sqrt{\frac{s^2}{n}}  =17.37037-1.96\sqrt{\frac{49.93643}{135}}=17.37037-1.192059=16.17831$$ $$l_2=17.37037+1.192059=18.56243$$
+```{r}
+# a)
+z <- 1.96
+d <- z*sqrt(s2 / n); d
+
+m - d; m + d
+```
+
+</li>
+  <li>	Per un livello di confidenza inferiore l’ampiezza diminuisce $(2.384119\longrightarrow2.000779)$
+```{r}
+# b)
+2 * qnorm(0.95)*sqrt(s2 / n)
+```
+  </li>
+  <li>	$\sigma^2=25$ $$P(|\overline{X}-\mu|\leq0.9)=0.9=1-\alpha$$ $$d=z_{1-\frac{\alpha}{2}}  \frac{\sigma}{\sqrt{n}}$$ $$0.09=z_{0.995}  \frac{5}{\sqrt{n}}$$ $$n=\left(z_{0.995}  \frac{5}{0.09}\right)^2=\left(3.291 \frac{5}{0.09}\right)^2=33428.03$$
+```{r}
+# c)
+(3.291*5/0.09)^2
+```
+</li>
+</ol>
+
+
+### Esercizio 6 {-}
+Numerosità campionaria elevata $$n=160;\quad \hat{p}=\frac{95}{160}=0.59375$$
+```{r}
+# E6
+
+rm(list = ls())
+
+n <- 160
+p <- 95 / n; p
+```
+
+
+<ol  type='a'>
+  <li>	$1-\alpha=0.97;\quad 1-\frac{\alpha}{2}=0.985;\quad z_{0.985}=2.17$ $$\begin{align*}l_1&=\hat{p}-z_{0.985}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}=0.59375-2.17\sqrt{\frac{0.59375(1-0.59375)}{160}}=\\ &=0.59375-0.0842555=0.509495\end{align*}$$ $$l_2=0.59375+0.0842555=0.6780055$$
+```{r}
+# a)
+z <- 2.17
+d <- z*sqrt(p*(1-p)/n); d
+
+p - d; p + d
+```
+  
+</li>
+  <li>	Tenendo conto dell’informazione campionaria $$2\cdot2.17\sqrt{\frac{0.59375(1-0.59375)}{n}}<0.16$$ $$\sqrt{n}>\frac{2\cdot2.17\sqrt{0.59375(1-0.59375)}}{0.16}$$ $$n>\frac{4\cdot2.17^2\cdot0.59375(1-0.59375)}{0.16^2} =177.4747$$ Ancora 18
+
+Senza tenere conto dell’informazione campionaria $$n>\frac{4\cdot2.17^2\cdot0.5(1-0.5)}{0.16^2} =183.9414$$ Ancora 24
+
+```{r}
+# b)
+(2*z*sqrt(p*(1-p))/0.16)^2
+(2*z*sqrt(0.5*(1-0.5))/0.16)^2
+```
+
+</li>
+</ol>
+
+
+### Esercizio 7 {-}
+$$\overline{x}=130;\quad \hat{\sigma}^2=\frac{419244}{20}-130^2=4062.2;\quad s^2=4276;\quad r=n-1=19$$
+```{r}
+# E7 
+
+sx <- 2600
+sx2 <- 419244
+n <- 20
+m <- sx / n; m
+s2d <- sx2 / n - m^2; s2d
+s2 <- s2d * n / (n - 1); s2
+```
+
+<ol  type='a'>
+  <li>	$$l_1=\overline{x}-t_{0.975}\sqrt{\frac{s^2}{n}}=130-2.093\sqrt{\frac{4276}{20}}=130-30.60364=99.39636$$ $$l_2=120+30.60364=160.6036$$
+```{r}
+# a)
+t <- 2.093
+d <- t*sqrt(s2/n); d
+m - d; m + d
+```
+  
+</li>
+  <li>$$l_1=\frac{(n-1) s^2}{\chi_{1-\frac{\alpha}{2}}^2}=\frac{(n-1) s^2}{\chi_{0.975}^2}=\frac{19\cdot4276}{32.85}=2473.181$$ $$l_2=\frac{(n-1) s^2}{\chi_{\frac{\alpha}{2}}^2}=\frac{(n-1) s^2}{\chi_{0.025}^2}=\frac{19\cdot4276}{8.91}=9118.294$$
+  
+```{r}
+# b)
+(n - 1)*s2 / 32.85
+(n - 1)*s2 / 8.91
+```
+  
+</li>
+</ol>
+
+
+
+
+

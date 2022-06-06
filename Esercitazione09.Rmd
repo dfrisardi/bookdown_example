@@ -1,0 +1,329 @@
+# Esercitazione 9
+
+## Esercizio 1
+
+Sia data una v.c. $X$ discreta la cui funzione di probabilità è $$f(x)=\begin{cases}ax,\quad\quad x=1,2,…,7\\0,\,\,\,\,\quad\quad\mathrm{altrove}\end{cases}$$
+<ol type='a'>
+  <li>Si calcoli il valore assunto da $a$ e si tracci il grafico di $f(x)$.</li>
+  <li>Si ricavi la funzione di ripartizione e la si rappresenti graficamente.</li>
+  <li>Si determinino i quartili e li si riconosca sul grafico di $F(x)$.</li>
+  <li>Si calcolino $E(X)$ e $Var(X)$.</li>
+  <li>Si calcoli $P(X\geq3│X\leq6)$.</li>
+</ol>
+	
+## Esercizio 2
+	
+Data la funzione $$f(x)=\begin{cases}\frac{1}{2}-ax,\quad\quad x=1,2,…,5\\0,\quad\quad\quad\quad\,\,\,\,\mathrm{altrove}\end{cases}$$
+
+<ol type='a'>
+  <li>Si determini il valore di $a$ che rende questa funzione una funzione di probabilità per una variabile casuale discreta $X$ e la si rappresenti graficamente.</li>
+  <li>Si calcolino $E(X)$ e $Var(X)$.</li>
+  <li>Si ricavi la funzione di ripartizione $F(x)$ e se ne rappresenti il grafico.</li>
+  <li>Si calcolino i quartili e li si riconosca sul grafico.</li>
+</ol>
+
+## Esercizio 3 
+
+Sia data la funzione $$F(x)=\begin{cases}0,\quad\quad\,\, x<1\\0.2a,\quad 1\leq x<2\\0.5a,\quad 2\leq x<4\\0.6a,\quad4\leq x<7\\0.8a,\quad x\geq7\end{cases}$$
+
+<ol type='a'>
+  <li>Si determini il valore di a che rende $F(x)$ una funzione di ripartizione per una variabile casuale discreta $X$.</li>
+  <li>Si ricavi la funzione di ripartizione di $X$ e se ne tracci il grafico.</li>
+  <li>Si determinino $E(X)$ e $Var(X)$.</li>
+  <li>Si calcolino i quartili.</li>
+</ol>
+	
+## Esercizio 4
+
+Sia data la seguente funzione $$f(x)=\begin{cases}-\frac{1}{2}x+\frac{1}{2}, & 0\leq x<1\\x-1, &1\leq x\leq a\\0,&\mathrm{altrove} \end{cases}$$
+	
+<ol type='a'>
+  <li>Si determini il valore di a che fa in modo che $f(x)$ possa essere considerata una funzione di densità e se ne tracci il grafico.</li>
+  <li>Si determini la funzione di ripartizione $F(x)$ e se ne tracci il grafico.</li>
+  <li>Si determinino quartili e li si riconoscano sui grafici di $f(x)$ e di $F(x)$.</li>
+  <li>Si ricavino $P(1<X<2)$ e $P(X<1.5│X<2)$.</li>
+</ol>
+
+
+## Soluzioni {-}	
+
+### Esercizio 1 {-}
+
+<ol type='a'>
+  <li>$$a\cdot(1+2+3+4+5+6+7)=1$$ $$a\cdot28=1$$ $$a=\frac{1}{28}$$
+```{r echo=FALSE}
+data.frame(rbind(c("$x$",1:7),c("$f(x)$", round(1:7/28,4))))%>%
+  kbl(align = 'c', col.names = NULL)%>%
+  kable_classic(html_font = 'Computer Modern', full_width=T)%>%
+  column_spec(1, bold=T, border_left = T, border_right = T)%>%
+  column_spec(8, border_right = T)%>%
+  row_spec(1, bold = T)%>%
+  row_spec(c(1,2),
+           extra_css = 'border-top: thin solid;border-bottom: thin solid')
+  
+```
+```{r fig.align='center'}
+# E1
+rm(list = ls())
+
+# a
+sum(1:7)
+plot(1:7/28, type = "h", xlab = "x", ylab = "f(x)")
+
+```
+  
+  </li>
+  <li>
+```{r echo=FALSE}
+data.frame(rbind(c("$x$",1:7),c("$F(x)$", round(cumsum(1:7/28),4))))%>%
+  kbl(align = 'c', col.names = NULL)%>%
+  kable_classic(html_font = 'Computer Modern', full_width=T)%>%
+  column_spec(1, bold=T, border_left = T, border_right = T)%>%
+  column_spec(8, border_right = T)%>%
+  row_spec(1, bold = T)%>%
+  row_spec(c(1,2),
+           extra_css = 'border-top: thin solid;border-bottom: thin solid')
+```
+
+
+```{r fig.align='center'}
+# b
+plot(cumsum(1:7) / 28, type = "s", xlab = "x", ylab = "F(x)")
+```
+  
+  </li>
+  
+  <li>	La prima probabilità cumulata che supera 0.25 si osserva con 4, la prima probabilità cumulata che supera 0.5 si osserva con 5, la prima probabilità cumulata che supera o è uguale a 0.75 si osserva con 6. Per il terzo quartile possiamo prendere 6 o il valore che sta in mezzo a 6 e 7, ovvero 6.5</li>
+  
+  <li>
+```{r echo=FALSE}
+data.frame(rbind(c("$x$",1:7, "Totale"),c("$f(x)$", round((1:7/28),4), sum(1:7/28)),c("$x\\cdot f(x)$", round(1:7*(1:7/28),4), sum(1:7*(1:7/28))), c("$x^2\\cdot f(x)$", round((1:7)^2*(1:7/28),4), sum((1:7)^2*(1:7/28)))))%>%
+  kbl(align = 'c', col.names = NULL)%>%
+  kable_classic(html_font = 'Computer Modern', full_width=T)%>%
+  column_spec(1, bold=T, border_left = T, border_right = T)%>%
+  column_spec(9, border_right = T, border_left = T)%>%
+  row_spec(1, bold = T)%>%
+  row_spec(1, extra_css = 'border-top: thin solid;border-bottom: thin solid')%>%
+  row_spec(4, extra_css = 'border-bottom: thin solid')
+```
+$$\mu=E(X)=5$$ $$E(X^2)=28$$ $$\sigma^2=Var(X)=E(X^2)-E(X)^2=28-5^2=28-25=3$$ 
+  
+```{r}
+# d
+sum(1:7 * 1:7 / 28)
+
+sum((1:7)^2 * 1:7 / 28)
+
+sum((1:7)^2 * 1:7 / 28) - sum(1:7 * 1:7 / 28)^2
+
+(sum((1:7)^2 * 1:7 / 28) - sum(1:7 * 1:7 / 28)^2)^0.5
+```
+  
+  </li>
+  <li>	$$\begin{align*}P(X\geq3│X\leq6) & =\frac{P(3\leq X\leq6)}{P(X\leq6)} =\frac{P(X\leq6)-P(X<3)}{P(X\leq6)} =\frac{F(6)-F(2)}{F(6)} =\\ & =\frac{0.75-0.1071}{0.75}=\frac{0.6429}{0.75}=0.8571\end{align*}$$
+  
+Notare: $$\begin{align*}1-\frac{F(2)}{F(6)} & = 1-\frac{P(X\leq2}{P(X\leq6)} = 1-\frac{P(X\leq2\cap X\leq6)}{P(X\leq6)} =\\ & = 1-P(X\leq2│X\leq6)=1-P(X<3|X\leq6)\end{align*}$$
+</li>
+</ol>
+
+### Esercizio 2 {-}
+
+<ol type='a'>
+  <li>	$$\sum_{i=1}^5\left(\frac{1}{2}-a\cdot i\right) =1$$ $$\frac{5}{2}-a\sum_{i=1}^5 i =1$$ $$\frac{5}{2}-a\cdot15=1$$ $$-a\cdot 15=1-\frac{5}{2}$$ $$a\cdot15=\frac{3}{2}$$ $$a=\frac{3}{2\cdot15}=\frac{1}{10}$$
+
+```{r echo=FALSE}
+data.frame(rbind(c("$x$",1:5),c("$f(x)$", round(0.5-1:5/10,4))))%>%
+  kbl(align = 'c', col.names = NULL)%>%
+  kable_classic(html_font = 'Computer Modern', full_width=T)%>%
+  column_spec(1, bold=T, border_left = T, border_right = T)%>%
+  column_spec(6, border_right = T)%>%
+  row_spec(1, bold = T)%>%
+  row_spec(c(1,2),
+           extra_css = 'border-top: thin solid;border-bottom: thin solid')
+  
+```
+
+```{r fig.align='center'}
+# E2
+rm(list = ls())
+
+# a
+sum(1:5)
+sum(0.5 - 1:5 / 10)
+plot(0.5 - 1:5 / 10, type = "h", xlab = 'x', ylab = "f(x)")
+```
+
+</li>
+  <li>
+```{r echo=FALSE}
+data.frame(rbind(c("$x$",1:5, "Totale"),c("$f(x)$", round((0.5-1:5/10),4), sum(0.5-1:5/10)),c("$x\\cdot f(x)$", round(1:5*(0.5-1:5/10),4), sum(1:5*(0.5-1:5/10))), c("$x^2\\cdot f(x)$", round((1:5)^2*(0.5-1:5/10),4), sum((1:5)^2*(0.5-1:5/10)))))%>%
+  kbl(align = 'c', col.names = NULL)%>%
+  kable_classic(html_font = 'Computer Modern', full_width=T)%>%
+  column_spec(1, bold=T, border_left = T, border_right = T)%>%
+  column_spec(7, border_right = T, border_left = T)%>%
+  row_spec(1, bold = T)%>%
+  row_spec(1, extra_css = 'border-top: thin solid;border-bottom: thin solid')%>%
+  row_spec(4, extra_css = 'border-bottom: thin solid')
+```
+
+$$\mu=E(X)=2$$ $$\sigma^2=E(X^2)-E(X)^2=5-2^2=1$$
+```{r}
+# b
+sum(1:4*(0.5 - 1:4 / 10))
+sum((1:4)^2*(0.5 - 1:4 / 10))
+```
+
+  </li>
+  <li>
+```{r echo=FALSE}
+data.frame(rbind(c("$x$",1:5),c("$F(x)$", round(cumsum(0.5-1:5/10),4))))%>%
+  kbl(align = 'c', col.names = NULL)%>%
+  kable_classic(html_font = 'Computer Modern', full_width=T)%>%
+  column_spec(1, bold=T, border_left = T, border_right = T)%>%
+  column_spec(6, border_right = T)%>%
+  row_spec(1, bold = T)%>%
+  row_spec(c(1,2),
+           extra_css = 'border-top: thin solid;border-bottom: thin solid')
+```
+```{r fig.align='center'}
+# c
+plot(cumsum(0.5-1:5/10), ylim = c(0, 1), type = "s", xlab = "x", ylab = "F(x)")
+
+```
+
+  </li>
+  <li> La prima probabilità cumulata che supera 0.25 è in corrispondenza di 1, che supera 0.5 è in corrispondenza di 2, che supera 0.75 è in corrispondenza di 0.75.</li>
+</ol>
+
+### Esercizio 3 {-}
+
+<ol type='a'>
+  <li>$$0.8a=1$$ $$a=\frac{1}{0.8}=1.25$$
+
+```{r echo=FALSE}
+data.frame(rbind(c("$x$",1,2,4,7),c("$F(x)$", round(c(0.2, 0.5, 0.6, 0.8)/0.8,4))))%>%
+  kbl(align = 'c', col.names = NULL)%>%
+  kable_classic(html_font = 'Computer Modern', full_width=T)%>%
+  column_spec(1, bold=T, border_left = T, border_right = T)%>%
+  column_spec(5, border_right = T)%>%
+  row_spec(1, bold = T)%>%
+  row_spec(c(1,2),
+           extra_css = 'border-top: thin solid;border-bottom: thin solid')
+```
+
+  
+```{r fig.align='center'}
+# E3
+rm(list = ls())
+
+# a
+1/0.8
+c(0.2, 0.5, 0.6, 0.8)/0.8
+plot(c(1, 2, 4, 7), c(0.2, 0.5, 0.6, 0.8)/0.8, ylim = c(0, 1), type = "s", xlab = "x", ylab = "F(x)")
+```
+  
+  </li>
+  <li>
+```{r echo=FALSE}
+Fx <- c(0.2, 0.5, 0.6, 0.8)/0.8
+f <- c(0.25, Fx[-1] - Fx[-4])
+data.frame(rbind(c("$x$",1,2,4,7),c("$f(x)$", round(f,4))))%>%
+  kbl(align = 'c', col.names = NULL)%>%
+  kable_classic(html_font = 'Computer Modern', full_width=T)%>%
+  column_spec(1, bold=T, border_left = T, border_right = T)%>%
+  column_spec(5, border_right = T)%>%
+  row_spec(1, bold = T)%>%
+  row_spec(c(1,2),
+           extra_css = 'border-top: thin solid;border-bottom: thin solid')
+```
+
+```{r}
+# b
+Fx <- c(0.2, 0.5, 0.6, 0.8)/0.8
+f <- c(0.25, Fx[-1] - Fx[-4])
+f
+plot(c(1, 2, 4, 7), f, ylim = c(0, 0.375), type = "h", xlab = "x", ylab = "f(x)")
+```
+  
+  </li>
+  <li>
+```{r echo=FALSE}
+Fx <- c(0.2, 0.5, 0.6, 0.8)/0.8
+f <- c(0.25, Fx[-1] - Fx[-4])
+x <- c(1, 2, 4, 7)
+data.frame(rbind(c("$x$",1,2,4,7, "Totale"),c("$f(x)$", round(f,4), sum(f)),c("$x\\cdot f(x)$", round(x*f,4), sum(x*f)), c("$x^2\\cdot f(x)$", round(x^2*f,4), sum(x^2*f))))%>%
+  kbl(align = 'c', col.names = NULL)%>%
+  kable_classic(html_font = 'Computer Modern', full_width=T)%>%
+  column_spec(1, bold=T, border_left = T, border_right = T)%>%
+  column_spec(6, border_right = T, border_left = T)%>%
+  row_spec(1, bold = T)%>%
+  row_spec(1, extra_css = 'border-top: thin solid;border-bottom: thin solid')%>%
+  row_spec(4, extra_css = 'border-bottom: thin solid')
+```
+
+$$\mu=E(X)=3.25$$ $$\sigma^2=E(X^2)-E(X)^2=16-10.5625=5.4375$$
+  </li>
+  <li>La cumulata che è uguale a 0.25 corrisponde a 1 ed è tale fino a 2, quindi il primo quartile viene fissato pari a 1.5, la mediana è pari a 2, il terzo quartile è pari è compreso tra 4 e 7 (5.5).</li>
+</ol>
+
+
+### Esercizio 4 {-}
+
+<ol type='a'>
+  <li>$$\begin{align*} \int_{-\infty}^{+\infty}f(x)dx &=  \int_0^1-\frac{1}{2} x+\frac{1}{2} dx+\int_1^ax-1 dx=\\ & = \left[-\frac{1}{2} \left(\frac{x^2}{2}\right)+\frac{1}{2} x\right]_0^1+\left[\frac{x^2}{2}-x\right]_1^a=\\ & = \left[-\frac{1}{4}+\frac{1}{2}\right]+\left[\frac{a^2}{2}-a\right]-\left[\frac{1}{2}-1\right]=\frac{1}{4}+\frac{a^2}{2}-a+\frac{1}{2}= \\ & = \frac{1}{2} a^2-1\cdot a+\frac{3}{4}:=1\end{align*}$$ $$\frac{1}{2} a^2-1\cdot a-\frac{1}{4}=0$$ $$a=\frac{-(-1)\pm \sqrt{(-1)^2-4\left[\frac{1}{2} \left(-\frac{1}{4}\right)\right] }}{(2(-1)}=1\pm\sqrt{\frac{3}{2}}=1\pm 1.2247=\begin{cases}-0.2247<1 &\mathrm{NO} \\ 2.2247 &\mathrm{SÌ}\end{cases}$$
+  
+```{r fig.align='center'}
+# E4
+
+#a
+f <- Vectorize(function(x) {
+  if (x < 0 | x >= 1 + (3/2)^0.5)
+    return(0)
+  if (x < 1)
+    return(-1/2*x+1/2)
+  if (x < 1 + (3/2)^0.5)
+    return(x - 1)
+})
+
+plot(f, from = -1, to = 3, n = 10001, ylab = "f(x)")
+
+```
+  
+  </li>
+  <li>$$F(x)=\int_{-\infty}^xf(t)dt$$ 
+  
+  In $[0,1)$ $$\int_0^x-\frac{1}{2} t+\frac{1}{2} dt=\left[-\frac{1}{4} t^2+\frac{1}{2} t\right]_0^x=-\frac{1}{4} x^2+\frac{1}{2} x$$ $$\lim_{x\rightarrow1^-} F(x)=-\frac{1}{4}+\frac{1}{2}=\frac{1}{4}=0.25$$
+  
+  In $[1, 2.2247)$ $$F(1)+\int_1^xt-1\,\, dt=\frac{1}{4}+\left[\frac{1}{2} t^2-t\right]_1^x=\frac{1}{4}+\frac{1}{2} x^2-x-\frac{1}{2}+1=\frac{1}{2} x^2-x+\frac{3}{4}$$ $$F(1)=\frac{1}{4}=0.25$$ $$F\left(1+\sqrt{\frac{3}{2}}\right)=F(2.2247)=1$$
+  
+```{r fig.align='center'}
+# b
+Fx <- Vectorize(function(x) {
+  if (x < 0)
+    return(0)
+  if (x < 1)
+    return(-1/4*x^2+1/2*x)
+  if (x < 1 + (3/2)^0.5)
+    return(1/2*x^2-x+3/4)
+  return(1)
+})
+
+plot(Fx, from = -1, to = 3, n = 10001, ylab = "F(x)")
+
+```  
+  </li>
+  <li> Il primo quartile corrisponde con 1, il secondo quartile è maggiore di 1, quindi $$\frac{1}{2} x^2-x+\frac{3}{4}=\frac{2}{4}$$ $$\frac{1}{2} x^2-x+\frac{1}{4}=0$$ $$x=\frac{(-1)\pm\sqrt{(-1)^2-4 \frac{1 }{2}\frac{1}{4}  }}{2(-1)} =1\pm\frac{1}{\sqrt{2}}$$
+```{r}
+# c
+1+1/sqrt(2)
+```
+  
+Il caso "sottrazione" lo escludiamo perché sappiamo che dev'essere maggiore di 1, quindi la mediana è pari a 1.7071. Il terzo quartile è pari a $$frac{1}{2} x^2-x+\frac{3}{4}=\frac{3}{4}$$ $$\frac{1}{2} x^2-x=0$$ Escludiamo la soluzione nulla $$\frac{1}{2} x-1=0$$ $$\frac{1}{2} x=1$$ $$x=2$$
+
+  
+  </li>
+  <li></li>
+</ol>
+
+
+

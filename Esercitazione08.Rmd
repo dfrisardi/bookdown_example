@@ -1,0 +1,156 @@
+# Esercitazione 8
+
+## Esercizio 1
+Si lancia un dado 2 volte. Determinare la probabilità che:
+<ol type='a'>
+  <li>entrambi i lanci diano luogo ad un numero pari;</li>
+  <li>la somma dei due punteggi sia 5.</li>
+</ol>
+
+## Esercizio 2
+
+Da un’urna contenente 5 palline numerate, delle quali le prime 3 rosse e le ultime 2 nere, ne vengono estratte 2. Considerando prima l’ipotesi di "*estrazioni con reinserimento*" e poi quella di "*estrazioni senza reinserimento*", si determini la probabilità che:
+
+<ol type='a'>
+  <li>entrambe siano rosse;</li>
+  <li>la prima sia rossa e la seconda sia nera;</li>
+  <li>una sola sia rossa.</li>
+</ol>
+
+## Esercizio 3
+
+Due urne A e B, fra loro alla pari di fronte all’operazione di scelta, contengono:
+
+*	l’urna A è composta da 6 palline nere e 4 gialle;
+*	l’urna B è composta da 7 palline nere e 3 verdi.
+
+Si risponda quindi ai seguenti quesiti.
+<ol type='a'>
+  <li>Scelta a caso un’urna, determinare la probabilità di ottenere da questa una pallina nera.</li>
+  <li>Posto di avere ottenuto una pallina nera, qual è la probabilità che provenga dall’urna A?</li>
+</ol>
+
+## Esercizio 4
+
+In inverno in una certa regione 1 individuo su 5 si vaccina contro l’influenza. La probabilità di contrarre l’inﬂuenza è di 0.05 per un individuo vaccinato e 0.65 per un individuo non vaccinato.
+
+<ol type='a'>
+  <li>Qual è la probabilità di prendere l’inﬂuenza per un individuo della regione?</li>
+  <li>Scelto a caso a ﬁne stagione un individuo, che si constata aver contratto l’inﬂuenza, qual è la probabilità che NON si fosse vaccinato?</li>
+  <li>Come si modiﬁcherebbe la probabilità calcolata al punto b) se nella stessa regione si vaccinassero 3 individui su 5?</li>
+</ol>
+
+## Esercizio 5
+
+Un sacchetto contiene 5 pennarelli di colore diverso: nero, blu, rosso, verde e giallo. Tizio prende dal secchetto 3 pennarelli in blocco.
+
+<ol type='a'>
+  <li>Calcolare quante sono le possibili terne.</li>
+  <li>Calcolare quante sono le possibili terne che contengono il pennarello nero.</li>
+  <li>Calcolare la probabilità che Tizio estragga un pennarello nero.</li>
+  <li>Sapendo che nella terna presa da Tizio c’è il pennarello giallo, calcolare la probabilità che Tizio estragga il pennarello nero.</li>
+</ol>
+
+## Esercizio 6
+
+Una stanza contiene 10 poltrone. Entrano 7 persone e si siedono. Indicare in quanti modi le poltrone possono essere occupate, prima senza distinguere la persona che occupa la poltrona, poi distinguendola.
+
+## Soluzioni {-}
+
+### Esercizio 1 {-}
+
+Lo spazio degli eventi è $\Omega={(i,j):\,\,i=1,…,6;\,\,j=1,…,6}$ e consideriamo ciascun evento equiprobabile. Essendo $N=|\Omega|=6\cdot6=36$ la probabilità di ciascun evento elementare è $\frac{1}{36}$.
+
+<ol type='a'>
+  <li>	Indichiamo con $A=\{$*il primo lancio ha dato luogo ad un numero pari*$\}$ e indichiamo con $B=\{$*il secondo lancio ha dato luogo ad un numero pari*$\}$, pertanto stiamo cercando la probabilità $$P(A\cap B)$$ osservando che i due lanci sono indipendenti notiamo che anche gli eventi $A$ e $B$ sono indipendenti tra di loro, pertanto $$P(A\cap B)=P(A)P(B)$$ 
+
+Sappiamo che dal primo lancio tre numeri su sei sono pari $$P(A)=\frac{3}{6}=\frac{1}{2}$$ analogamente nel secondo lancio $$P(B)=\frac{3}{6}=\frac{1}{2}$$
+
+In conclusione $$P(A\cap B)=P(A)P(B)=\frac{1}{2}\cdot\frac{1}{2}=\frac{1}{4}$$
+</li>
+  <li>	$C=\{$*la somma dei due punteggi è pari a 5*$\}$. Per determinare questa probabilità è opportuno riprodurre lo spazio degli eventi e per ogni evento calcolare la somma dei punteggi dei due dadi
+```{r echo=FALSE}
+data.frame(c("$w_{ij}=i+j$",1:6),c(1:4,"**5**",6,7),c(2:4,"**5**",6:8),c(3,4,"**5**",6:9),c(4,"**5**",6:10),c("**5**",6:11),c(6:12))%>%
+  kbl(align = 'c', col.names = NULL)%>%
+  kable_classic(html_font = 'Computer Modern', full_width=T)%>%
+  column_spec(1, bold=T, border_left = T, border_right = T)%>%
+  column_spec(7, border_right = T)%>%
+  row_spec(1, bold = T, 
+           extra_css = 'border-top: thin solid;border-bottom: thin solid')%>%
+  row_spec(7,extra_css = 'border-bottom: thin solid')  
+  
+
+```
+Notiamo che $n(C)=4$, pertanto $P(C)=\frac{n(C)}{N}=\frac{4}{36}=\frac{1}{9}$.
+A tale risultato possiamo arrivare anche attraverso la probabilità condizionata che fa uso dei due eventi
+<center>$D=\{$*al primo lancio numero al più pari a 4*$\}$</center>
+<center>$E=\{$*al secondo lancio unico numero che è complemento a 5*$\}$</center>
+otteniamo quindi $P(D)=\frac{4}{6}=\frac{2}{3}$ e $P(E│D)=\frac{1}{6}$ e $P(E│\overline{D})=0$
+Considerando che l’evento $D$ ed il suo complementare $\overline{D}$ sono una partizione dello spazio degli eventi, possiamo usare la formula delle probabilità totali
+$$P(E)=P(E│D)P(D)+P(E│\overline{D})P(\overline{D})=\frac{1}{6}\cdot\frac{2}{3}+0\cdot\frac{1}{3}=\frac{1}{9}$$
+
+  </li>
+</ol>
+
+### Esercizio 2 {-}
+<center><h3>Estrazioni con reinserimento</center></h3>
+
+Le estrazioni con reinserimento implicano indipendenza nelle diverse estrazioni pertanto i diversi punti verranno risolti definendo l’evento $A$ alla prima estrazione e l’evento $B$ alla seconda estrazione e le rispettive probabilità, per ottenere la probabilità congiunta moltiplicando le due precedenti.
+
+<ol>
+  <li>$P(A)=\frac{3}{5}, \quad P(B)=\frac{3}{5}, \quad P(A\cap B)=P(A)P(B)=\frac{3}{5}\cdot\frac{3}{5}=\frac{9}{25}$</li>
+  <li>$P(A)=\frac{3}{5},\quad P(B)=\frac{2}{5},\quad P(A\cap B)=P(A)P(B)=\frac{3}{5}\cdot\frac{2}{5}=\frac{6}{25}$</li>
+  <li>Alla probabilità del punto precedente va sommata la probabilità dell’evento disgiunto: prima nera e seconda rossa $$P(A)=\frac{2}{5},\quad P(B)=\frac{3}{5},\quad P(A\cap B)=\frac{6}{25}$$ pertanto il risultato finale è $$\frac{6}{25}+\frac{6}{25}=\frac{12}{25}$$</li>
+</ol>
+
+	
+<center><h3>Estrazioni senza reinserimento</center></h3>
+	
+Le estrazioni senza reinserimento fanno cadere l’indipendenza poiché la composizione dell’urna cambia alla seconda estrazione. Pertanto, i diversi punti verranno risolti definendo l’evento $A$ alla prima estrazione e l’evento $B$ alla seconda estrazione e la probabilità dell’evento $A$, la probabilità dell’evento $B$ _condizionatamente_ al fatto che si sia verificato l’evento $A$, e la probabilità congiunta moltiplicando le due precedenti.
+
+<ol>
+  <li>$P(A)=\frac{3}{5},\quad P(B│A)=\frac{2}{4}=\frac{1}{2},\quad P(A\cap B)=P(A)P(B│A)=\frac{3}{5}\cdot\frac{1}{2}=\frac{3}{10}$</li>
+  <li>$P(A)=\frac{3}{4},\quad P(B│A)=\frac{2}{4}=\frac{1}{2},\quad P(A\cap B)=P(A)P(B│A)=\frac{3}{5}\cdot\frac{1}{2}=\frac{3}{10}$ </li>
+  <li>Alla probabilità del punto precedente va sommata la probabilità dell’evento disgiunto: prima nera e seconda rossa $$P(A)=\frac{2}{5},\quad P(B|A)=\frac{3}{4},\quad P(A\cap B)=P(A)P(B│A)=\frac{2}{5}\cdot\frac{3}{4}=\frac{3}{10}$$ pertanto il risultato finale è $$\frac{3}{10}+\frac{3}{10}=\frac{3}{5}$$</li>
+</ol>
+
+### Esercizio 3 {-}
+
+<ol type='a'>
+  <li>	$N=\{$*pallina nera*$\}$, $P(A)=P(B)$=\frac{1}{2}, $A$ e $B$ costituiscono una partizione dello spazio degli eventi, pertanto $$P(N)=P(N│A)P(A)+P(N│B)P(B)=\frac{6}{10}\cdot\frac{1}{2}+\frac{7}{10}\cdot\frac{1}{2}=\frac{13}{20}$$
+</li>
+  <li>	Applichiamo la formula di Bayes $$P(A│N)=\frac{P(N│A)P(A)}{P(N)}=\frac{\frac{6}{10}\cdot\frac{1}{2}}{\frac{13}{20}}=\frac{6}{13}$$
+</li>
+</ol>
+
+### Esercizio 4 {-}
+
+
+<ol type='a'>
+  <li>$$P(V)=\frac{1}{5},\quad P(\overline{V})=1-\frac{1}{5}=\frac{4}{5},\quad P(I│V)=0.05,\quad P(I│\overline{V})=0.65$$  $$P(I)=P(I│V)P(V)+P(I│\overline{V})P(\overline{V})=0.05\cdot\frac{1}{5}+0.65\cdot\frac{4}{5}=0.53$$</li>
+  <li>$$P(\overline{V}│I)=\frac{P(I│\overline{V})P(\overline{V})}{P(I)} =\frac{0.65\cdot\frac{4}{5}}{0.53}=0.9811$$</li>
+  <li>$$P(I)=P(I│V)P(V)+P(I│\overline{V})P(\overline{V})=0.05\cdot\frac{3}{5}+0.65\cdot\frac{2}{5}=0.29$$ $$P(\overline{V}│I)=\frac{P(I│\overline{V})P(\overline{V})}{P(I)} =\frac{0.65\cdot\frac{2}{5}}{0.29}=0.8966$$ diminuirebbe </li>
+</ol>
+
+	
+### Esercizio 5 {-}
+
+	
+
+<ol type='a'>
+  <li>$$\require{cancel} N=\begin{pmatrix}5\\ 3\end{pmatrix}=\frac{5!}{3!(5-3)!}=\frac{5\cdot4\cdot\cancel{3!}}{\cancel{3!}\cdot2}=10$$</li>
+  <li>	A terne contenenti la pallina nera $$n(A)=\begin{pmatrix}4\\2\end{pmatrix}=\frac{4!}{2!(4-2)!}=\frac{4\cdot3\cdot\cancel{2!}}{\cancel{2!}\cdot2}=6$$
+</li>
+  <li>$$	P(A)=\frac{n(A)}{N}=\frac{6}{10}=0.6$$</li>
+  <li>	$B=\{$*nella terna c’è il pennarello giallo*$\}$, $P(B)=0.6$ $$n(A\cap B)=\begin{pmatrix}3\\1\end{pmatrix}=\frac{3!}{1!2!}=\frac{3\cdot2}{1\cdot2}=3$$ $$P(A\cap B)=\frac{n(A\cap B)}{N}=\frac{3}{10}=0.3$$ $$P(A│B)=\frac{P(A\cap B)}{P(B)} =\frac{3}{10}\cdot\frac{10}{6}=\frac{n(A\cap B)}{n(B)} =\frac{3}{6}=\frac{1}{2}$$
+</li>
+</ol>
+
+
+### Esercizio 6 {-}
+
+$$C_{10,7}=\begin{pmatrix}10\\7\end{pmatrix}=\frac{10!}{7!(10-7)!}=\frac{10\cdot9\cdot8\cdot\cancel{7!}}{\cancel{7!}\cdot3!}=\frac{10\cdot9\cdot8}{3\cdot2}=10\cdot3\cdot4=120$$
+
+Volendo distinguere le persone che occupano ciascuna poltrona dobbiamo considerare che per ogni combinazione i 7 individui si possono disporre in $7!$ modi diversi, ovvero il rispettivo numero di permutazioni. Il risultato corrisponde alle disposizioni semplici di 10 elementi presi 7 alla volta
+
+$$D_{10,7}=\frac{10!}{(10-7)!}=C_{10,7} P_7=\begin{pmatrix}10\\7\end{pmatrix}7!=120\cdot7!=120\cdot5040=604800$$

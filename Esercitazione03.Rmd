@@ -1,0 +1,246 @@
+# Esercitazione 3
+
+<center><h2>Medie analitiche e medie lasche</h2></center>
+
+Per gli esercizi da 1 a 4 la fonte dei dati è: **Banca d’Italia – Indagine campionaria**, “*Indagine sui bilanci delle famiglie italiane*”, anno 2006.
+
+La base di dati è costituita da 7768 famiglie, 19551 individui, dei quali 13009 percettori di reddito.
+
+
+## Esercizio 1
+
+Si consideri il carattere $X=$“*titolo di studio*”. Di seguito è riportata la distribuzione di frequenze. Si individuino mediana, quartili, decili e moda.
+
+```{r echo=FALSE}
+tab1=data.frame("j"=c(1:7,"Totale"),
+                "xj"=c("Nessuno", "Licenza elementare", "Licenza media inferiore",
+                       "Licenza media superiore", "Laurea triennale", 
+                       "Laurea magistrale", "Specializzazione post-laurea",
+                       ""),
+                "nj"=c(2293,4240,5671,5738,146,1421,42,19551))
+colnames(tab1)=c("$j$","<center>$x_j$</center>","$n_j$")
+tab1%>%
+  format_cells(rows=8, col=1, 'italics')%>%
+  format_cells(rows=8, col=3, 'italics')%>%
+  kbl(align = 'clc', escape = F)%>%
+  kable_classic(html_font = 'Computer Modern', full_width=F)%>%
+  row_spec(c(0,8), bold = T)%>%
+  row_spec(c(0,8), extra_css = 'border-top: thin solid;border-bottom: thin solid')%>%
+  row_spec(7, extra_css = 'border-bottom: thin solid')
+
+```
+
+## Esercizio 2
+
+Si considerino i seguenti 10 individui e il carattere $X=$“*età in anni compiuti*”. Si individuino mediana, quartili, moda e media aritmetica.
+
+```{r echo=FALSE}
+tab2=data.frame(rbind(paste0("$x_{",1:10,"}$"),c(58,36,32,86,52,60,56,19,37,51)))
+tab2%>%
+  kbl(align = 'c', col.names = NULL)%>%
+  kable_classic(html_font = 'Computer Modern', full_width=F)%>%
+  row_spec(1, bold = T)%>%
+  row_spec(c(1,2), extra_css = 'border-top: thin solid;border-bottom: thin solid')
+  
+```
+
+## Esercizio 3
+
+La seguente tabella riporta la distribuzione di frequenze dell’età in anni compiuti $X$ circoscritta all’intervallo $[31,40]$. Si individuino mediana, quartili, moda e media aritmetica.
+
+```{r echo=FALSE}
+tab3=data.frame(rbind(c("$x_j$",31:40,"Totale"),
+                      c("$n_j$",222,227,227,215,201,294,259,282,271,276,2474)))
+
+tab3%>%
+  kbl(align = 'c', col.names = NULL)%>%
+  kable_classic(html_font = 'Computer Modern', full_width=F)%>%
+  column_spec(c(1,12), bold=T, border_left = T, border_right = T)%>%
+  row_spec(1, bold = T)%>%
+  row_spec(c(1,2), extra_css = 'border-top: thin solid;border-bottom: thin solid')
+```
+
+## Esercizio 4
+
+Si considerino ora le 7768 famiglie. Per ognuna di esse si osserva il reddito disponibile netto $X$ espresso in migliaia di euro. I dati sono stati raggruppati in classi. Si individuino mediana, quartili, moda e media aritmetica. Si verifichi la somma dagli scarti dalla media aritmetica.
+
+```{r echo=FALSE}
+tab4 = data.frame("j"=c("$j$", 1:5, "Totale"),
+                  "Classi"=c("<center>Classi</center>", "$(0,50]$", "$(50,100]$",
+                             "$(100,150]$", "$(150,350]$", "$(350,850]$",""),
+                  "nj"=c("$n_j$", 6696,958,80,26,8,7768))
+tab4%>%
+  kbl(align = 'crc', col.names = NULL, escape=F)%>%
+  kable_classic(html_font = 'Computer Modern', full_width=F)%>%
+  column_spec(1, border_left = T, border_right = T, bold=T)%>%
+  column_spec(c(2,3), border_left = T, border_right = T)%>%
+  row_spec(6,extra_css = 'border-top: thin solid;border-bottom: thin solid')%>%
+  row_spec(c(1,7), bold = T, extra_css = 'border-top: thin solid;border-bottom: thin solid')
+
+```
+## Esercizio 5
+
+Nel mese di dicembre, in un comune italiano sono state rilevate le temperature di una giornata ad intervalli regolari di 3 ore. La seguente tabella riporta i valori osservati espressi in gradi Celsius:
+
+```{r echo=FALSE}
+tab5 = data.frame("$j$"=c(1:8),
+                  "$x_j$"=c(8,6,6,6,11,12,10,10))
+colnames(tab5) = c("$j$","$x_j$")
+
+tab5%>%
+  kbl(align = 'cc', escape = F)%>%
+  kable_classic(html_font = 'Computer Modern', full_width=F)%>%
+  column_spec(1, bold = T)%>%
+  row_spec(0, bold = T, 
+           extra_css = 'border-top: thin solid;border-bottom: thin solid')%>%
+  row_spec(8, extra_css = 'border-bottom: thin solid')
+
+```
+
+Si calcoli la media aritmetica. Che valore assumerebbe la media aritmetica se le temperature fossero espresse in gradi Kelvin? E se fossero espresse in gradi Fahrenheit? Si discuta la natura del carattere e delle scale citate. $x_6=12°\,C$ è il doppio di $x_2=6°\,C$?
+Si ricordano le relazioni esistenti tra le scale di misurazione della temperatura
+$$K=C+273.15$$
+$$F=\frac{9}{5} K-459.67$$
+
+Lo zero assoluto corrisponde a $0°\,K$.
+
+## Esercizio 6
+
+Si consideri una popolazione suddivisa in tre gruppi $A, B$ e $C$. Si calcoli la media aritmetica di ogni gruppo e la media dell’intera popolazione e si verifichi la proprietà associativa della media aritmetica.
+
+```{r echo=FALSE}
+tab6_a = data.frame("A"=c(12,34,45,12,75,"Tot. 178"))
+tab6_b = data.frame("B"=c(90,76,34,45,"Tot. 245"))
+tab6_c = data.frame("C"=c(98,34,23,64,34,83,"Tot. 336"))
+
+knitr::kables(list(
+  tab6_a%>%kbl(align = 'c', col.names = "Gruppo $A$")%>%
+    kable_classic(html_font = 'Computer Modern', full_width=F,
+                  position='right')%>%
+    row_spec(5, extra_css = 'border-bottom: thin solid')%>%
+    row_spec(c(0,6), bold=T,extra_css = 'border-top: thin solid;border-bottom: thin solid'),
+  tab6_b%>%kbl(align = 'c', col.names = "Gruppo $B$")%>%
+    kable_classic(html_font = 'Computer Modern', full_width=F,
+                  position='center')%>%
+    row_spec(4, extra_css = 'border-bottom: thin solid')%>%
+    row_spec(c(0,5),bold=T,extra_css = 'border-top: thin solid;border-bottom: thin solid'),
+  tab6_c%>%kbl(align = 'c', col.names = "Gruppo $C$")%>%
+    kable_classic(html_font = 'Computer Modern', full_width=F,
+                  position='left')%>%
+    row_spec(6, extra_css = 'border-bottom: thin solid')%>%
+    row_spec(c(0,7),bold=T,extra_css = 'border-top: thin solid;border-bottom: thin solid')
+))
+
+```
+
+
+## Esercizio 7
+
+Un automobilista, nel fare un percorso di $N=100\,Km$, viaggia a velocità diverse. Percorre $20\,Km$ a una velocità di $50\,Km/h$, $30\,Km$ a $80\,Km/h$ e altri $50\,Km$ li percorre a $60\,Km/h$. Valutare la velocità media che lascia invariato il tempo di percorrenza del tragitto.
+
+
+## Soluzioni {-}
+
+### Esercizio 1 {-}
+
+$X=$ *titolo di studio*. Con $x_j$ indichiamo la $j$-esima modalità, $j=1,2,\ldots,K$. Il carattere presenta $K=7$ modalità distinte. Le modalità devono essere ordinate.
+
+```{r echo=F}
+tab1.sol=data.frame("j"=c(1:7,""),
+                "xj"=c("Nessuno", "Licenza elementare", "Licenza media inferiore",
+                       "Licenza media superiore", "Laurea triennale", 
+                       "Laurea magistrale", "Specializzazione post-laurea",
+                       ""),
+                "nj"=c(2293,4240,5671,5738,146,1421,42,"$N=19551$"),
+                "Cj"=c(2293,6533,12204,17942,18088,19509,19551,""))
+colnames(tab1.sol)=c("$j$","<center>$x_j$</center>","$n_j$", "$C_j$")
+tab1.sol%>%
+  format_cells(rows=8, col=3, 'italics')%>%
+  kbl(align = 'clc', escape = F)%>%
+  kable_classic(html_font = 'Computer Modern', full_width=F)%>%
+  row_spec(c(0,8), bold = T)%>%
+  row_spec(0, extra_css = 'border-top: thin solid;border-bottom: thin solid')%>%
+  row_spec(7, extra_css = 'border-bottom: thin solid')
+```
+
+Mediana: $Pos(Me)=\frac{N+1}{2}=9776$, $Me=x_{(9776)}=$ *Licenza media inferiore*.
+
+Per trovare quartili decili e centili si segue la stessa procedura ma cambiano le posizioni delle modalità. 
+
+Quartili: $l\cdot\frac{N+1}{4}$ per $l=1,2,3$. Decili: $l\cdot \frac{N+1}{10}$ per $l=1,2,\ldots,9$. Notare la corrispondenza tra media e secondo quartile.
+
+Esempi: $Pos(Q_1)=4888$, $Pos(Q_3)=14664$, $Pos(D_3)=5865.6\cong 5866$. Per avere una posizione esatta arrotondare sempre per eccesso.
+
+La moda è la modalità che presenta frequenza più elevata, in questo caso $Moda =$ *Licenza media superiore*. È opportuno discuterne la rappresentatività, a tale scopo si valuta la sua frequenza relativa $f_4=\frac{n_4}{N}=\frac{5738}{19551}=0.2935$. La moda rappresenta il $23.35\%$ della popolazione.
+
+### Esercizio 2 {-}
+
+### Esercizio 3 {-}
+
+### Esercizio 4 {-}
+
+### Esercizio 5 {-}
+
+
+```{r, echo=FALSE}
+tab5.sol = data.frame("$j$"=c(1:8, "Media"),
+                  "$x_j$"=c(8,6,6,6,11,12,10,10,"$8.625$"))
+colnames(tab5.sol) = c("$j$","$x_j$")
+
+tab5.sol%>%
+  format_cells(9,1,value="italics")%>%
+  kbl(align = 'cc', escape = F)%>%
+  kable_classic(html_font = 'Computer Modern', full_width=F)%>%
+  column_spec(1, bold = T)%>%
+  row_spec(c(0,9), bold = T, 
+           extra_css = 'border-top: thin solid;border-bottom: thin solid')%>%
+  row_spec(8, extra_css = 'border-bottom: thin solid')
+```
+
+In Kelvin $8.625+273.15=281.775$ e in Fahrenheit $\frac{9}{5}\cdot  281.775-459.67=47.525$.
+
+### Esercizio 6 {-}
+
+```{r echo=F}
+tab6.sol = data.frame("a"=c(rep("",6),"Somma", "Media"),
+                      "A"=c(12,34,45,12,75,"",178, "$35.6$"),
+                      "B"=c(90,76,34,45,"","",245,"$61.25$"),
+                      "C"=c(98,34,23,64,34,83,336,"$56$"),
+                      "Totale"=c(rep("",6),759, "$50.6$"))
+tab6.sol%>%
+  format_cells(c(7,8), c(1:5), 'italics')%>%
+  kbl(align = 'lcccc', col.names = c("","$A$","$B$","$C$","Totale"))%>%
+  kable_classic(html_font = 'Computer Modern', full_width=F)%>%
+  row_spec(c(0,8), bold = T, 
+           extra_css = 'border-top: thin solid;border-bottom: thin solid')%>%
+  row_spec(c(6,7), extra_css = 'border-bottom: thin solid')
+
+```
+### Esercizio 7 {-}
+
+$$T=\sum_{j=1}^k t_j = \sum_{j=1}^k \frac{l_j}{v_j}$$
+$$ \sum_{j=1}^k \frac{l_j}{\overline{v}}= \sum_{j=1}^k \frac{l_j}{v_j}$$
+$$ \frac{1}{\overline{v}}=\frac{\displaystyle \sum_{j=1}^k \frac{l_j}{v_j}}{\displaystyle \sum_{j=1}^k l_j}$$
+$$\overline{v}=\frac{\displaystyle \sum_{j=1}^kl_j}{\displaystyle \sum_{j=1}^k \frac{l_j}{v_j}}$$
+È una specie di media armonica ponderata delle velocità, con pesi pari alle lunghezze dei diversi tratti.
+
+```{r echo=FALSE}
+tab7.sol = data.frame("j"=c(1:3,"Totale"),
+                      "vj"=c(50,80,60,""),
+                      "lj"=c(20,30,50,100),
+                      "tj"=c(0.4,0.375,0.833,1.608))
+
+tab7.sol%>%
+  format_cells(4,c(1,3,4), 'italics')%>%
+  kbl(align = 'c', col.names = c("$j$","$v_j$","$l_j$","$t_j$"))%>%
+  kable_classic(html_font = 'Computer Modern', full_width=F)%>%
+  row_spec(c(0,4), bold = T, 
+           extra_css = 'border-top: thin solid;border-bottom: thin solid')%>%
+  row_spec(3, extra_css = 'border-bottom: thin solid')
+  
+```
+
+$$\overline{v}=\frac{100}{1.608}=62.1891 \,\frac{Km}{h}$$
+
+
+
